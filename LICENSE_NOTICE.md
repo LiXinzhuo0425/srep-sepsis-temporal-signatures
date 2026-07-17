@@ -1,0 +1,1 @@
+No new software license is asserted in this submission release candidate. Reuse remains subject to the publication license, third-party dependency licenses, and source-repository terms. The authors should select and approve a repository license before public release.

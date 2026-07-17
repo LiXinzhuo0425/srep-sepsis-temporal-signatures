@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this code or data, cite the associated article."
+title: "Fixed blood transcriptomic signatures show distinct temporal architectures across sepsis cohorts: code and data"
+version: "1.0.0"
+date-released: "2026-07-17"
+authors:
+  - family-names: "Li"
+    given-names: "Xinzhuo"
+    orcid: "https://orcid.org/0009-0003-1186-703X"
+  - family-names: "Tu"
+    given-names: "Xinyue"
+  - family-names: "Yan"
+    given-names: "Zihao"
+  - family-names: "Gong"
+    given-names: "Yi"

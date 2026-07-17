@@ -1,0 +1,57 @@
+{
+  "release_id": "srep-sepsis-temporal-signatures-v1.0.0",
+  "command_exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "figure_checks": [
+    {
+      "figure": "Figure_1_study_design",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "53379b19ef078bdb775096e3200c2672552d8009c9f77d4a893897dffef6387d",
+      "produced_sha256": "53379b19ef078bdb775096e3200c2672552d8009c9f77d4a893897dffef6387d",
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_2_pooled_longitudinal_change",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "7f8c3c89ef74d0284787b36e71ff99614467260d9b70a87bae412ef308cab6c8",
+      "produced_sha256": "7f8c3c89ef74d0284787b36e71ff99614467260d9b70a87bae412ef308cab6c8",
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_3_cross_cohort_transportability",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "6552737beb73952c960154051f0453ed94a0795a6a056049c8acc930c75c95c6",
+      "produced_sha256": "6552737beb73952c960154051f0453ed94a0795a6a056049c8acc930c75c95c6",
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_4_gene_architecture",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "02005f8b587410d86bb947ce73dcb2cc6d86cf278b7b720325fbbe59ce95448a",
+      "produced_sha256": "02005f8b587410d86bb947ce73dcb2cc6d86cf278b7b720325fbbe59ce95448a",
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_5_gene_pathway_cell_integration",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "ca1bf73f8a5abb82c69450a16e7c7d7645e893a7357f8d7256e2037b522b1108",
+      "produced_sha256": "ca1bf73f8a5abb82c69450a16e7c7d7645e893a7357f8d7256e2037b522b1108",
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_6_temporal_measurement_context",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "974ef15985fb13861ff8060146a84038cd72bffca9f3f2e991fd21c0e63ed53b",
+      "produced_sha256": "974ef15985fb13861ff8060146a84038cd72bffca9f3f2e991fd21c0e63ed53b",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

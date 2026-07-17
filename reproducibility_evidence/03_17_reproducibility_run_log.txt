@@ -1,0 +1,24 @@
+INPUT_HASH inputs/expression/GSE110487_rawcounts.xlsx PASS
+INPUT_HASH inputs/expression/GSE236713_series_matrix.txt.gz PASS_DOCUMENTED_DEVIATION original_truncated_hash_retained=True raw_rescue_hash_verified=True
+INPUT_HASH inputs/expression/GSE54514_series_matrix.txt.gz PASS
+INPUT_HASH inputs/expression/GSE57065_series_matrix.txt.gz PASS
+INPUT_HASH inputs/expression/GSE8121_series_matrix.txt.gz PASS
+INPUT_HASH inputs/expression/GSE95233_series_matrix.txt.gz PASS
+INPUT_HASH inputs/metadata/dataset_preprocessing_lock.csv PASS
+INPUT_HASH inputs/metadata/longitudinal_sample_manifest.csv PASS
+INPUT_HASH inputs/metadata/platform_feature_map.csv PASS
+INPUT_HASH inputs/metadata/signature_dataset_compatibility.csv PASS
+PREPROCESS_INTERMEDIATES removed_and_rebuilt=GSE236713,GSE110487
+SCORE GSE236713 rows=3576 qc=PASS manual=40/40
+SCORE GSE57065 rows=856 qc=PASS manual=40/40
+SCORE GSE95233 rows=992 qc=PASS manual=40/40
+SCORE GSE54514 rows=1304 qc=PASS manual=40/40
+SCORE GSE110487 rows=496 qc=PASS manual=40/40
+SCORE GSE8121 rows=600 qc=PASS manual=40/40
+COMPARE scores PASS max_abs_diff=0 numeric comparison
+COMPARE changes PASS max_abs_diff=0 numeric comparison
+COMPARE cohort_effects PASS max_abs_diff=2.22e-16 numeric comparison
+COMPARE meta PASS max_abs_diff=1.42e-14 numeric comparison
+FIGURE_EXPORTS count=24 PASS
+VERSIONS {"DESeq2": "1.50.2", "numpy": "1.26.4", "pandas": "2.3.3", "platform": "macOS-26.5.2-arm64-arm-64bit", "python": "3.9.6 (default, Dec  2 2025, 07:27:58)  [Clang 17.0.0 (clang-1700.6.3.2)]"}
+FINAL PASS
