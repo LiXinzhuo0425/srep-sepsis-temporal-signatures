@@ -1,10 +1,12 @@
 {
   "release_id": "srep-sepsis-temporal-signatures-v1.0.0",
+  "doi": "10.5281/zenodo.21415497",
+  "repository": "https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures",
   "files": [
     {
       "path": "CITATION.cff",
-      "size_bytes": 609,
-      "sha256": "1274b72c8adb9990b0902bd42de073277ab0cc17c8845c0545d52f75d4ac3c26"
+      "size_bytes": 640,
+      "sha256": "44dad6f2013a04a5caf03e791f73edecf9e58ea3162c47ce909c4ea2d5d1e185"
     },
     {
       "path": "LICENSE_CODE",
@@ -13,8 +15,8 @@
     },
     {
       "path": "LICENSE_DATA",
-      "size_bytes": 711,
-      "sha256": "8ca704f5d548771a0dc92530bc22502f40c9f57dfce3411cf3555f117bd4712b"
+      "size_bytes": 751,
+      "sha256": "63f81ea91a2116637e72f26bca6d989ea82e916dc2ed01952f2c110ebcd6d6c9"
     },
     {
       "path": "LICENSE_NOTICE.md",
@@ -23,8 +25,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 3733,
-      "sha256": "3c46d3af354072d221acd2c9bef1ab310ef17466786e768bfdb73bda11e65ffe"
+      "size_bytes": 3728,
+      "sha256": "35323a596615baffd7c9d365460d747a8890ebd020ee5342f832b1cfebf9dfd7"
     },
     {
       "path": "code/frozen_archive/03_00_08_protocol_deviations.json",

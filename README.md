@@ -41,7 +41,7 @@ The completed clean-from-frozen-input reruns are retained in `reproducibility_ev
 
 ## Version and citation
 
-Release identifier: `srep-sepsis-temporal-signatures-v1.0.0`. The public repository is `https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures`. A persistent Zenodo DOI will be added after the archive deposit is published.
+Release identifier: `srep-sepsis-temporal-signatures-v1.0.0`. The public repository is `https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures`. The persistent archive DOI is `https://doi.org/10.5281/zenodo.21415497`.
 
 ## License
 

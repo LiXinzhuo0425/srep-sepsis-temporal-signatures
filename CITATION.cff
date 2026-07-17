@@ -4,6 +4,7 @@ title: "Fixed blood transcriptomic signatures show distinct temporal architectur
 version: "1.0.0"
 date-released: "2026-07-17"
 repository-code: "https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures"
+doi: "10.5281/zenodo.21415497"
 license: "MIT"
 authors:
   - family-names: "Li"
