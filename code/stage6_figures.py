@@ -20,6 +20,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 import numpy as np
 import pandas as pd
+from PIL import Image
 
 
 ROOT = Path(os.environ.get("SEPSIS_SIGNATURE_PROJECT_ROOT", Path(__file__).resolve().parents[3])).resolve()
@@ -119,7 +120,10 @@ def export(fig: plt.Figure, stem: str) -> None:
     fig.savefig(base.with_suffix(".svg"), bbox_inches="tight")
     fig.savefig(base.with_suffix(".pdf"), bbox_inches="tight")
     fig.savefig(base.with_suffix(".png"), dpi=300, bbox_inches="tight")
-    fig.savefig(base.with_suffix(".tiff"), dpi=600, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})
+    tiff_path = base.with_suffix(".tiff")
+    fig.savefig(tiff_path, dpi=600, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})
+    with Image.open(tiff_path) as image:
+        image.convert("RGB").save(tiff_path, dpi=(600, 600), compression="tiff_lzw")
     plt.close(fig)
 
 
@@ -168,8 +172,8 @@ def figure1() -> None:
 
     ax2 = fig.add_subplot(gs[1]); panel(ax2, "b")
     y = np.arange(len(COHORT_INFO))[::-1]
-    ax2.barh(y + 0.17, COHORT_INFO["T24_n"], height=0.31, color=COL["blue"], label="T24")
-    ax2.barh(y - 0.17, COHORT_INFO["T48_n"], height=0.31, color=COL["red"], label="T48")
+    ax2.barh(y + 0.17, COHORT_INFO["T24_n"], height=0.31, color=COL["blue"], edgecolor=COL["blue"], label="T24")
+    ax2.barh(y - 0.17, COHORT_INFO["T48_n"], height=0.31, color=COL["red"], edgecolor=COL["red"], hatch="///", label="T48")
     ax2.set_yticks(y)
     ax2.set_yticklabels([f"{r.cohort}  {r.population}" for r in COHORT_INFO.itertuples(index=False)], fontsize=7)
     ax2.set_xlabel("Paired patients contributing to the primary window")

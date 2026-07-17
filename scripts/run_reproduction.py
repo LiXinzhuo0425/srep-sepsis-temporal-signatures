@@ -40,7 +40,7 @@ for ref in sorted(REFERENCE.glob("Figure_*.png")):
 for item in checks:
     item["status"] = "PASS" if item["reference_sha256"] == item["produced_sha256"] else "FAIL"
 result = {
-    "release_id": "srep-sepsis-temporal-signatures-v1.0.0",
+    "release_id": "srep-sepsis-temporal-signatures-v1.0.1",
     "command_exit_code": completed.returncode,
     "stdout": completed.stdout,
     "stderr": completed.stderr,

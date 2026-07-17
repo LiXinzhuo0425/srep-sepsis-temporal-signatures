@@ -1,5 +1,5 @@
 {
-  "release_id": "srep-sepsis-temporal-signatures-v1.0.0",
+  "release_id": "srep-sepsis-temporal-signatures-v1.0.1",
   "command_exit_code": 0,
   "stdout": "",
   "stderr": "",
@@ -8,8 +8,8 @@
       "figure": "Figure_1_study_design",
       "reference_exists": true,
       "produced_exists": true,
-      "reference_sha256": "53379b19ef078bdb775096e3200c2672552d8009c9f77d4a893897dffef6387d",
-      "produced_sha256": "53379b19ef078bdb775096e3200c2672552d8009c9f77d4a893897dffef6387d",
+      "reference_sha256": "72632001c8dc17f8251bce1fbfeee8282d9b823a6e8dcab90f6d65c6497f8fab",
+      "produced_sha256": "72632001c8dc17f8251bce1fbfeee8282d9b823a6e8dcab90f6d65c6497f8fab",
       "status": "PASS"
     },
     {
