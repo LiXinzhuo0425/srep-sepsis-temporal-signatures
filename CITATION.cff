@@ -3,6 +3,8 @@ message: "If you use this code or data, cite the associated article."
 title: "Fixed blood transcriptomic signatures show distinct temporal architectures across sepsis cohorts: code and data"
 version: "1.0.0"
 date-released: "2026-07-17"
+repository-code: "https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures"
+license: "MIT"
 authors:
   - family-names: "Li"
     given-names: "Xinzhuo"

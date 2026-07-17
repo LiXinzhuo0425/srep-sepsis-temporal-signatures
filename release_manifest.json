@@ -3,18 +3,28 @@
   "files": [
     {
       "path": "CITATION.cff",
-      "size_bytes": 510,
-      "sha256": "308989c97e64d7de5576f877be391c31363f5455a650f652d47988658c1bcf60"
+      "size_bytes": 609,
+      "sha256": "1274b72c8adb9990b0902bd42de073277ab0cc17c8845c0545d52f75d4ac3c26"
+    },
+    {
+      "path": "LICENSE_CODE",
+      "size_bytes": 1102,
+      "sha256": "fa1c5bc6e69f7544f523e2d848bca2ff5f07687f4cc361b509167d848c3e1b76"
+    },
+    {
+      "path": "LICENSE_DATA",
+      "size_bytes": 711,
+      "sha256": "8ca704f5d548771a0dc92530bc22502f40c9f57dfce3411cf3555f117bd4712b"
     },
     {
       "path": "LICENSE_NOTICE.md",
-      "size_bytes": 268,
-      "sha256": "b47ac4e8f69a8777eb515d19fb10b936d00dab566015210f42466d5665b80d31"
+      "size_bytes": 545,
+      "sha256": "1a113350157e0cbd39473b5379aed6a38455b21faaa1a7728a8446ef5296e107"
     },
     {
       "path": "README.md",
-      "size_bytes": 3455,
-      "sha256": "42b434d4d1e3a1f543caf092e98b1eca17db216a2a34c78ee9709c8f96d9c888"
+      "size_bytes": 3733,
+      "sha256": "3c46d3af354072d221acd2c9bef1ab310ef17466786e768bfdb73bda11e65ffe"
     },
     {
       "path": "code/frozen_archive/03_00_08_protocol_deviations.json",
@@ -1025,11 +1035,6 @@
       "path": "reference_outputs/main_figures/Figure_6_temporal_measurement_context.tiff",
       "size_bytes": 1679486,
       "sha256": "5a239041dd04457d0a2139fb3c3a7f50ec9d9d65688d88ff98bf260bb59cfbaa"
-    },
-    {
-      "path": "release_manifest.json",
-      "size_bytes": 51208,
-      "sha256": "e493b499819533397f5fa1660539b6f3d21522c78eeb9bb5e9f452aecf563a96"
     },
     {
       "path": "reproducibility_evidence/03_16_verification_summary.json",
