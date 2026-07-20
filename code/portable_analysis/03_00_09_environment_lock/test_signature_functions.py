@@ -44,7 +44,7 @@ class TestInputGuardrails(unittest.TestCase):
             "CEACAM1": 4, "ZDHHC19": 4, "C9orf95": 4, "GNA15": 4, "BATF": 4, "C3AR1": 4,
             "KIAA1370": 1, "TGFBI": 1, "MTCH1": 1, "RPGRIP1": 1, "HLA-DPB1": 1,
         }
-        self.assertAlmostEqual(sepsis_metascore_dgm(data), 3.0)
+        self.assertAlmostEqual(sepsis_metascore_dgm(data), 4.0 - (5.0 / 6.0))
 
     def test_multi_probe_mean_is_explicit(self):
         score = septicyte_lab_microarray({"PLAC8": [7, 9], "LAMP1": 6, "PLA2G7": 2, "CEACAM4": 1})
@@ -72,7 +72,7 @@ class TestManualArithmetic(unittest.TestCase):
     def test_sepsis_metascore(self):
         data = {g: 9 for g in ("CEACAM1", "ZDHHC19", "NMRK1", "GNA15", "BATF", "C3AR1")}
         data.update({g: 4 for g in ("FAM214A", "TGFBI", "MTCH1", "RPGRIP1", "HLA-DPB1")})
-        self.assertAlmostEqual(sepsis_metascore_dgm(data), 5.0)
+        self.assertAlmostEqual(sepsis_metascore_dgm(data), 9.0 - (5.0 / 6.0) * 4.0)
 
     def test_septicyte(self):
         self.assertEqual(septicyte_lab_microarray({"PLAC8": 8, "LAMP1": 6, "PLA2G7": 2, "CEACAM4": 1}), 11)

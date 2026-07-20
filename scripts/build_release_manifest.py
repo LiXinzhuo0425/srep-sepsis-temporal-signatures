@@ -3,11 +3,13 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED = {".git", "MANIFEST_SHA256.txt", "release_manifest.json"}
+EXCLUDED = {".git", "__pycache__", ".DS_Store", "MANIFEST_SHA256.txt", "release_manifest.json"}
+VERSION_DOI = sys.argv[1] if len(sys.argv) > 1 else None
 
 
 def digest(path: Path) -> str:
@@ -21,7 +23,7 @@ def digest(path: Path) -> str:
 files = []
 for path in sorted(ROOT.rglob("*")):
     rel = path.relative_to(ROOT)
-    if not path.is_file() or any(part in EXCLUDED for part in rel.parts):
+    if not path.is_file() or path.name.endswith(".inspect.ndjson") or any(part in EXCLUDED for part in rel.parts):
         continue
     files.append(
         {
@@ -32,9 +34,10 @@ for path in sorted(ROOT.rglob("*")):
     )
 
 manifest = {
-    "release_id": "srep-sepsis-temporal-signatures-v1.0.1",
-    "doi": "10.5281/zenodo.21417810",
+    "release_id": "srep-sepsis-temporal-signatures-v1.1.1",
+    "doi": VERSION_DOI,
     "concept_doi": "10.5281/zenodo.21415496",
+    "publication_status": "public immutable release" if VERSION_DOI else "public GitHub release prepared; version DOI pending",
     "repository": "https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures",
     "files": files,
 }

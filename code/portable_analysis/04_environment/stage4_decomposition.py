@@ -74,7 +74,7 @@ GENE_GROUPS = {
 }
 
 STRUCTURE_ROWS = [
-    {"signature_id": "SIG001", "formula_structure": "difference of two geometric means", "exact_method": "group-wise exact Shapley", "formula": "GM(6 up genes) - GM(5 down genes)", "intercept_in_change": "NO", "linear_approximation": "PROHIBITED", "exactly_decomposable": "YES"},
+    {"signature_id": "SIG001", "formula_structure": "weighted difference of two geometric means", "exact_method": "group-wise exact Shapley", "formula": "GM(6 up genes) - (5/6) * GM(5 down genes)", "intercept_in_change": "NO", "linear_approximation": "PROHIBITED", "exactly_decomposable": "YES"},
     {"signature_id": "SIG002", "formula_structure": "linear signed sum", "exact_method": "analytic coefficient times expression change", "formula": "PLAC8 + LAMP1 - PLA2G7 - CEACAM4", "intercept_in_change": "NO", "linear_approximation": "NOT_APPLICABLE", "exactly_decomposable": "YES"},
     {"signature_id": "SIG003", "formula_structure": "two-gene ratio", "exact_method": "exact two-point Shapley", "formula": "FAIM3 / PLAC8; orientation multiplied by -1", "intercept_in_change": "NO", "linear_approximation": "PROHIBITED", "exactly_decomposable": "YES"},
     {"signature_id": "SIG004", "formula_structure": "ratio of expression difference", "exact_method": "exact two-point Shapley", "formula": "(NLRP1 - IDNK) / PLAC8", "intercept_in_change": "NO", "linear_approximation": "PROHIBITED", "exactly_decomposable": "YES"},
@@ -186,7 +186,7 @@ def decompose(signature: str, x0: dict[str, float], x1: dict[str, float]) -> dic
     if signature == "SIG001":
         up = shapley_geometric_mean(tuple(SMS_UP), x0, x1)
         down = shapley_geometric_mean(tuple(SMS_DOWN), x0, x1)
-        return {**up, **{gene: -value for gene, value in down.items()}}
+        return {**up, **{gene: -(5.0 / 6.0) * value for gene, value in down.items()}}
     if signature == "SIG022":
         viral = shapley_geometric_mean(tuple(SWEENEY_BV_VIRAL), x0, x1)
         bacterial = shapley_geometric_mean(tuple(SWEENEY_BV_BACTERIAL), x0, x1)
@@ -360,8 +360,8 @@ def cohort_summaries(gene_level: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFra
 def analysis_subset(frame: pd.DataFrame, analysis_set: str) -> pd.DataFrame:
     if analysis_set == "ALL_COHORTS":
         return frame
-    if analysis_set == "BLINDED_VALIDATION_ONLY":
-        return frame[frame["analysis_role"] == "BLINDED_VALIDATION"]
+    if analysis_set == "PRESPECIFIED_NON_PILOT_ONLY":
+        return frame[frame["analysis_role"] == "PRESPECIFIED_NON_PILOT"]
     excluded_primary = {"DEVELOPMENT_OVERLAP", "POSSIBLE_SAME_MARS_PROGRAM", "POSSIBLE_SAME_PROGRAM"}
     excluded_strict = excluded_primary | {"PRIOR_EXTERNAL_VALIDATION", "POSSIBLE_PRIOR_EXTERNAL_BENCHMARK"}
     excluded = excluded_primary if analysis_set == "PRIMARY_INDEPENDENT" else excluded_strict
@@ -389,7 +389,7 @@ def gene_meta(cohort_gene: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     meta_rows = []
     loo_rows = []
     for keys, base in cohort_gene.groupby(["signature_id", "time_window", "gene", "gene_group"], sort=False):
-        for analysis_set in ("ALL_COHORTS", "BLINDED_VALIDATION_ONLY", "PRIMARY_INDEPENDENT", "STRICT_NEVER_USED"):
+        for analysis_set in ("ALL_COHORTS", "PRESPECIFIED_NON_PILOT_ONLY", "PRIMARY_INDEPENDENT", "STRICT_NEVER_USED"):
             subset = analysis_subset(base, analysis_set)
             subset = subset[np.isfinite(subset["bootstrap_se"]) & (subset["bootstrap_se"] > 0)]
             if subset.empty:

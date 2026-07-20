@@ -1,0 +1,6 @@
+evidence_level,evidence_type,permitted_claim,prohibited_claim,stage4_role,stage4_status
+E1,Exact contribution decomposition under the frozen formula,Explain the mathematical source of score change,Causal driver; within-cell regulation; clinical utility,CORE_REQUIRED,PASS
+E2,Multicohort association with prespecified pathway change,State that score change is consistent with or coupled to a biological process,State that a pathway drives score change or treatment response,CONDITIONAL,PASS_LIMITED
+E3,External blood/single-cell reference annotation,Describe a potential cell source of component genes,Infer cell abundance or within-cell transcription from bulk RNA,REQUIRED_LIGHTWEIGHT,PASS
+E4,Association with synchronous clinical-severity change,Limited clinical anchoring if the formal gate is met,"Prognostic validation, monitoring utility or treatment guidance",CONDITIONAL,STOPPED_BY_GATE
+E5,Causal mechanism or clinical decision utility,None in the current study,Any causal or decision-support claim,PROHIBITED,NOT_ASSESSED

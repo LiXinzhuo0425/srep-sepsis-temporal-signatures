@@ -106,7 +106,7 @@ SMS_DOWN = ("FAM214A", "TGFBI", "MTCH1", "RPGRIP1", "HLA-DPB1")
 
 
 def sepsis_metascore_dgm(expression: Mapping[str, Any] | Iterable[tuple[str, Any]]) -> float:
-    """Unstandardized Sepsis MetaScore ordering: GM(up six) - GM(down five).
+    """Published Sepsis MetaScore: GM(up six) - (5/6) * GM(down five).
 
     The original within-dataset z standardization is intentionally not done
     here because no immutable single-sample reference mean/SD was published.
@@ -114,7 +114,7 @@ def sepsis_metascore_dgm(expression: Mapping[str, Any] | Iterable[tuple[str, Any
     """
 
     data = prepare_expression(expression)
-    return _geometric_mean(_required(data, SMS_UP), "SMS up") - _geometric_mean(
+    return _geometric_mean(_required(data, SMS_UP), "SMS up") - (5.0 / 6.0) * _geometric_mean(
         _required(data, SMS_DOWN), "SMS down"
     )
 

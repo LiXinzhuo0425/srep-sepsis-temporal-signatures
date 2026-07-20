@@ -1,0 +1,9 @@
+{
+  "signature_gene_count": 74,
+  "exact_or_alias_mapped": 74,
+  "historical_symbols_resolved": 2,
+  "lineage_assigned": 43,
+  "hpa_version": "25.1",
+  "hpa_file_sha256": "ad401f8519ecdee5b67b0ad3bf28175d402d1ea0ad6c542b90fcab2bee39b470",
+  "claim_boundary": "Potential cell source only; no inference of within-cell transcription or deconvolved cell proportion."
+}

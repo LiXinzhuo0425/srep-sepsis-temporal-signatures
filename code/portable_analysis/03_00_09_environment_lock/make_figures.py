@@ -174,7 +174,7 @@ def figure4_pilot_validation():
     for window in ["T1", "T2"]:
         for sig in SIGNATURES:
             pilot = meta[(meta.signature_id == sig) & (meta.time_window == window) & (meta.analysis_set == "PILOT_ONLY")]
-            validation = meta[(meta.signature_id == sig) & (meta.time_window == window) & (meta.analysis_set == "BLINDED_VALIDATION_ONLY")]
+            validation = meta[(meta.signature_id == sig) & (meta.time_window == window) & (meta.analysis_set == "PRESPECIFIED_NON_PILOT_ONLY")]
             if not pilot.empty and not validation.empty:
                 rows.append({"signature_id": sig, "time_window": window, "pilot": pilot.iloc[0].pooled_delta_z, "validation": validation.iloc[0].pooled_delta_z})
     data = pd.DataFrame(rows)

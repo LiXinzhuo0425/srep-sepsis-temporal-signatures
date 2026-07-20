@@ -1,0 +1,22 @@
+dataset,clinical_variable,anchor_level,public_source,availability_status,estimated_time_matched_paired_n,audit_reason,decision
+GSE236713,Delta SOFA,PRIMARY_LEVEL_1,Mentioned in series summary / study methods,NOT_DEPOSITED_SAMPLE_LEVEL,0,"No serial sample-level SOFA values in GEO matrix, characteristics, RAW archive or supplementary listing",ABANDON_FORMAL
+GSE57065,Delta SOFA,PRIMARY_LEVEL_1,Not present,UNAVAILABLE,0,No SOFA field,ABANDON_FORMAL
+GSE95233,Delta SOFA,PRIMARY_LEVEL_1,Not present,UNAVAILABLE,0,No SOFA field,ABANDON_FORMAL
+GSE54514,Delta SOFA,PRIMARY_LEVEL_1,Not present,UNAVAILABLE,0,No SOFA field,ABANDON_FORMAL
+GSE110487,Delta SOFA,PRIMARY_LEVEL_1,Not present in deposited workbook,UNAVAILABLE,0,Expression-only workbook,ABANDON_FORMAL
+GSE8121,Delta SOFA,PRIMARY_LEVEL_1,Not present,UNAVAILABLE,0,No SOFA field,ABANDON_FORMAL
+GSE236713,Shock or vasopressor state change,PRIMARY_LEVEL_1,Not present,UNAVAILABLE,0,No serial vasoactive or shock-state field,ABANDON_FORMAL
+GSE57065,Shock or vasopressor state change,PRIMARY_LEVEL_1,Cohort is septic shock,BASELINE_CASE_DEFINITION_ONLY,0,No serial resolution/persistence field,ABANDON_FORMAL
+GSE95233,Shock or vasopressor state change,PRIMARY_LEVEL_1,Cohort is septic shock,BASELINE_CASE_DEFINITION_ONLY,0,No serial resolution/persistence field,ABANDON_FORMAL
+GSE54514,Shock or vasopressor state change,PRIMARY_LEVEL_1,Not present,UNAVAILABLE,0,No serial field,ABANDON_FORMAL
+GSE110487,Shock or vasopressor state change,PRIMARY_LEVEL_1,Cohort is septic shock,BASELINE_CASE_DEFINITION_ONLY,0,No serial field,ABANDON_FORMAL
+GSE8121,Shock or vasopressor state change,PRIMARY_LEVEL_1,Cohort is septic shock,BASELINE_CASE_DEFINITION_ONLY,0,No serial field,ABANDON_FORMAL
+ALL,Delta lactate,SECONDARY_LEVEL_2,Not deposited in a time-matched sample-level form,UNAVAILABLE,0,No eligible cohort,ABANDON_FORMAL
+ALL,Delta CRP or PCT,SECONDARY_LEVEL_2,Not deposited in a time-matched sample-level form,UNAVAILABLE,0,No eligible cohort,ABANDON_FORMAL
+ALL,Mechanical ventilation state change,SECONDARY_LEVEL_2,Not deposited in a time-matched sample-level form,UNAVAILABLE,0,No eligible cohort,ABANDON_FORMAL
+GSE54514,APACHE II change,NONQUALIFYING_SEVERITY_FIELD,Sample characteristic,STATIC_BASELINE_VALUE_REPEATED,0,Within-patient APACHE II is unchanged across days; not a longitudinal anchor,DESCRIPTIVE_ONLY
+GSE57065,SAPS II change,NONQUALIFYING_SEVERITY_FIELD,Sample characteristic,STATIC_HIGH_LOW_CATEGORY_REPEATED,0,"Within-patient category is unchanged at 0, 24 and 48 h",DESCRIPTIVE_ONLY
+GSE54514,Neutrophil proportion change,NONPRESET_LAB_FIELD,Sample characteristic,SERIAL_AVAILABLE_ONE_COHORT,31,One cohort only; not a prespecified severity anchor; no new cell-proportion correction analysis,DESCRIPTIVE_SUPPLEMENT_ONLY
+GSE236713,Mortality,EXPLORATORY_OUTCOME,Sample characteristic,AVAILABLE_FIXED_OUTCOME,93,Not a synchronous clinical change; cannot validate prognosis,EXPLORATORY_DESCRIPTION_ONLY
+GSE54514,Mortality,EXPLORATORY_OUTCOME,Disease status,AVAILABLE_FIXED_OUTCOME,31,Not a synchronous clinical change; cannot validate prognosis,EXPLORATORY_DESCRIPTION_ONLY
+GSE95233,Mortality,EXPLORATORY_OUTCOME,Sample characteristic,AVAILABLE_FIXED_OUTCOME,31,Not a synchronous clinical change; cannot validate prognosis,EXPLORATORY_DESCRIPTION_ONLY

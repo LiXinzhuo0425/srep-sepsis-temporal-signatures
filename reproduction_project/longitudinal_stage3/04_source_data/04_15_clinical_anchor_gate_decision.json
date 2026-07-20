@@ -1,0 +1,12 @@
+{
+  "formal_gate": "FAIL",
+  "formal_module_decision": "STOP_FORMAL_CLINICAL_ANCHORING",
+  "eligible_level_1_anchor": null,
+  "independent_cohorts_with_same_level_1_anchor": 0,
+  "cumulative_time_matched_level_1_patients": 0,
+  "required_cohorts": 2,
+  "recommended_minimum_patients": 80,
+  "reason": "No deposited serial SOFA, vasopressor/shock-state, lactate, CRP or PCT variable is available in at least two independent cohorts. Static APACHE II/SAPS II fields and mortality outcomes do not satisfy the frozen synchronous-change definition.",
+  "analysis_04_17": "NOT_RUN_BY_PREDEFINED_GATE",
+  "allowed_residual_use": "Availability report and claim-boundary matrix only; fixed mortality may be described as exploratory outcome availability but not analysed as prognostic validation."
+}

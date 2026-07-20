@@ -1,0 +1,9 @@
+signature_id,formula_structure,exact_method,formula,intercept_in_change,linear_approximation,exactly_decomposable,gene_n,direction_coefficient,reconstruction_tolerance
+SIG001,weighted difference of two geometric means,group-wise exact Shapley,GM(6 up genes) - (5/6) * GM(5 down genes),NO,PROHIBITED,YES,11,1,1e-08
+SIG002,linear signed sum,analytic coefficient times expression change,PLAC8 + LAMP1 - PLA2G7 - CEACAM4,NO,NOT_APPLICABLE,YES,4,1,1e-08
+SIG003,two-gene ratio,exact two-point Shapley,FAIM3 / PLAC8; orientation multiplied by -1,NO,PROHIBITED,YES,2,-1,1e-08
+SIG004,ratio of expression difference,exact two-point Shapley,(NLRP1 - IDNK) / PLAC8,NO,PROHIBITED,YES,3,1,1e-08
+SIG022,difference of two geometric means,group-wise exact Shapley,GM(3 viral genes) - GM(4 bacterial genes),NO,PROHIBITED,YES,7,1,1e-08
+SIG023,two-gene expression difference,analytic coefficient times expression change,FAM89A - IFI44L,NO,NOT_APPLICABLE,YES,2,1,1e-08
+SIG033,linear weighted sum,analytic coefficient times expression change,sum of 7 published beta_g * X_g,NO,NOT_APPLICABLE,YES,7,1,1e-08
+SIG034,ratio of sums of four module geometric means,exact Owen value under the frozen four-module partition,[GM(M1)+GM(M2)]/[GM(M3)+GM(M4)],NO,PROHIBITED,YES,42,1,1e-08

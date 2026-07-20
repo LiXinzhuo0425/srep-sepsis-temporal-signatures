@@ -1,0 +1,10 @@
+analysis_family,multiplicity_rule,robustness_checks,status,interpretation_note
+Gene contribution decomposition,All component genes reported; within-signature/window FDR supplied for inferential summaries,Exact reconstruction; primary-independent meta; leave-one-dataset-out; development-overlap exclusion,PASS,No gene selected for entry based on significance
+Pathway longitudinal changes,BH-FDR separately by T24/T48 and pathway tier,Prediction intervals; leave-one-dataset-out; singscore versus ssGSEA,PASS,No prespecified primary pathway reached FDR<0.05 for its overall mean change
+Signature–pathway coupling,"BH-FDR by analysis set, time window and tier",Independent-only cohorts; prediction intervals; ssGSEA sensitivity,PASS_LIMITED,One primary T48 coupling passed FDR: SIG034–oxidative phosphorylation
+Cell-source annotation,Descriptive; no hypothesis test,HPA exact/alias mapping; PBMC-atlas scope check; unresolved genes retained,PASS,Potential source only; no deconvolution
+Clinical anchoring,No testing because the availability gate failed,Static severity and fixed outcomes explicitly rejected as substitutes,STOPPED_BY_GATE,Zero clinical association P values generated
+Time-window families,T24 and T48 kept separate,No replacement by T72/day5,PASS,Extended windows do not alter primary interpretation
+Scale sensitivity,Stage 3 baseline-SD primary; MAD and raw/rank sensitivity retained,No result-driven scale selection,PASS,Stage 4 contributions inherit the frozen denominator
+Influential datasets,No P-value gate,Leave-one-dataset-out and prediction intervals,PASS,High heterogeneity is retained in interpretation
+Single-gene dominance,Pre-coded dominance and cancellation thresholds,Dominant-gene identity across cohorts; all genes retained,PASS,"Dominance is descriptive, not a basis for dropping signatures"

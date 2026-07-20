@@ -1,0 +1,12 @@
+{
+  "independent_cohorts_with_full_transcriptome": 6,
+  "cohorts_supporting_T24": 4,
+  "cohorts_supporting_T48": 5,
+  "primary_compatible_fraction": 0.9814814814814815,
+  "primary_incompatible_count": 1,
+  "minimum_compatible_cohorts_across_primary_pathways": 5,
+  "primary_pathways_supported_by_at_least_four_cohorts": 9,
+  "primary_pathway_count": 9,
+  "constant_primary_score_combinations": 0,
+  "decision": "START"
+}

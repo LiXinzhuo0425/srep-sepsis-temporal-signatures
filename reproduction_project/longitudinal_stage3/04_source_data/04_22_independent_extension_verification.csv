@@ -1,0 +1,39 @@
+check_id,category,detail,observed,expected,tolerance,status
+RECON_SIG001,Exact decomposition,Independent sum for 10 deterministic patient-window records,n=10; max_error=8.438e-15,10 records; max_error <= 1e-8,1e-8,PASS
+RECON_SIG002,Exact decomposition,Independent sum for 10 deterministic patient-window records,n=10; max_error=1.998e-15,10 records; max_error <= 1e-8,1e-8,PASS
+RECON_SIG003,Exact decomposition,Independent sum for 10 deterministic patient-window records,n=10; max_error=2.776e-17,10 records; max_error <= 1e-8,1e-8,PASS
+RECON_SIG004,Exact decomposition,Independent sum for 10 deterministic patient-window records,n=10; max_error=2.220e-16,10 records; max_error <= 1e-8,1e-8,PASS
+RECON_SIG022,Exact decomposition,Independent sum for 10 deterministic patient-window records,n=10; max_error=4.885e-15,10 records; max_error <= 1e-8,1e-8,PASS
+RECON_SIG023,Exact decomposition,Independent sum for 10 deterministic patient-window records,n=10; max_error=1.110e-16,10 records; max_error <= 1e-8,1e-8,PASS
+RECON_SIG033,Exact decomposition,Independent sum for 10 deterministic patient-window records,n=10; max_error=2.442e-15,10 records; max_error <= 1e-8,1e-8,PASS
+RECON_SIG034,Exact decomposition,Independent sum for 10 deterministic patient-window records,n=10; max_error=1.554e-14,10 records; max_error <= 1e-8,1e-8,PASS
+RECON_ALL,Exact decomposition,All gene-level records reconstruct Stage 3 delta Z,n=3344; max_error=1.715e-14,n=3344; max_error <= 1e-8,1e-8,PASS
+FORMULA_SIG001,Formula specification,Frozen gene roster and attribution method,genes=11; methods=['EXACT_GROUPED_SHAPLEY_GEOMETRIC_MEAN_DIFFERENCE'],genes=11; method=EXACT_GROUPED_SHAPLEY_GEOMETRIC_MEAN_DIFFERENCE,,PASS
+FORMULA_SIG002,Formula specification,Frozen gene roster and attribution method,genes=4; methods=['EXACT_LINEAR'],genes=4; method=EXACT_LINEAR,,PASS
+FORMULA_SIG003,Formula specification,Frozen gene roster and attribution method,genes=2; methods=['EXACT_SHAPLEY_RATIO_2_GENE'],genes=2; method=EXACT_SHAPLEY_RATIO_2_GENE,,PASS
+FORMULA_SIG004,Formula specification,Frozen gene roster and attribution method,genes=3; methods=['EXACT_SHAPLEY_RATIO_OF_DIFFERENCE_3_GENE'],genes=3; method=EXACT_SHAPLEY_RATIO_OF_DIFFERENCE_3_GENE,,PASS
+FORMULA_SIG022,Formula specification,Frozen gene roster and attribution method,genes=7; methods=['EXACT_GROUPED_SHAPLEY_GEOMETRIC_MEAN_DIFFERENCE'],genes=7; method=EXACT_GROUPED_SHAPLEY_GEOMETRIC_MEAN_DIFFERENCE,,PASS
+FORMULA_SIG023,Formula specification,Frozen gene roster and attribution method,genes=2; methods=['EXACT_LINEAR_DIFFERENCE'],genes=2; method=EXACT_LINEAR_DIFFERENCE,,PASS
+FORMULA_SIG033,Formula specification,Frozen gene roster and attribution method,genes=7; methods=['EXACT_LINEAR_WEIGHTED_SUM'],genes=7; method=EXACT_LINEAR_WEIGHTED_SUM,,PASS
+FORMULA_SIG034,Formula specification,Frozen gene roster and attribution method,genes=42; methods=['EXACT_OWEN_VALUE_FOUR_FIXED_MODULES'],genes=42; method=EXACT_OWEN_VALUE_FOUR_FIXED_MODULES,,PASS
+HASH_MSIGDB_HALLMARK,Source integrity,04_pathway_data/gene_sets/h.all.v2026.1.Hs.symbols.gmt,eecaf6dad908334ae885406ec72bdc0646d8917588ed7c219fac92fc5363f596,eecaf6dad908334ae885406ec72bdc0646d8917588ed7c219fac92fc5363f596,,PASS
+HASH_REACTOME_GMT_ZIP,Source integrity,04_pathway_data/gene_sets/ReactomePathways.gmt.zip,8c1dbc8578431da5d2d5118262718c60b553a9be3398e93658daa069e4a9afd4,8c1dbc8578431da5d2d5118262718c60b553a9be3398e93658daa069e4a9afd4,,PASS
+HASH_GPL570,Source integrity,04_pathway_data/platform_annotations/GPL570.annot.gz,d7cd44352127b1e34f3a720ebea86093ef255a38f1612a85a2962b71bde8f394,d7cd44352127b1e34f3a720ebea86093ef255a38f1612a85a2962b71bde8f394,,PASS
+HASH_GPL6947,Source integrity,04_pathway_data/platform_annotations/GPL6947.annot.gz,244c4ef6394abd8c87309318f3f27e9e63c45d2d1c3e89303818f1f63a290824,244c4ef6394abd8c87309318f3f27e9e63c45d2d1c3e89303818f1f63a290824,,PASS
+HASH_GPL17077,Source integrity,04_pathway_data/platform_annotations/GPL17077.txt,01801c4e21609f813ee637de1e59121a4b30fa814a3494e077eb306b734031d9,01801c4e21609f813ee637de1e59121a4b30fa814a3494e077eb306b734031d9,,PASS
+HASH_GENCODE_V25,Source integrity,04_pathway_data/platform_annotations/gencode.v25.annotation.gtf.gz,de76f9570ccef2e03545cf30a1b13713e578baf174b004126f7889ba23b152fe,de76f9570ccef2e03545cf30a1b13713e578baf174b004126f7889ba23b152fe,,PASS
+PATHWAY_PRIMARY_SUPPORT,Pathway feasibility,Minimum compatible cohorts across nine primary Hallmarks,5,>=4,,PASS
+PATHWAY_EXCLUSIONS,Pathway feasibility,Noncompatible primary dataset-pathway combinations,GSE54514:HALLMARK_COAGULATION:0.681,GSE54514:HALLMARK_COAGULATION:0.681,,PASS
+PATHWAY_WINDOWS,Pathway feasibility,Primary-window cohort support,"{""T1"": 4, ""T2"": 5}",T1>=4 and T2>=4,,PASS
+META_SIG034_OXPHOS_T48,Meta-analysis input,Independent inverse-variance Fisher-z pooled rho,0.247062837336; cohorts=5,0.247062837336; cohorts=5,1e-10,PASS
+FDR_SIG034_OXPHOS_T48,Multiplicity,Independent BH recalculation within T48 primary Hallmark family,family=72; FDR=0.038786312703,family=72; FDR=0.038786312703,1e-10,PASS
+CELL_ANNOTATION_COVERAGE,Cell-source annotation,Unique signature genes with an HPA mapping,74,74,,PASS
+CELL_ALIAS_RESOLUTION,Cell-source annotation,Historical symbols resolved,2,2,,PASS
+CELL_CLAIM_BOUNDARY,Cell-source annotation,Every row retains potential-source language,74,74,,PASS
+CLINICAL_GATE,Clinical anchoring,Maximum time-matched Level 1 patient count,0,>=80 required; observed below gate,,PASS
+CLINICAL_NO_MODELS,Clinical anchoring,Formal models and P values generated,models=0; p_values=0,models=0; p_values=0,,PASS
+INTEGRATED_SIGNATURE_COUNT,Integrated evidence,One unique row per frozen signature,rows=8; unique=8,8 and 8,,PASS
+INTEGRATED_CLINICAL_BOUNDARY,Integrated evidence,Clinical anchor state remains gated,8,8,,PASS
+FIGURE_EXPORTS,Figure reproducibility,"Nonempty PDF, PNG, TIFF and editable-text SVG exports",rows=56; svg_pass=14,56 files; 14 SVG PASS,,PASS
+WORKBOOK_INTEGRITY,Deliverable integrity,Artifact-tool workbooks are valid XLSX archives,valid=15; total=15,15 valid workbooks before 04_22 creation,,PASS
+WORKBOOK_FORMULAS,Deliverable integrity,Formula/error risk scan,0,0 formula cells; all values are frozen outputs,,PASS

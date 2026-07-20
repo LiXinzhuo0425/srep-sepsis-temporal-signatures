@@ -1,0 +1,10 @@
+{
+  "gene_level_rows": 32604,
+  "patient_signature_window_records": 3344,
+  "reconstruction_passed": 3344,
+  "maximum_raw_error": 1.4210854715202004e-14,
+  "maximum_delta_z_error": 1.715294573045867e-14,
+  "cohort_gene_rows": 936,
+  "gene_meta_rows": 1141,
+  "signatures_classified": 8
+}

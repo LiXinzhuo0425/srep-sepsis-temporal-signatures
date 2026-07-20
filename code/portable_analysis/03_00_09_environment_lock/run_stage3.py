@@ -66,12 +66,12 @@ GSE236713_RAW_TAR = INPUT / "expression/GSE236713_RAW.tar"
 GSE236713_RAW_REQUIRED = INTERMEDIATE / "GSE236713_raw75_log2_required.parquet"
 
 COHORT_GROUPS = {
-    "GSE236713": {"platform_class": "MICROARRAY", "platform": "AGILENT", "age_group": "ADULT", "sample_group": "PBL", "clinical_group": "BROADER_SEPSIS", "case_grade": "S2", "role": "BLINDED_VALIDATION"},
+    "GSE236713": {"platform_class": "MICROARRAY", "platform": "AGILENT", "age_group": "ADULT", "sample_group": "PBL", "clinical_group": "BROADER_SEPSIS", "case_grade": "S2", "role": "PRESPECIFIED_NON_PILOT"},
     "GSE57065": {"platform_class": "MICROARRAY", "platform": "AFFYMETRIX", "age_group": "ADULT", "sample_group": "WHOLE_BLOOD", "clinical_group": "SEPTIC_SHOCK", "case_grade": "S2", "role": "PILOT"},
-    "GSE95233": {"platform_class": "MICROARRAY", "platform": "AFFYMETRIX", "age_group": "ADULT", "sample_group": "WHOLE_BLOOD", "clinical_group": "SEPTIC_SHOCK", "case_grade": "S2", "role": "BLINDED_VALIDATION"},
+    "GSE95233": {"platform_class": "MICROARRAY", "platform": "AFFYMETRIX", "age_group": "ADULT", "sample_group": "WHOLE_BLOOD", "clinical_group": "SEPTIC_SHOCK", "case_grade": "S2", "role": "PRESPECIFIED_NON_PILOT"},
     "GSE54514": {"platform_class": "MICROARRAY", "platform": "ILLUMINA", "age_group": "ADULT", "sample_group": "WHOLE_BLOOD", "clinical_group": "BROADER_SEPSIS", "case_grade": "S2", "role": "PILOT"},
-    "GSE110487": {"platform_class": "RNASEQ", "platform": "RNASEQ", "age_group": "ADULT", "sample_group": "WHOLE_BLOOD", "clinical_group": "SEPTIC_SHOCK", "case_grade": "S2", "role": "BLINDED_VALIDATION"},
-    "GSE8121": {"platform_class": "MICROARRAY", "platform": "AFFYMETRIX", "age_group": "PEDIATRIC", "sample_group": "WHOLE_BLOOD", "clinical_group": "SEPTIC_SHOCK", "case_grade": "S2", "role": "BLINDED_VALIDATION"},
+    "GSE110487": {"platform_class": "RNASEQ", "platform": "RNASEQ", "age_group": "ADULT", "sample_group": "WHOLE_BLOOD", "clinical_group": "SEPTIC_SHOCK", "case_grade": "S2", "role": "PRESPECIFIED_NON_PILOT"},
+    "GSE8121": {"platform_class": "MICROARRAY", "platform": "AFFYMETRIX", "age_group": "PEDIATRIC", "sample_group": "WHOLE_BLOOD", "clinical_group": "SEPTIC_SHOCK", "case_grade": "S2", "role": "PRESPECIFIED_NON_PILOT"},
 }
 
 
@@ -249,7 +249,7 @@ def geometric_mean(values: list[float]) -> float:
 
 def manual_score(signature: str, expression: dict[str, float]) -> float:
     if signature == "SIG001":
-        return geometric_mean([expression[g] for g in ("CEACAM1", "ZDHHC19", "NMRK1", "GNA15", "BATF", "C3AR1")]) - geometric_mean([expression[g] for g in ("FAM214A", "TGFBI", "MTCH1", "RPGRIP1", "HLA-DPB1")])
+        return geometric_mean([expression[g] for g in ("CEACAM1", "ZDHHC19", "NMRK1", "GNA15", "BATF", "C3AR1")]) - (5.0 / 6.0) * geometric_mean([expression[g] for g in ("FAM214A", "TGFBI", "MTCH1", "RPGRIP1", "HLA-DPB1")])
     if signature == "SIG002":
         return expression["PLAC8"] + expression["LAMP1"] - expression["PLA2G7"] - expression["CEACAM4"]
     if signature == "SIG003":
@@ -602,8 +602,8 @@ def analysis_set_mask(effects: pd.DataFrame, signature: str, analysis_set: str) 
     mask = effects["signature_id"] == signature
     if analysis_set == "PILOT_ONLY":
         mask &= effects["analysis_role"] == "PILOT"
-    if analysis_set == "BLINDED_VALIDATION_ONLY":
-        mask &= effects["analysis_role"] == "BLINDED_VALIDATION"
+    if analysis_set == "PRESPECIFIED_NON_PILOT_ONLY":
+        mask &= effects["analysis_role"] == "PRESPECIFIED_NON_PILOT"
     if analysis_set in {"PRIMARY_INDEPENDENT", "STRICT_NEVER_USED"}:
         overlaps = overlap_lookup()
         excluded_primary = {"DEVELOPMENT_OVERLAP", "POSSIBLE_SAME_MARS_PROGRAM", "POSSIBLE_SAME_PROGRAM"}
@@ -619,7 +619,7 @@ def meta_analyses(effects: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     for signature in STAGE3_FUNCTIONS:
         for window in ALL_WINDOWS:
             base = effects[(effects["signature_id"] == signature) & (effects["time_window"] == window)]
-            for analysis_set in ("ALL_COHORTS", "PILOT_ONLY", "BLINDED_VALIDATION_ONLY", "PRIMARY_INDEPENDENT", "STRICT_NEVER_USED"):
+            for analysis_set in ("ALL_COHORTS", "PILOT_ONLY", "PRESPECIFIED_NON_PILOT_ONLY", "PRIMARY_INDEPENDENT", "STRICT_NEVER_USED"):
                 subset = base[analysis_set_mask(base, signature, analysis_set)] if analysis_set != "ALL_COHORTS" else base
                 subset = subset[np.isfinite(subset["bootstrap_se"]) & (subset["bootstrap_se"] > 0)]
                 if subset.empty:
@@ -876,7 +876,7 @@ def evidence_grades(meta: pd.DataFrame, profiles: pd.DataFrame, scaling_meta: pd
             primary_class = stability_class(p)
             sensitivities = []
             effects = []
-            for name in ("ALL_COHORTS", "STRICT_NEVER_USED", "BLINDED_VALIDATION_ONLY"):
+            for name in ("ALL_COHORTS", "STRICT_NEVER_USED", "PRESPECIFIED_NON_PILOT_ONLY"):
                 row = m[m["analysis_set"] == name]
                 if not row.empty:
                     sensitivities.append(stability_class(row.iloc[0]))
@@ -946,7 +946,7 @@ def analyze(out_root: Path = ROOT) -> None:
     within = within_use_comparison(changes)
     within.to_csv(SOURCE_DATA / "03_07_within_intended_use_comparison.csv", index=False)
 
-    development = meta[meta["analysis_set"].isin(["ALL_COHORTS", "PILOT_ONLY", "PRIMARY_INDEPENDENT", "STRICT_NEVER_USED", "BLINDED_VALIDATION_ONLY"])].copy()
+    development = meta[meta["analysis_set"].isin(["ALL_COHORTS", "PILOT_ONLY", "PRIMARY_INDEPENDENT", "STRICT_NEVER_USED", "PRESPECIFIED_NON_PILOT_ONLY"])].copy()
     development.to_csv(SOURCE_DATA / "03_08_development_cohort_exclusion_analysis.csv", index=False)
     attrition = attrition_analysis(scores, changes)
     attrition.to_csv(SOURCE_DATA / "03_09_attrition_and_missingness_analysis.csv", index=False)

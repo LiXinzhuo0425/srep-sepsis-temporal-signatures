@@ -1,7 +1,8 @@
 {
-  "release_id": "srep-sepsis-temporal-signatures-v1.0.1",
-  "doi": "10.5281/zenodo.21417810",
+  "release_id": "srep-sepsis-temporal-signatures-v1.1.1",
+  "doi": null,
   "concept_doi": "10.5281/zenodo.21415496",
+  "publication_status": "public GitHub release prepared; version DOI pending",
   "repository": "https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures",
   "files": [
     {
@@ -10,9 +11,14 @@
       "sha256": "43b1de4fff4b8af5657ebe27f3bbe39d5a9dbeed38dc8c123a881d5115e04a50"
     },
     {
+      "path": "CHANGELOG_v1.1.1.md",
+      "size_bytes": 1472,
+      "sha256": "c74f239ade519cd39f22a134e1fbc68be9f202d1d061117da0763a93a9a44663"
+    },
+    {
       "path": "CITATION.cff",
-      "size_bytes": 640,
-      "sha256": "e5a12ddeedf4ecaf3b2fb56d9202f1491ac6342de8da55e8b351edc8625668c4"
+      "size_bytes": 639,
+      "sha256": "ca7e67bea704cac85ce88d73b537f3473893e21c244ff565d05ad88549bb770e"
     },
     {
       "path": "LICENSE_CODE",
@@ -31,8 +37,18 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 5147,
-      "sha256": "3d54f604fc3f93a58f91035f50f6cdabfc4edc1a4778a3a54e1200954f98cdda"
+      "size_bytes": 6431,
+      "sha256": "e6528ab6ae7e16c8baf92f870b44783bea3d6d45be90e5eeaa337087f78fd32c"
+    },
+    {
+      "path": "code/analyse_gse106878_confirmation.py",
+      "size_bytes": 10064,
+      "sha256": "89cff184803e8f3f9c7e52e8ff41100155aa9a1350879e0b49ab0c3a287e51dd"
+    },
+    {
+      "path": "code/modified_hk_sensitivity.py",
+      "size_bytes": 4402,
+      "sha256": "b2b4484d10a9557305c91532421c6516402cff31955989bc79a2f1236b251ef7"
     },
     {
       "path": "code/portable_analysis/03_00_08_protocol_deviations.json",
@@ -241,8 +257,8 @@
     },
     {
       "path": "code/portable_analysis/03_00_09_environment_lock/analysis_config.json",
-      "size_bytes": 183198,
-      "sha256": "13fe11c33a7ad016030787e76421b804727cde5753bc4ce80cfa1afdbdde308d"
+      "size_bytes": 184166,
+      "sha256": "9a62ea2b56270c2855f5d2196a09775bb769aa47dfabe12ca079848487179dfd"
     },
     {
       "path": "code/portable_analysis/03_00_09_environment_lock/environment_manifest.xlsx",
@@ -256,8 +272,8 @@
     },
     {
       "path": "code/portable_analysis/03_00_09_environment_lock/make_figures.py",
-      "size_bytes": 20666,
-      "sha256": "eb8ba40b5ccf9342ddb92dbddc6e618792ea4bdbd66917a36771842ddd99972b"
+      "size_bytes": 20670,
+      "sha256": "277ca60a2abc501d2d20fc4284c999dea289f34a27b238276117b916e02d29a4"
     },
     {
       "path": "code/portable_analysis/03_00_09_environment_lock/pre_unblinding_gate_audit.json",
@@ -291,18 +307,18 @@
     },
     {
       "path": "code/portable_analysis/03_00_09_environment_lock/run_stage3.py",
-      "size_bytes": 57931,
-      "sha256": "c58447f00e20859f3c12ac23bf38cad5ea0588dc2746af8dfcdbcf331123bf3c"
+      "size_bytes": 57981,
+      "sha256": "602e66992f127a51cc795ca60ec1944def080291d42a7ce033424d675397176b"
     },
     {
       "path": "code/portable_analysis/03_00_09_environment_lock/signatures.py",
-      "size_bytes": 12349,
-      "sha256": "3dbbda043abd280238e1f9b3f8f5234eabf8dee47d87c47a4eecea2e2d5536ba"
+      "size_bytes": 12357,
+      "sha256": "106469dd5776f7dcc9927204c310678e0854f5aec25115af77ca5b13a02e944d"
     },
     {
       "path": "code/portable_analysis/03_00_09_environment_lock/test_signature_functions.py",
-      "size_bytes": 5236,
-      "sha256": "5e2566b38074e2e5336dcc4fe4e18923ab3330b02c97293d391709b5e96872ce"
+      "size_bytes": 5270,
+      "sha256": "92c995870428b6d77f5017cca9d8624ebba3a3b7d0459f12251f11cc813004ee"
     },
     {
       "path": "code/portable_analysis/03_00_09_environment_lock/verify_stage3.py",
@@ -371,8 +387,8 @@
     },
     {
       "path": "code/portable_analysis/04_environment/stage4_decomposition.py",
-      "size_bytes": 31320,
-      "sha256": "7cdb9b7dd5262457e8c73df5185555a2adc8774a23d4f5b3cc3d4c0e395fd0a7"
+      "size_bytes": 31363,
+      "sha256": "b8c10e959d88f37d6bcace6d02b1353be9d23a2bc6ca3912a9ec31974690c3d5"
     },
     {
       "path": "code/portable_analysis/04_environment/stage4_figures.py",
@@ -441,18 +457,63 @@
     },
     {
       "path": "code/stage6_figures.py",
-      "size_bytes": 29886,
-      "sha256": "cafa8a710b4199aa5e109e53fd527c8d458c0e1e313531b0d2893f4d24069d16"
+      "size_bytes": 35156,
+      "sha256": "f9df8b1640812c3f7047602540fc9adaf67a9dfc5db95cdc204ed12d9df2bead"
+    },
+    {
+      "path": "data/analysis_audits/10_02_classification_stability_matrix.csv",
+      "size_bytes": 1238,
+      "sha256": "a860813088acd768991f30ba065d46aec76305a95567b29eeb685367983465ad"
+    },
+    {
+      "path": "data/analysis_audits/10_03_meta_cohort_composition.csv",
+      "size_bytes": 16323,
+      "sha256": "61c0c7579c64c30eab31e0ce7194c14cb3299538208bbbef044296d7360022f2"
+    },
+    {
+      "path": "data/analysis_audits/10_03_primary_meta_inputs_and_weights.csv",
+      "size_bytes": 16917,
+      "sha256": "1d8dd3eb99a3a4c5b5ebbeb3c6234d9c9c5eb2775b455c9504765fe8da033b43"
+    },
+    {
+      "path": "data/analysis_audits/10_04_cohort_independence_overlap_matrix.csv",
+      "size_bytes": 2165,
+      "sha256": "4b6c090f550df004845894c6c203c520c80177db5ba70ad3092006155637aceb"
+    },
+    {
+      "path": "data/analysis_audits/10_04_dataset_candidate_screen.csv",
+      "size_bytes": 4414,
+      "sha256": "262a147590f2325a5c6992938d37c9d19fc077b6d8996c132cb410e55617feb2"
+    },
+    {
+      "path": "data/analysis_audits/10_05_baseline_covariate_smd.csv",
+      "size_bytes": 4335,
+      "sha256": "358c7c8a7834dd2f4fb046a847691ea04e289d5e3b55e70b8048d8da2c7577ac"
+    },
+    {
+      "path": "data/analysis_audits/10_05_baseline_signature_smd.csv",
+      "size_bytes": 9520,
+      "sha256": "01d56c3bbfe94a56e180fece750366929340366b4a46cb8bee60c6daa58ca54d"
+    },
+    {
+      "path": "data/analysis_audits/10_05_landmark_missingness_counts.csv",
+      "size_bytes": 2353,
+      "sha256": "5aca12a3ba4a8d37957ac954967a3909b5bf2745d1bd5e06c8507e4ce2ce0dbc"
+    },
+    {
+      "path": "data/analysis_audits/10_05_tipping_point_summary.csv",
+      "size_bytes": 4040,
+      "sha256": "8e923adb9b1ded594306bf2cd34ad355bd7cceb9fb3b9d0ac5bcb9a8e09afaf9"
     },
     {
       "path": "data/derived_patient_level/gene_contributions.parquet",
-      "size_bytes": 1851589,
-      "sha256": "170c849f3a08abb6c9ea3e1fe9e1aa0dad1da38ee8326e8d5b76f27b24e932c8"
+      "size_bytes": 1851569,
+      "sha256": "c479856155fc81c359aaf0e53b888f730cc671042a66ad345c1d4f1fc43577c1"
     },
     {
       "path": "data/derived_patient_level/paired_changes_all_windows.parquet",
-      "size_bytes": 184052,
-      "sha256": "78024ce67246495b0af9aae4aac9028cef809aaef46090e9f14c18152121c360"
+      "size_bytes": 184032,
+      "sha256": "82c1e6e3d8ce9b0cf4be74e1df407cc65e2ae13e60ef2ed1c2f44ee607967ff8"
     },
     {
       "path": "data/derived_patient_level/pathway_changes.parquet",
@@ -461,43 +522,108 @@
     },
     {
       "path": "data/derived_patient_level/score_matrix.parquet",
-      "size_bytes": 177623,
-      "sha256": "75fd84cd33a295bb987a1ca937d4de8aa13269ec869a18614057c6524a1c3955"
+      "size_bytes": 177603,
+      "sha256": "9ee1736d7e90411f66bc6f292e704b50b7246389b2b3086f99aedccb76d4c4dc"
+    },
+    {
+      "path": "data/figure_source_data/Figure_1_source_data.csv",
+      "size_bytes": 510,
+      "sha256": "4a461e5019352e0db9b7ba4176861f3a4ad3438e7e91bb224c40967f3547d77b"
+    },
+    {
+      "path": "data/figure_source_data/Figure_2_source_data.csv",
+      "size_bytes": 4214,
+      "sha256": "db839195729f60251f858bdd3d4f7b9ab1b586b32b8560c4a03fac2ebc80f364"
+    },
+    {
+      "path": "data/figure_source_data/Figure_3A_B_source_data.csv",
+      "size_bytes": 30441,
+      "sha256": "1fa0a3f2d09bb7fc2e9921ff668ceafbf40423d7b6eaa4d705e4408ee87351d2"
+    },
+    {
+      "path": "data/figure_source_data/Figure_3C_source_data.csv",
+      "size_bytes": 6872,
+      "sha256": "e4e01a93180ce23772e0973d4384f472251f6bfc3ff007a9bef33e6c1a7b1cc5"
+    },
+    {
+      "path": "data/figure_source_data/Figure_4A_source_data.csv",
+      "size_bytes": 24453,
+      "sha256": "8a1b807ad5efeedb1e46ea058a0d3c370edda6a2b1c2bb09324e28e79998e33a"
+    },
+    {
+      "path": "data/figure_source_data/Figure_4B_source_data.csv",
+      "size_bytes": 3697,
+      "sha256": "2d560c00858f9b0929084fc74e319d69ac698d85112ddbcadb27425822e8f27c"
+    },
+    {
+      "path": "data/figure_source_data/Figure_5_04_07_gene_contribution_meta_analysis.csv",
+      "size_bytes": 231664,
+      "sha256": "1c2be12f9447212b5c54ee28cf4285da241876c8d713b71c1718690f3c3a7bdd"
+    },
+    {
+      "path": "data/figure_source_data/Figure_5_04_12_meta_signature_pathway_coupling.csv",
+      "size_bytes": 425087,
+      "sha256": "0480a3c4ba8315421e05d8d1fc32aa01cec2311c2e04231a2c488d6a4f294a45"
+    },
+    {
+      "path": "data/figure_source_data/Figure_5_04_12_meta_signature_pathway_coupling_ssgsea.csv",
+      "size_bytes": 438595,
+      "sha256": "a454d17e413b1798b49e4c6fb25b5e298096534563fc24d758bb46a7a6b7b7c9"
+    },
+    {
+      "path": "data/figure_source_data/Figure_5_04_13_cell_source_annotation.csv",
+      "size_bytes": 39974,
+      "sha256": "a9075edcc415ef4ef637d9a4a33b6f832b87c1dd3903711df92bd5ace725505e"
+    },
+    {
+      "path": "data/figure_source_data/Figure_5_04_14_gene_contribution_cell_source_map.csv",
+      "size_bytes": 8107,
+      "sha256": "2a609f9df7ca7dcf1b44af3d00b55103f73a34456e6f9c0c8123a435ee8b60c9"
+    },
+    {
+      "path": "data/figure_source_data/Figure_6_source_data.csv",
+      "size_bytes": 858,
+      "sha256": "e0f11a7952243a300592aa9936a794346942bb901c32b201da29897fd267422a"
+    },
+    {
+      "path": "data/platform_metadata/platform_feature_map.csv",
+      "size_bytes": 68895,
+      "sha256": "f4f13a2289bf6595ec435efcfe83bd025832f573d2024cb80ed5b7783f608a4d"
     },
     {
       "path": "data/source_tables/stage3/03_04_cohort_signature_primary_effects.csv",
-      "size_bytes": 30489,
-      "sha256": "235e55f61610b2bf183026882b4ae83957494d14aaaf1374bf8392b1dafd4eae"
+      "size_bytes": 31287,
+      "sha256": "58f30878af25253d9935daf2c042a567a15b2053aca4661fbfbcf771e1e98b09"
     },
     {
       "path": "data/source_tables/stage3/03_05_signature_level_meta_analysis.csv",
-      "size_bytes": 24301,
-      "sha256": "a8a688317996a10cb03a09a70b99df2ace8e130bdf3c125d19b050d46abc8b01"
+      "size_bytes": 24777,
+      "sha256": "77e1082eaa98dc47a5c49155f65493f2145e58bcdd2948a27cefc32706269f25"
     },
     {
       "path": "data/source_tables/stage3/03_06_temporal_stability_profile.csv",
-      "size_bytes": 6870,
-      "sha256": "78a40141dcdf18762fe47e089bc0af4524242c6d263e60f030b135be863b78f3"
+      "size_bytes": 7014,
+      "sha256": "d7fb79625c9f1193272da907b83338e617bf759d1e8da15f358a9e04ea4b6fbb"
     },
     {
       "path": "data/source_tables/stage4/04_07_gene_contribution_meta_analysis.csv",
-      "size_bytes": 231852,
-      "sha256": "1df3abcca2a0bf08a29ee3b8834e9756a5b1eb06cbcb68fbd9d1d1bbfdc33468"
+      "size_bytes": 240272,
+      "sha256": "a0b4da5bd314125b440dc7b552a4d22febf80d90fb68e3e53e807039b2a8fa62"
     },
     {
       "path": "data/source_tables/stage4/04_08_signature_drift_architecture.csv",
-      "size_bytes": 2526,
-      "sha256": "a2849b6fd38e31da9ce6bbdaaa889d143dd9e18313e71b87dc6efd951f22667b"
+      "size_bytes": 2534,
+      "sha256": "0799191af66faf83d5c1c50565cb5c572066769be609d8ac920a5073b690351a"
     },
     {
       "path": "data/source_tables/stage4/04_12_meta_signature_pathway_coupling.csv",
-      "size_bytes": 425034,
-      "sha256": "24a8d6f77664673fe09270ef696ede5e89b30789a72bdd2a627db481e3b58f81"
+      "size_bytes": 432636,
+      "sha256": "0c107173306bce7a3f047f8fd895c6286d1273fb13a1e64aee5130114bc64975"
     },
     {
       "path": "data/source_tables/stage4/04_12_meta_signature_pathway_coupling_ssgsea.csv",
-      "size_bytes": 438484,
-      "sha256": "8fa6ecd54f5ec2edd8b413d4b8b0b40e2cb3482bfcc9f4d7cb25cba95c0f9924"
+      "size_bytes": 446078,
+      "sha256": "2e309ebbc8fa267ae988a4f61a3a6a9da6045c294c4dfdebdf8c7242aec64cba"
     },
     {
       "path": "data/source_tables/stage4/04_13_cell_source_annotation.csv",
@@ -506,133 +632,178 @@
     },
     {
       "path": "data/source_tables/stage4/04_14_gene_contribution_cell_source_map.csv",
-      "size_bytes": 8106,
-      "sha256": "c738156bcf1be5d82cca8ec95b41efc65dba1ed5e5ae6d9c11d181a862810e1e"
+      "size_bytes": 8219,
+      "sha256": "1113501fb0fecddb151dc73e0af1b08539297defbfb526039e3e690538b8bae4"
+    },
+    {
+      "path": "data/source_tables/stage4/04_20_integrated_signature_interpretation_matrix.csv",
+      "size_bytes": 5753,
+      "sha256": "b4df28e2c7123709e4b7a39e1c5520230611f820bab7f5e6b774e593712ec275"
     },
     {
       "path": "environment/requirements_release.txt",
       "size_bytes": 77,
-      "sha256": "cdd8c6328c4735b27805296cd46d765284fd3d8b07dd5a2507025db33316432e"
+      "sha256": "b1e2aca8c6d991e032c91175ceb1c1ae3072cb1af34b77408c105bed5acdb45d"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_1_study_design.pdf",
-      "size_bytes": 44427,
-      "sha256": "d7587ad2a407d4248371f8f1de2146cad00e7755f18d26a89da3a83675572ab1"
+      "path": "reference_outputs/code_generated_figures_v1.1.1/Figure_2_pooled_longitudinal_change.pdf",
+      "size_bytes": 47495,
+      "sha256": "9360e25a7a6740ea2e6b01f81345bd45e4916045debb7d9d5db8a2e509cb3f31"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_1_study_design.png",
-      "size_bytes": 239797,
-      "sha256": "72632001c8dc17f8251bce1fbfeee8282d9b823a6e8dcab90f6d65c6497f8fab"
+      "path": "reference_outputs/code_generated_figures_v1.1.1/Figure_2_pooled_longitudinal_change.png",
+      "size_bytes": 163416,
+      "sha256": "8a80c978e2ad7ce4174bbcc714a16d2384aacfd9774ef338e64437737136c466"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_1_study_design.svg",
-      "size_bytes": 24150,
-      "sha256": "58c1a3b7127f36da2854ab8ada1298c99bf2c96ab9e0808bfeda82aa7fb59908"
+      "path": "reference_outputs/code_generated_figures_v1.1.1/Figure_2_pooled_longitudinal_change.svg",
+      "size_bytes": 28922,
+      "sha256": "e737faf0f333d72a9be1b5c3b4bbdf123ecc290def2fcadbae820be13f24f881"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_1_study_design.tiff",
-      "size_bytes": 932728,
-      "sha256": "82c90b47404b00dbac97325768dac2f5a85fc708cdd405c899db921220135c6b"
+      "path": "reference_outputs/code_generated_figures_v1.1.1/Figure_2_pooled_longitudinal_change.tiff",
+      "size_bytes": 587748,
+      "sha256": "4adb38f82352f5a218dd253e6b5c6d5ea29a70d118f78ccf29b0c113c7daba9c"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_2_pooled_longitudinal_change.pdf",
-      "size_bytes": 47485,
-      "sha256": "7406447c30be684e70d1b8109484f44db8ecc93bdc20d09caf9c5e818f03508b"
+      "path": "reference_outputs/code_generated_figures_v1.1.1/Figure_4_gene_contribution_patterns.pdf",
+      "size_bytes": 53225,
+      "sha256": "6a8152a3fcc9cb46794e63c535a92932e26870d3aa8006eb563f8af835b54116"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_2_pooled_longitudinal_change.png",
-      "size_bytes": 163286,
-      "sha256": "7f8c3c89ef74d0284787b36e71ff99614467260d9b70a87bae412ef308cab6c8"
+      "path": "reference_outputs/code_generated_figures_v1.1.1/Figure_4_gene_contribution_patterns.png",
+      "size_bytes": 246863,
+      "sha256": "83b2cae2807955d4217d33828f4551c59f8cab301c74a804575d0fd82a7ff992"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_2_pooled_longitudinal_change.svg",
-      "size_bytes": 28812,
-      "sha256": "b5cc4c07a2c37a8b4dde2990c63b5b0cdcaaed2db96692e88e9d31321701aa10"
+      "path": "reference_outputs/code_generated_figures_v1.1.1/Figure_4_gene_contribution_patterns.svg",
+      "size_bytes": 36807,
+      "sha256": "02b4083af412434dac65d031dd898f64b5f1b36669abc757788764c5c06f4442"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_2_pooled_longitudinal_change.tiff",
-      "size_bytes": 587310,
-      "sha256": "456954a4bd3e361dd542e03eb98c702e6d95698996356bcf8cccd7587e58bfaa"
+      "path": "reference_outputs/code_generated_figures_v1.1.1/Figure_4_gene_contribution_patterns.tiff",
+      "size_bytes": 795142,
+      "sha256": "11f5e16814a01f7e8d62c8c230cdaea3348d75c4c39b6331eac9e6055836f83e"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_3_cross_cohort_transportability.pdf",
-      "size_bytes": 50466,
-      "sha256": "4190340db7381d197153c015093f677b2d1eb5bd34e8771998792c63c62cefa3"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_1_study_design.pdf",
+      "size_bytes": 53136,
+      "sha256": "9b20cc4900b9a8039b5d04c1746e3cbadc375c6faf989792302913abdbd54aaa"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_3_cross_cohort_transportability.png",
-      "size_bytes": 366533,
-      "sha256": "6552737beb73952c960154051f0453ed94a0795a6a056049c8acc930c75c95c6"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_1_study_design.png",
+      "size_bytes": 219688,
+      "sha256": "2ec04365615c1826c457fc08c80898ca78f814e3a6dedb9936b0f72ae135f849"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_3_cross_cohort_transportability.svg",
-      "size_bytes": 51038,
-      "sha256": "9171a82ca6881cfdba0cb81e5deb6b7fb9db98b3c738aefe97397ffa7c23e892"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_1_study_design.svg",
+      "size_bytes": 24250,
+      "sha256": "c897693a61ab9608704914528c5e50def135f5d85ef606d09dec94cc99e88d2b"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_3_cross_cohort_transportability.tiff",
-      "size_bytes": 1690914,
-      "sha256": "cac2906e8786fb83208d6bdc9c446f76d956e5e88a8a2e71dcec1c3c8817fd66"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_1_study_design.tiff",
+      "size_bytes": 876774,
+      "sha256": "23d38cde05ee93b52dcdd4b4a5e8c216895cdffbffcaea48d61e5d9b57e71d05"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_4_gene_architecture.pdf",
-      "size_bytes": 52642,
-      "sha256": "57cbfe3f75f498dd4845bd30c77de972781539a85806b75b4761e74a2b6f5136"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_2_pooled_longitudinal_change.pdf",
+      "size_bytes": 65305,
+      "sha256": "525b53572c68fb5ffdb39091658ae8fea1efe82db1dc0e943a861052fcf9da0e"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_4_gene_architecture.png",
-      "size_bytes": 252515,
-      "sha256": "02005f8b587410d86bb947ce73dcb2cc6d86cf278b7b720325fbbe59ce95448a"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_2_pooled_longitudinal_change.png",
+      "size_bytes": 160754,
+      "sha256": "277b8e8787317b541b54bcd5e5bb7506bd01b24e783e82e7487eb913861f0a47"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_4_gene_architecture.svg",
-      "size_bytes": 37724,
-      "sha256": "36875008b1b580b58974395dd972637e00e761caf78dfb15282bd342fb9d73da"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_2_pooled_longitudinal_change.svg",
+      "size_bytes": 29852,
+      "sha256": "d4c748b39975094fe0bc88922abf8eb6302cef163255769ab43d4a9f099f7f3d"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_4_gene_architecture.tiff",
-      "size_bytes": 797842,
-      "sha256": "53a2c0255eadaa323e3644dcaa95703bb7095686ab5a6ae96b285e6a3c8041da"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_2_pooled_longitudinal_change.tiff",
+      "size_bytes": 590434,
+      "sha256": "a279470df57a428d9fa14d50b585186ddeb944ed03570a8c31465633c437473f"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_5_gene_pathway_cell_integration.pdf",
-      "size_bytes": 52988,
-      "sha256": "33f1bcb758e3debe79f938a78aaabab69980a7e15b55eb17aff42e349cd8ecf3"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_3_cross_cohort_transportability.pdf",
+      "size_bytes": 69147,
+      "sha256": "2efc8fab2654122ca1a263b7ffe28ec94eb6ae77fc3661b0637e2e1408d73fd0"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_5_gene_pathway_cell_integration.png",
-      "size_bytes": 347992,
-      "sha256": "ca1bf73f8a5abb82c69450a16e7c7d7645e893a7357f8d7256e2037b522b1108"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_3_cross_cohort_transportability.png",
+      "size_bytes": 381204,
+      "sha256": "b6e2aef32cddbc8bb6860b8c423699cccd8fda1147ec36d48d84faeffc8bbb1c"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_5_gene_pathway_cell_integration.svg",
-      "size_bytes": 60148,
-      "sha256": "dcd6ff7c11df5fc48a1508b728c43aafcf31346bdd26d0c65fec4bff7821ad86"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_3_cross_cohort_transportability.svg",
+      "size_bytes": 57507,
+      "sha256": "1d47f3c2a1c173f418fa366e67968114c1f32c1f0c4034970c969f7e2fab314d"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_5_gene_pathway_cell_integration.tiff",
-      "size_bytes": 1724800,
-      "sha256": "c76c9490512ae2c77dc11e405d45ae2ad45f81bff438856357f3005adf3659c3"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_3_cross_cohort_transportability.tiff",
+      "size_bytes": 1739692,
+      "sha256": "b394934adb4a25ffc0f26e13d2c839a964595e2579d358218a5704badfcb3c6a"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_6_temporal_measurement_context.pdf",
-      "size_bytes": 46397,
-      "sha256": "6e8c30ea68679a55953eac95ee9e2344556f75bc8401dcfe922fd7d1cacb23fa"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_4_gene_contribution_patterns.pdf",
+      "size_bytes": 63174,
+      "sha256": "9d5dafef0ea84404421d0f5f76604900c7d1767d4fa0a47fc8d8059833662ba7"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_6_temporal_measurement_context.png",
-      "size_bytes": 314288,
-      "sha256": "974ef15985fb13861ff8060146a84038cd72bffca9f3f2e991fd21c0e63ed53b"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_4_gene_contribution_patterns.png",
+      "size_bytes": 227701,
+      "sha256": "47f604a54529c098403c2282dd58535ba80d04468a41b3d44d43d84599859be1"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_6_temporal_measurement_context.svg",
-      "size_bytes": 24265,
-      "sha256": "c9a202d13e16cbb652520791994a555681ffad963644830429f1911566f68535"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_4_gene_contribution_patterns.svg",
+      "size_bytes": 38119,
+      "sha256": "a40edfc91652b933dee1162e48fd23a94cfc37451ca84b5be61381b6ca795813"
     },
     {
-      "path": "reference_outputs/main_figures/Figure_6_temporal_measurement_context.tiff",
-      "size_bytes": 1080028,
-      "sha256": "433dcf72e471ff60b265e00c84afa49cd0b2358430ac2bc5c841ff021c4a3ad4"
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_4_gene_contribution_patterns.tiff",
+      "size_bytes": 792132,
+      "sha256": "d47d41f10fa20e98641ecca07057473c6c23d9e36d6315ea699754216e1c6274"
+    },
+    {
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_5_gene_pathway_cell_integration.pdf",
+      "size_bytes": 61976,
+      "sha256": "6626cda09b283a9f55d445feab362169f7b1e05f1fb88b46f9db56d836fc7749"
+    },
+    {
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_5_gene_pathway_cell_integration.png",
+      "size_bytes": 349796,
+      "sha256": "31aa8fd877ac850998770524390a8a8dd720c0fe6565a4cc10c8679a5977b0ab"
+    },
+    {
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_5_gene_pathway_cell_integration.svg",
+      "size_bytes": 66777,
+      "sha256": "5ab5f1aa936feb0847c2501881829a6e1f37bc56a68958bd4de0adbb7f6b3096"
+    },
+    {
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_5_gene_pathway_cell_integration.tiff",
+      "size_bytes": 1777740,
+      "sha256": "01b4e569b72dff4d6167a15a07e7a9b60463cdef02a7703d1642b6c2baa0b482"
+    },
+    {
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_6_temporal_measurement_context.pdf",
+      "size_bytes": 57092,
+      "sha256": "4b0144a47a73a23f00caece8120b38a5c198077b66d4dcbe626466f19e56afe7"
+    },
+    {
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_6_temporal_measurement_context.png",
+      "size_bytes": 288870,
+      "sha256": "9e225e82bb7b8150a7f30a561f8b62abec6752b1af7e6db56b5072b198c8c7fd"
+    },
+    {
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_6_temporal_measurement_context.svg",
+      "size_bytes": 29146,
+      "sha256": "0e153ae8978012c512160281b1b31ebe642455fef82f76eb6d932835976852fb"
+    },
+    {
+      "path": "reference_outputs/main_figures_v1.1.1/Figure_6_temporal_measurement_context.tiff",
+      "size_bytes": 1103708,
+      "sha256": "9cc7398635975ba49322d7deb0f6d53b1a526febad58c73f0ca300a8549abf55"
     },
     {
       "path": "reproducibility_evidence/03_16_verification_summary.json",
@@ -660,29 +831,154 @@
       "sha256": "6ba5e3e4c639c05b5110ce3c60e7188ba8081260a91c0cd48176650c2671ee07"
     },
     {
-      "path": "reproducibility_evidence/reproduction_result.json",
-      "size_bytes": 2195,
-      "sha256": "57adfebab80fe613fa029005b2d057938bf1fcf549f5c301d253fc95ee7a1e14"
+      "path": "reproducibility_evidence/Cross_Material_Consistency_Audit.csv",
+      "size_bytes": 2237,
+      "sha256": "8f14ecea510ba0daeb8abd30f8d840c387d8fcfeb634141ab9ae5303f595682a"
+    },
+    {
+      "path": "reproducibility_evidence/Cross_Material_Consistency_Audit.json",
+      "size_bytes": 8276,
+      "sha256": "da1079a07809df9febf83b21f448429d6c2e54a4dfc7ac87b4129e2eee4dd711"
+    },
+    {
+      "path": "reproducibility_evidence/Cross_Material_Consistency_Audit.md",
+      "size_bytes": 1067,
+      "sha256": "4fd40fa4ad0ea289be972c78d3df493845d9fced473a24af381ce793125a6cc8"
+    },
+    {
+      "path": "reproducibility_evidence/S25_ModifiedHK.csv",
+      "size_bytes": 3050,
+      "sha256": "d0b6f51837e351000b95dd29a71610c2691df8b888c9affbc9591ada946f4a22"
+    },
+    {
+      "path": "reproducibility_evidence/S26_GSE106878_postfreeze_confirmation_effects.csv",
+      "size_bytes": 3636,
+      "sha256": "0630d08a4b6fcf8bb42fd43b0f645891036a68b1df775916a7a130cadea6d511"
+    },
+    {
+      "path": "reproducibility_evidence/Updated_Search_Candidate_Adjudication.csv",
+      "size_bytes": 3021,
+      "sha256": "c73c3d474b2ccabce150f092075dba416b4f7d229f4c772beccd871450d75f9d"
+    },
+    {
+      "path": "reproducibility_evidence/Updated_Search_Candidate_Adjudication.md",
+      "size_bytes": 3528,
+      "sha256": "8566180bfe965d6bebfab59a9df035f22d016d2fe706dbac79672d75762c923c"
+    },
+    {
+      "path": "reproducibility_evidence/reproduction_result_v1.1.1.json",
+      "size_bytes": 10614,
+      "sha256": "f1df73942947dc640574d1d4231c5869a19ede058cb77855670d9d93b5555f46"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_02_evidence_level_and_claim_boundary.csv",
+      "size_bytes": 1031,
+      "sha256": "704ea72403568b3d255cb35e083b5378bab18b31f0f0399c813371bc998f4411"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_03_signature_decomposition_specification.csv",
+      "size_bytes": 1253,
+      "sha256": "d69205ff698ffaad48ea1e0ced82c1cf1da11a9ffa4aecf926faa40eed297bee"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_03_signature_gene_coefficients.csv",
+      "size_bytes": 5214,
+      "sha256": "d42f72b4e4576f07a39e5f4612e0de15785c0acacf41995feddfa0f9ed127c6d"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_04_gene_level_data_qc.csv",
+      "size_bytes": 6687,
+      "sha256": "d7ed31c89fa07a5a36b0f8003c6050439417e0c1db2bf75b77774ed3a551f9ee"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_05_decomposition_reconstruction_qc.csv",
+      "size_bytes": 496089,
+      "sha256": "4472711928e26ae02d6fe7cd9f97b6fce600884d766fcd70ada2b0b8dcbeb0ff"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_06_cohort_level_gene_contributions.csv",
+      "size_bytes": 217504,
+      "sha256": "330cdbfa0caa801678770f4193dfb188756be7607e17ef5e9581554c9f9763df"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_06_cohort_level_signature_architecture_metrics.csv",
+      "size_bytes": 11944,
+      "sha256": "c5895617a67ecc2d275c67fd8bdc79d36347c576502b04d77b2554e1e5760bfb"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_07_gene_contribution_leave_one_out.csv",
+      "size_bytes": 83084,
+      "sha256": "744c0b73c2c1b4c796b97d5623a14ec50fccf1666d3d4d4bd54462e5d5d93153"
     },
     {
       "path": "reproduction_project/longitudinal_stage3/04_source_data/04_07_gene_contribution_meta_analysis.csv",
-      "size_bytes": 231852,
-      "sha256": "1df3abcca2a0bf08a29ee3b8834e9756a5b1eb06cbcb68fbd9d1d1bbfdc33468"
+      "size_bytes": 240272,
+      "sha256": "a0b4da5bd314125b440dc7b552a4d22febf80d90fb68e3e53e807039b2a8fa62"
     },
     {
       "path": "reproduction_project/longitudinal_stage3/04_source_data/04_08_signature_drift_architecture.csv",
-      "size_bytes": 2526,
-      "sha256": "a2849b6fd38e31da9ce6bbdaaa889d143dd9e18313e71b87dc6efd951f22667b"
+      "size_bytes": 2534,
+      "sha256": "0799191af66faf83d5c1c50565cb5c572066769be609d8ac920a5073b690351a"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_09_full_transcriptome_expression_audit.csv",
+      "size_bytes": 542,
+      "sha256": "c4b11d8cf4f76c486f0abcdd45fa08c4e1e90e1ddc76761ad8b1615373184bb9"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_09_pathway_gate_decision.json",
+      "size_bytes": 421,
+      "sha256": "ad0369f1d296a060c9d8a39b590160975a848f2161e76ac89c30e3c9b8de243d"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_09_pathway_gene_coverage.csv",
+      "size_bytes": 38434,
+      "sha256": "6269598e46fb269b43695c40635f03e57fccf06f252e018786b6dd4b17a8ae87"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_09_pathway_time_window_support.csv",
+      "size_bytes": 167,
+      "sha256": "4f5f872ec1fe5cb76004205569eef39ad826117a3e86a57b865fe48fd1fcc06b"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_11_cohort_longitudinal_pathway_changes.csv",
+      "size_bytes": 118820,
+      "sha256": "300dd9aa56fd82c1370b117ef3250d21d39bf7ef1fc911ab2e02076b54b589d4"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_11_meta_longitudinal_pathway_changes.csv",
+      "size_bytes": 24343,
+      "sha256": "324cbbcb253ce5c524618c95ade8e64fc0e439b6fae55236b645fef377cefa82"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_11_meta_longitudinal_pathway_changes_ssgsea.csv",
+      "size_bytes": 24338,
+      "sha256": "d12bd9f6450cd76755843910d5d1e0c733e25c4b4822d7fabcf3320dcb7f0741"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_11_pathway_leave_one_out.csv",
+      "size_bytes": 54485,
+      "sha256": "956a47ceaa25fd81f53bc8ba8fd9414073c5dd0263b105cd24c724abb27306c4"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_12_cohort_signature_pathway_coupling.csv",
+      "size_bytes": 832701,
+      "sha256": "b3d0cc8e595fbaa7ade75e846306c1e2e5761206b5d37528a26a61c7df3b055a"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_12_cohort_signature_pathway_coupling_ssgsea.csv",
+      "size_bytes": 858590,
+      "sha256": "ecd6f5d8bdd6e715c6301feb672b3a88b3bfffa56ea2902b10816135f96a2219"
     },
     {
       "path": "reproduction_project/longitudinal_stage3/04_source_data/04_12_meta_signature_pathway_coupling.csv",
-      "size_bytes": 425034,
-      "sha256": "24a8d6f77664673fe09270ef696ede5e89b30789a72bdd2a627db481e3b58f81"
+      "size_bytes": 432636,
+      "sha256": "0c107173306bce7a3f047f8fd895c6286d1273fb13a1e64aee5130114bc64975"
     },
     {
       "path": "reproduction_project/longitudinal_stage3/04_source_data/04_12_meta_signature_pathway_coupling_ssgsea.csv",
-      "size_bytes": 438484,
-      "sha256": "8fa6ecd54f5ec2edd8b413d4b8b0b40e2cb3482bfcc9f4d7cb25cba95c0f9924"
+      "size_bytes": 446078,
+      "sha256": "2e309ebbc8fa267ae988a4f61a3a6a9da6045c294c4dfdebdf8c7242aec64cba"
     },
     {
       "path": "reproduction_project/longitudinal_stage3/04_source_data/04_13_cell_source_annotation.csv",
@@ -690,24 +986,189 @@
       "sha256": "a9075edcc415ef4ef637d9a4a33b6f832b87c1dd3903711df92bd5ace725505e"
     },
     {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_14_gene_contribution_cell_source_detail.csv",
+      "size_bytes": 246546,
+      "sha256": "c79945b6cb85fa46bf73271f31e1812ece7c7fb446c237f139616babdc68d1aa"
+    },
+    {
       "path": "reproduction_project/longitudinal_stage3/04_source_data/04_14_gene_contribution_cell_source_map.csv",
-      "size_bytes": 8106,
-      "sha256": "c738156bcf1be5d82cca8ec95b41efc65dba1ed5e5ae6d9c11d181a862810e1e"
+      "size_bytes": 8219,
+      "sha256": "1113501fb0fecddb151dc73e0af1b08539297defbfb526039e3e690538b8bae4"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_14_leading_cell_source_by_signature.csv",
+      "size_bytes": 2578,
+      "sha256": "4a68310d410aa3c568cfd3012c4df2769b3b2ff55cdcec5703a6d421eb50ef80"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_15_clinical_anchor_availability_audit.csv",
+      "size_bytes": 3310,
+      "sha256": "06f36803de6a161a1617e8ef49f7ee2319ff994b5914af0a59ea93be796b55bc"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_15_clinical_anchor_gate_decision.json",
+      "size_bytes": 790,
+      "sha256": "9304e3dc6ade7de5ca2cff5bf77751eb4bd9b0386ce80b552e9288daeb028f7e"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_17_signature_clinical_anchor_analysis_status.csv",
+      "size_bytes": 437,
+      "sha256": "b541794de7d1ad34cbc81484846994bde7dd51d608dddb6d1617fe61a97a89b2"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_18_context_of_use_evidence_matrix.csv",
+      "size_bytes": 1607,
+      "sha256": "ba33750d57b99fa057cce4dccaf90b0cf67d1649089f5fa58b081709557ae2c8"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_20_integrated_signature_interpretation_matrix.csv",
+      "size_bytes": 5753,
+      "sha256": "b4df28e2c7123709e4b7a39e1c5520230611f820bab7f5e6b774e593712ec275"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_21_multiplicity_and_robustness_audit.csv",
+      "size_bytes": 1829,
+      "sha256": "dd6ea8bfb7fd17ba02a8cfd68c37461cbb373eb331b4420f128eb4f5bec8d852"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_22_independent_extension_verification.csv",
+      "size_bytes": 6202,
+      "sha256": "144b5599a2fdbb3c04f8853c67dec1a3d60a9cfbdc934b593295119917b78c81"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_22_independent_extension_verification_summary.json",
+      "size_bytes": 276,
+      "sha256": "51892c08f75dda2c0a54ff079de46c1ca1f0581b9c98dea87e6defb6d48df8b4"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_23_reproducibility_comparison.csv",
+      "size_bytes": 2309,
+      "sha256": "f0ce06f617a38f76c71c0b931559bab54061f425c9d70e76e0c5a40444b87485"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_cell_annotation_summary.json",
+      "size_bytes": 365,
+      "sha256": "b34ed4fb09699378e479fdcd5e6d13967f3f311cba731c83c194564d67703829"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_decomposition_summary.json",
+      "size_bytes": 287,
+      "sha256": "58100648d57368efdf33f5d1236787c6a6337c51c898032d42d3ad8ce769172c"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_figure_export_qc.csv",
+      "size_bytes": 5291,
+      "sha256": "fa0b3d1091f827091caa5cef23fd269b1301849a5c4ee932b79023230efdd9c4"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/04_source_data/04_pathway_summary.json",
+      "size_bytes": 801,
+      "sha256": "ee2abc7f63b3969bf5c6494e26e9b77ad2d54840e21f2d16c4f5de6cd2915eb8"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_02_score_generation_qc.csv",
+      "size_bytes": 4093,
+      "sha256": "73939c2585eabb1e528723594131c5113138e74160739a4656558d6502503d30"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_03_pairing_flow_report.csv",
+      "size_bytes": 218,
+      "sha256": "013c9644541a523b849f58c9d913102c65e6d506d49c3ecb30376ba4ad1dce0a"
     },
     {
       "path": "reproduction_project/longitudinal_stage3/source_data/03_04_cohort_signature_primary_effects.csv",
-      "size_bytes": 30489,
-      "sha256": "235e55f61610b2bf183026882b4ae83957494d14aaaf1374bf8392b1dafd4eae"
+      "size_bytes": 31287,
+      "sha256": "58f30878af25253d9935daf2c042a567a15b2053aca4661fbfbcf771e1e98b09"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_04_model_diagnostics.csv",
+      "size_bytes": 6925,
+      "sha256": "dd12e942c3081ea6502f6c04c82b6c2f1f7e1a3e8c34aca669c11c493a3b3c78"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_05_leave_one_dataset_out.csv",
+      "size_bytes": 27533,
+      "sha256": "a3927930293ef131a8e04f4a2a0270f829007701d1f889c87eba17f8e7cdbfb9"
     },
     {
       "path": "reproduction_project/longitudinal_stage3/source_data/03_05_signature_level_meta_analysis.csv",
-      "size_bytes": 24301,
-      "sha256": "a8a688317996a10cb03a09a70b99df2ace8e130bdf3c125d19b050d46abc8b01"
+      "size_bytes": 24777,
+      "sha256": "77e1082eaa98dc47a5c49155f65493f2145e58bcdd2948a27cefc32706269f25"
     },
     {
       "path": "reproduction_project/longitudinal_stage3/source_data/03_06_temporal_stability_profile.csv",
-      "size_bytes": 6870,
-      "sha256": "78a40141dcdf18762fe47e089bc0af4524242c6d263e60f030b135be863b78f3"
+      "size_bytes": 7014,
+      "sha256": "d7fb79625c9f1193272da907b83338e617bf759d1e8da15f358a9e04ea4b6fbb"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_07_within_intended_use_comparison.csv",
+      "size_bytes": 8748,
+      "sha256": "73d916e26445ec5743674b9b3180627e8b726bff490cd44fa932d73239ea3554"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_08_development_cohort_exclusion_analysis.csv",
+      "size_bytes": 24777,
+      "sha256": "77e1082eaa98dc47a5c49155f65493f2145e58bcdd2948a27cefc32706269f25"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_09_attrition_and_missingness_analysis.csv",
+      "size_bytes": 26535,
+      "sha256": "f11c050cf008b8d501a17449213e8f99eca8d598a43e6c3e771a1b88e7ec1a4c"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_10_platform_and_population_heterogeneity.csv",
+      "size_bytes": 25394,
+      "sha256": "fbbdc6700bb242d75fb9cf4303a1fa6821df836b357ad19a348da3f626ddb311"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_11_scaling_sensitivity_analysis.csv",
+      "size_bytes": 72542,
+      "sha256": "efd2c607526b0a7a02076d3b07f59c62dea4a0f4f03a27b7ce359a04e31377c5"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_12_extended_timepoint_analysis.csv",
+      "size_bytes": 7956,
+      "sha256": "1053e40d181f3ea706f6e63c826f804af944cca3613419673b2957e88558eece"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_13_time_dependent_discrimination_analysis.csv",
+      "size_bytes": 7423,
+      "sha256": "e73b216e5224dd808c8d2491f2c23a8c8418ce7ca7f4107516f9c7ef30f860c5"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_14_signature_evidence_grade.csv",
+      "size_bytes": 4136,
+      "sha256": "0eff48561d812eeeb1d8e0f968bec9d9f31325af20fd1271b1464e9c23baeb67"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_16_independent_result_verification.csv",
+      "size_bytes": 7368,
+      "sha256": "0ce9e989b94da1912157f7cd022c5fd0ed3f576fa5314de9af8e04fe778f8c5f"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/03_16_verification_summary.json",
+      "size_bytes": 70,
+      "sha256": "b9ccf3c7d0e25b19c811a5873913a92374f2632590de8297099b7a120f1f41d0"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/10_02_classification_stability_matrix.csv",
+      "size_bytes": 1238,
+      "sha256": "a860813088acd768991f30ba065d46aec76305a95567b29eeb685367983465ad"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/baseline_scales.csv",
+      "size_bytes": 3070,
+      "sha256": "3d85da75ceb312ded276c7e9d13d0e5cacc6ac30830bbb255bf3c25da612aaae"
+    },
+    {
+      "path": "reproduction_project/longitudinal_stage3/source_data/stage3_analysis_summary.json",
+      "size_bytes": 433,
+      "sha256": "8bef4e380367419eae44e459ae0df6f8a521a8df56e88284348db7f16bb6e597"
+    },
+    {
+      "path": "reproduction_project/reproduction_result_v1.1.1.json",
+      "size_bytes": 10614,
+      "sha256": "f1df73942947dc640574d1d4231c5869a19ede058cb77855670d9d93b5555f46"
     },
     {
       "path": "reproduction_project/stage5_manuscript/06_supplementary/figures/Supplementary_Figure_2_robustness.pdf",
@@ -785,39 +1246,319 @@
       "sha256": "f4a7b43522b68e7cd540ade3c601b2d506dce737eb0dfd2ffdb72be904833a8d"
     },
     {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_1_pilot_vs_validation.pdf",
+      "size_bytes": 35398,
+      "sha256": "b4c31d58ef3b65fab502bf17f8f9ed64094009965e11c113905ae7c98b10866e"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_1_pilot_vs_validation.png",
+      "size_bytes": 136735,
+      "sha256": "c2b16fb633ea459b7d60b140fc562b91140668e6c096dd30f538b19f1517f5ac"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_1_pilot_vs_validation.svg",
+      "size_bytes": 26461,
+      "sha256": "7a5d2dea0a75f333544ed15f8519eeb341fa86ef72247fb835f05d4ed48109cb"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_2_robustness.pdf",
+      "size_bytes": 46918,
+      "sha256": "dfec575022f9689b9f3bee85f36ef3c873335efda29e3a174e82dc06572e8fdd"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_2_robustness.png",
+      "size_bytes": 115291,
+      "sha256": "0274f5aa9097b01150668be33dca86e44417726465b7cb713ce97f0143f985e1"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_2_robustness.svg",
+      "size_bytes": 43224,
+      "sha256": "e0f701aa18e4b967476c379fc03ffd7b21819d0b5a2fe3e18b3882be89d105ff"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_3_patient_trajectories.pdf",
+      "size_bytes": 53235,
+      "sha256": "c60ae84f3b83b79ebb9cdc4cd83f5765fd52b22540d40b5130ba6082e98ff4b6"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_3_patient_trajectories.png",
+      "size_bytes": 935697,
+      "sha256": "b7158f5b99e07882b20ef4627684c9419db14c230c0410d536629942e034aeca"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_3_patient_trajectories.svg",
+      "size_bytes": 324887,
+      "sha256": "01b1ef0113bf63621177d3a6735fc19fce204d66d9a77d7e67aae04bbadeb332"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_4_pathway_heatmap.pdf",
+      "size_bytes": 45629,
+      "sha256": "6bc60df37b1c935df252a20317feb48b4e026bfd7a3521eced666c7101f52492"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_4_pathway_heatmap.png",
+      "size_bytes": 225426,
+      "sha256": "055d73f08ddf2be4538e8fb0728b61a23d7132f927b00b7e976bbac21b4917f4"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_4_pathway_heatmap.svg",
+      "size_bytes": 29669,
+      "sha256": "448340b911e37dd1d0132041694a3c5f500af5d8aa9616a79fbb14bf3c7bd0a2"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_5_gene_cell_source.pdf",
+      "size_bytes": 58451,
+      "sha256": "da5eae2dd90ab4d60a277ccb6689c0feea5c6202191e9f01becdccc255356fe0"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_5_gene_cell_source.png",
+      "size_bytes": 161885,
+      "sha256": "1db3b77f66e10035617b6a13748c242ce9249dc87b52bfc1fe5c4982e4d1138b"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_5_gene_cell_source.svg",
+      "size_bytes": 71920,
+      "sha256": "1bbfd68c217f61ff01071f38d518c8880a90cf85573a3fc15ad95683b85a18c0"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_6_context_of_use_boundary.pdf",
+      "size_bytes": 40922,
+      "sha256": "491c17f318c89925b726a23bf8fb31ca640257c2d7901e98aa275d74ff3b939f"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_6_context_of_use_boundary.png",
+      "size_bytes": 211994,
+      "sha256": "463299b269e86b1dd35e6ea7eff793031972062b29236d1af19b5309ce831bab"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_6_context_of_use_boundary.svg",
+      "size_bytes": 10379,
+      "sha256": "f4a7b43522b68e7cd540ade3c601b2d506dce737eb0dfd2ffdb72be904833a8d"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_1_study_design.pdf",
+      "size_bytes": 43524,
+      "sha256": "7eedf181b34f550dd35264481a26b3c3e0673d3ee45f2c4db42e2858c1a32ee1"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_1_study_design.png",
+      "size_bytes": 246690,
+      "sha256": "3f82f859999193e1c50e3a6adc48afa253f1a4727e13c76da511fdea7636ada3"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_1_study_design.svg",
+      "size_bytes": 23212,
+      "sha256": "dbfc12a7a316f4ee90d74c90317e43adbfced8e0e4e5aedca6d512a952b4f875"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_1_study_design.tiff",
+      "size_bytes": 920016,
+      "sha256": "56f890e314e800de54f36864422a5883de20acafb5e212e2d1b8675b1339fb12"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_2_pooled_longitudinal_change.pdf",
+      "size_bytes": 47495,
+      "sha256": "b7efbd195016deb853d535b0faf1f50d352fda826135f7c88b79091d29ba6548"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_2_pooled_longitudinal_change.png",
+      "size_bytes": 163416,
+      "sha256": "8a80c978e2ad7ce4174bbcc714a16d2384aacfd9774ef338e64437737136c466"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_2_pooled_longitudinal_change.svg",
+      "size_bytes": 28922,
+      "sha256": "cb7810963a41672d17a0a00c4732764267ea693a4a2eac2d3712e7ec131d1688"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_2_pooled_longitudinal_change.tiff",
+      "size_bytes": 587748,
+      "sha256": "4adb38f82352f5a218dd253e6b5c6d5ea29a70d118f78ccf29b0c113c7daba9c"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_3_cross_cohort_transportability.pdf",
+      "size_bytes": 50969,
+      "sha256": "0ea69c2a688047a1d81c0987bdbd60e1ff997b7f201ed7c7768461a43b28759a"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_3_cross_cohort_transportability.png",
+      "size_bytes": 373433,
+      "sha256": "5791ecfe874e32783ac2d452688bf07231970e32e3f832407ee7be2f3aa9f689"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_3_cross_cohort_transportability.svg",
+      "size_bytes": 54425,
+      "sha256": "8069960d8402d9d8868d9a30855fea56249c151247d6372b2819b092722f1f03"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_3_cross_cohort_transportability.tiff",
+      "size_bytes": 1718534,
+      "sha256": "fdc963e6743ce219f7c4442e8c640998d24078af55ae08323d06c3267f82fcae"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_4_gene_contribution_patterns.pdf",
+      "size_bytes": 53225,
+      "sha256": "9d2d62be247cf17b0ea07a8c5bb4a72e1bd69d33d6008576d9196ef758cdb35e"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_4_gene_contribution_patterns.png",
+      "size_bytes": 246863,
+      "sha256": "83b2cae2807955d4217d33828f4551c59f8cab301c74a804575d0fd82a7ff992"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_4_gene_contribution_patterns.svg",
+      "size_bytes": 36807,
+      "sha256": "12c0bb784f51ce3514690457345ae6a5aeacd5fa1c9d499fc3cd3abe06db57b4"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_4_gene_contribution_patterns.tiff",
+      "size_bytes": 795142,
+      "sha256": "11f5e16814a01f7e8d62c8c230cdaea3348d75c4c39b6331eac9e6055836f83e"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_5_gene_pathway_cell_integration.pdf",
+      "size_bytes": 52508,
+      "sha256": "02efff0295e15493d0d040452a7a2d1af0728aa13659af6508e01b787612f3a1"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_5_gene_pathway_cell_integration.png",
+      "size_bytes": 371236,
+      "sha256": "fe7fe9d5bae4e58f357da216c25cceb8fc2f802c6195f60f3e44f145ad44c71a"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_5_gene_pathway_cell_integration.svg",
+      "size_bytes": 64043,
+      "sha256": "b24fc94dfb6f1ef4aec245d73082502df0a8067097dca7387d986f7e006c063d"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_5_gene_pathway_cell_integration.tiff",
+      "size_bytes": 1824728,
+      "sha256": "58614c58df836c043398694f015b5ffcd8ad85cdfd088f6f7f1f3b704a7912a9"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_6_temporal_measurement_context.pdf",
+      "size_bytes": 47116,
+      "sha256": "f6479a038a7c0d6a295ef9fb7048c4ca1d07d9d49073bcb22868bb29cf6b61c2"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_6_temporal_measurement_context.png",
+      "size_bytes": 314410,
+      "sha256": "9abe301b9a50a8abcf7d1e6cc15a597854a75249947e858fd57d9c929f23f1b4"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_6_temporal_measurement_context.svg",
+      "size_bytes": 28019,
+      "sha256": "9b43d7a2830b12697e6eaf225741f0858a68b0fd5dad6c673a8868382b08b89e"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_6_temporal_measurement_context.tiff",
+      "size_bytes": 1103058,
+      "sha256": "708161d7aa6c286c45226fe717a3c6d4a82fc16208abf28e40897b61c7804c7f"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/figure_manifest.json",
+      "size_bytes": 1992,
+      "sha256": "18c65f5d3993cc7fc3775c685d97cc1c754e146535276050e8e78c420a60df41"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_1_source_data.csv",
+      "size_bytes": 510,
+      "sha256": "4a461e5019352e0db9b7ba4176861f3a4ad3438e7e91bb224c40967f3547d77b"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_2_source_data.csv",
+      "size_bytes": 4214,
+      "sha256": "db839195729f60251f858bdd3d4f7b9ab1b586b32b8560c4a03fac2ebc80f364"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_3A_B_source_data.csv",
+      "size_bytes": 30441,
+      "sha256": "1fa0a3f2d09bb7fc2e9921ff668ceafbf40423d7b6eaa4d705e4408ee87351d2"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_3C_source_data.csv",
+      "size_bytes": 6872,
+      "sha256": "e4e01a93180ce23772e0973d4384f472251f6bfc3ff007a9bef33e6c1a7b1cc5"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_4A_source_data.csv",
+      "size_bytes": 24453,
+      "sha256": "8a1b807ad5efeedb1e46ea058a0d3c370edda6a2b1c2bb09324e28e79998e33a"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_4B_source_data.csv",
+      "size_bytes": 3697,
+      "sha256": "2d560c00858f9b0929084fc74e319d69ac698d85112ddbcadb27425822e8f27c"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_5_04_07_gene_contribution_meta_analysis.csv",
+      "size_bytes": 231664,
+      "sha256": "1c2be12f9447212b5c54ee28cf4285da241876c8d713b71c1718690f3c3a7bdd"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_5_04_12_meta_signature_pathway_coupling.csv",
+      "size_bytes": 425087,
+      "sha256": "0480a3c4ba8315421e05d8d1fc32aa01cec2311c2e04231a2c488d6a4f294a45"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_5_04_12_meta_signature_pathway_coupling_ssgsea.csv",
+      "size_bytes": 438595,
+      "sha256": "a454d17e413b1798b49e4c6fb25b5e298096534563fc24d758bb46a7a6b7b7c9"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_5_04_13_cell_source_annotation.csv",
+      "size_bytes": 39974,
+      "sha256": "a9075edcc415ef4ef637d9a4a33b6f832b87c1dd3903711df92bd5ace725505e"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_5_04_14_gene_contribution_cell_source_map.csv",
+      "size_bytes": 8107,
+      "sha256": "2a609f9df7ca7dcf1b44af3d00b55103f73a34456e6f9c0c8123a435ee8b60c9"
+    },
+    {
+      "path": "reproduction_project/stage6_submission/06_02_revision/07_source_data_v1_1/Figure_6_source_data.csv",
+      "size_bytes": 858,
+      "sha256": "e0f11a7952243a300592aa9936a794346942bb901c32b201da29897fd267422a"
+    },
+    {
       "path": "reproduction_project/stage6_submission/06_02_revision/08_code/stage6_figures.py",
-      "size_bytes": 29886,
-      "sha256": "cafa8a710b4199aa5e109e53fd527c8d458c0e1e313531b0d2893f4d24069d16"
+      "size_bytes": 35156,
+      "sha256": "f9df8b1640812c3f7047602540fc9adaf67a9dfc5db95cdc204ed12d9df2bead"
     },
     {
       "path": "scripts/build_release_manifest.py",
-      "size_bytes": 1362,
-      "sha256": "1f883f0261c3e121af09c18957418f244335c804d89573462a44d1ddeee920e5"
+      "size_bytes": 1613,
+      "sha256": "d945026de7a00b3d8142d41606cd489524c6ddecb1c147c75acad61e8e767666"
     },
     {
       "path": "scripts/run_reproduction.py",
-      "size_bytes": 1882,
-      "sha256": "c7712628e637436031bc7f99327864f583f7de029ea8ce472c3a953c21563123"
+      "size_bytes": 5978,
+      "sha256": "558cc4adb43ee173b2359d56bc337fdaf491992438fc4c7ca9d4b8e88236118f"
     },
     {
-      "path": "tables/Figure_Source_Data_V7.xlsx",
-      "size_bytes": 738163,
-      "sha256": "241f3631d71388e6ef0a1be1aacd0887503e94729c24c75bbbd12820946a1b37"
+      "path": "tables/Figure_Source_Data.xlsx",
+      "size_bytes": 730988,
+      "sha256": "e93776b03433114486630ca936183d564121930a4a39c68ac988d086830da776"
     },
     {
-      "path": "tables/Supplementary_Data_V7.xlsx",
-      "size_bytes": 512565,
-      "sha256": "0cc6a2af15e1eabafcb7fc457adcfef01f05adf90fadbd70e1dd7db39293cecd"
+      "path": "tables/Signature_Implementation_Registry_v1.1.1.xlsx",
+      "size_bytes": 77469,
+      "sha256": "72337f171f85eef3bfd8e2367eaa05282db08ba9cd5537abe8baeb09002fcdc2"
     },
     {
-      "path": "tables/Table_1_cohort_characteristics_V7.xlsx",
-      "size_bytes": 5158,
-      "sha256": "954a43df448b890b443c93ee4c9fccb295a97c166cfd9f999654540763f1ab6c"
+      "path": "tables/Supplementary_Data.xlsx",
+      "size_bytes": 557958,
+      "sha256": "941fe21aa5f70d0b1eaa25a3a842f1e1829d0c488cfd00a481cc4f630b643dd9"
     },
     {
-      "path": "tables/Table_2_signature_summary_V7.xlsx",
-      "size_bytes": 5902,
-      "sha256": "17c057b574dbef14f3db2898818ec485128aff7e58e9dce82deb96c0ab08abc3"
+      "path": "tables/Table_1_cohort_characteristics_v1.1.1.xlsx",
+      "size_bytes": 5279,
+      "sha256": "b729e3769e044bea25bd5599cfbf24985f509970980e7b974e9145c0a08e2af0"
+    },
+    {
+      "path": "tables/Table_2_signature_summary_v1.1.1.xlsx",
+      "size_bytes": 5668,
+      "sha256": "261a921df59b0b3e80631fe013d0cba2d498c237a9e4cd4e9de4315115f0d3a5"
     }
   ]
 }

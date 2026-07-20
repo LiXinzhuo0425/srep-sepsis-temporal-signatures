@@ -1,0 +1,2 @@
+status,reason,main_anchor,secondary_anchors,models_fitted,p_values_generated,claim_boundary
+NOT_RUN_BY_PREDEFINED_GATE,"No deposited serial SOFA, vasopressor/shock-state, lactate, CRP or PCT variable is available in at least two independent cohorts. Static APACHE II/SAPS II fields and mortality outcomes do not satisfy the frozen synchronous-change definition.",NONE,NONE,0,0,No clinical-change association or prognostic claim is made.

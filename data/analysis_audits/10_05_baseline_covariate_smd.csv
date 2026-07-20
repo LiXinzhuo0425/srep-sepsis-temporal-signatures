@@ -1,0 +1,31 @@
+dataset,time_window,covariate,type,observed_available_n,missing_available_n,observed_mean_or_proportion,missing_mean_or_proportion,smd_observed_minus_missing,absolute_smd,descriptive_flag,source_status
+GSE236713,T24,Sex (female),binary,93,31,0.5483870967741935,0.25806451612903225,0.6195855517393627,0.6195855517393627,|SMD| >= 0.50,Public baseline metadata
+GSE236713,T24,Platform,constant within cohort,93,31,,,,,Not estimable,Constant within cohort; no within-cohort imbalance is possible
+GSE57065,T24,Age (years),continuous,28,0,62.714285714285715,,,,Not estimable,Public baseline metadata
+GSE57065,T24,Sex (female),binary,28,0,0.32142857142857145,,,,Not estimable,Public baseline metadata
+GSE57065,T24,SAPS II high group,binary,28,0,0.5,,,,Not estimable,Public baseline metadata
+GSE57065,T24,Platform,constant within cohort,28,0,,,,,Not estimable,Constant within cohort; no within-cohort imbalance is possible
+GSE57065,T48,Age (years),continuous,26,2,62.53846153846154,65.0,-0.15315212742476708,0.15315212742476708,|SMD| < 0.50,Public baseline metadata
+GSE57065,T48,Sex (female),binary,26,2,0.34615384615384615,0.0,1.028991510855053,1.028991510855053,|SMD| >= 0.50,Public baseline metadata
+GSE57065,T48,SAPS II high group,binary,26,2,0.46153846153846156,1.0,-1.5275252316519465,1.5275252316519465,|SMD| >= 0.50,Public baseline metadata
+GSE57065,T48,Platform,constant within cohort,26,2,,,,,Not estimable,Constant within cohort; no within-cohort imbalance is possible
+GSE95233,T24,Age (years),continuous,20,31,63.75,61.193548387096776,0.1685929449089981,0.1685929449089981,|SMD| < 0.50,Public baseline metadata
+GSE95233,T24,Sex (female),binary,20,31,0.4,0.3225806451612903,0.1616904166908887,0.1616904166908887,|SMD| < 0.50,Public baseline metadata
+GSE95233,T24,Platform,constant within cohort,20,31,,,,,Not estimable,Constant within cohort; no within-cohort imbalance is possible
+GSE95233,T48,Age (years),continuous,31,20,61.193548387096776,63.75,-0.1685929449089981,0.1685929449089981,|SMD| < 0.50,Public baseline metadata
+GSE95233,T48,Sex (female),binary,31,20,0.3225806451612903,0.4,-0.1616904166908887,0.1616904166908887,|SMD| < 0.50,Public baseline metadata
+GSE95233,T48,Platform,constant within cohort,31,20,,,,,Not estimable,Constant within cohort; no within-cohort imbalance is possible
+GSE54514,T24,Age (years),continuous,31,4,61.096774193548384,51.75,0.5334891371034667,0.5334891371034667,|SMD| >= 0.50,Public baseline metadata
+GSE54514,T24,Sex (female),binary,31,4,0.5806451612903226,0.75,-0.36481762126557965,0.36481762126557965,|SMD| < 0.50,Public baseline metadata
+GSE54514,T24,APACHE II,continuous,31,4,20.612903225806452,15.25,0.8531014437299607,0.8531014437299607,|SMD| >= 0.50,Public baseline metadata
+GSE54514,T24,Neutrophil proportion,continuous,31,4,0.7813162115806452,0.8595324777500001,-0.5940874344234284,0.5940874344234284,|SMD| >= 0.50,Public baseline metadata
+GSE54514,T24,Platform,constant within cohort,31,4,,,,,Not estimable,Constant within cohort; no within-cohort imbalance is possible
+GSE54514,T48,Age (years),continuous,28,7,59.75,61.142857142857146,-0.07835393343324333,0.07835393343324333,|SMD| < 0.50,Public baseline metadata
+GSE54514,T48,Sex (female),binary,28,7,0.5714285714285714,0.7142857142857143,-0.30151134457776374,0.30151134457776374,|SMD| < 0.50,Public baseline metadata
+GSE54514,T48,APACHE II,continuous,28,7,20.892857142857142,16.428571428571427,0.7128134696805132,0.7128134696805132,|SMD| >= 0.50,Public baseline metadata
+GSE54514,T48,Neutrophil proportion,continuous,28,7,0.7762297578214286,0.846357035857143,-0.5354000299531531,0.5354000299531531,|SMD| >= 0.50,Public baseline metadata
+GSE54514,T48,Platform,constant within cohort,28,7,,,,,Not estimable,Constant within cohort; no within-cohort imbalance is possible
+GSE110487,T48,Platform,constant within cohort,31,0,,,,,Not estimable,Constant within cohort; no within-cohort imbalance is possible
+GSE110487,T48,"Age, sex and baseline severity",unavailable,0,0,,,,,Not estimable,Not available in the public expression deposit used for this analysis
+GSE8121,T48,Platform,constant within cohort,30,0,,,,,Not estimable,Constant within cohort; no within-cohort imbalance is possible
+GSE8121,T48,"Age, sex and baseline severity",unavailable,0,0,,,,,Not estimable,Not available in the public expression deposit used for this analysis

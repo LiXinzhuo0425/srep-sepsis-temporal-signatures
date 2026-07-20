@@ -1,0 +1,97 @@
+dataset,signature_id,time_window,model,status,warning_count,warning_text
+GSE110487,SIG001,T2,MixedLM,CONVERGED,0,
+GSE110487,SIG002,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE110487,SIG003,T2,MixedLM,CONVERGED,0,
+GSE110487,SIG004,T2,MixedLM,CONVERGED,0,
+GSE110487,SIG022,T2,MixedLM,CONVERGED,0,
+GSE110487,SIG023,T2,MixedLM,CONVERGED,0,
+GSE110487,SIG033,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE110487,SIG034,T2,MixedLM,CONVERGED,0,
+GSE236713,SIG001,T1,MixedLM,CONVERGED,0,
+GSE236713,SIG001,T4,MixedLM,CONVERGED,0,
+GSE236713,SIG002,T1,MixedLM,CONVERGED,0,
+GSE236713,SIG002,T4,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE236713,SIG003,T1,MixedLM,CONVERGED,0,
+GSE236713,SIG003,T4,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE236713,SIG004,T1,MixedLM,CONVERGED,0,
+GSE236713,SIG004,T4,MixedLM,CONVERGED,0,
+GSE236713,SIG022,T1,MixedLM,CONVERGED,0,
+GSE236713,SIG022,T4,MixedLM,CONVERGED,0,
+GSE236713,SIG023,T1,MixedLM,CONVERGED,0,
+GSE236713,SIG023,T4,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE236713,SIG033,T1,MixedLM,CONVERGED,0,
+GSE236713,SIG033,T4,MixedLM,CONVERGED,0,
+GSE236713,SIG034,T1,MixedLM,CONVERGED,0,
+GSE236713,SIG034,T4,MixedLM,CONVERGED,0,
+GSE54514,SIG001,T1,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG001,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG001,T3,MixedLM,CONVERGED,5,Random effects covariance is singular | Random effects covariance is singular | Random effects covariance is singular | Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE54514,SIG001,T4,MixedLM,CONVERGED,3,Random effects covariance is singular | The MLE may be on the boundary of the parameter space. | The Hessian matrix at the estimated parameter values is not positive definite.
+GSE54514,SIG002,T1,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG002,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG002,T3,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG002,T4,MixedLM,CONVERGED,2,Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE54514,SIG003,T1,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG003,T2,MixedLM,CONVERGED,5,Random effects covariance is singular | Random effects covariance is singular | Random effects covariance is singular | Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE54514,SIG003,T3,MixedLM,CONVERGED,2,Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE54514,SIG003,T4,MixedLM,CONVERGED,2,Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE54514,SIG004,T1,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG004,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG004,T3,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG004,T4,MixedLM,CONVERGED,2,Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE54514,SIG022,T1,MixedLM,CONVERGED,0,
+GSE54514,SIG022,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG022,T3,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG022,T4,MixedLM,CONVERGED,0,
+GSE54514,SIG023,T1,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG023,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG023,T3,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG023,T4,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG033,T1,MixedLM,CONVERGED,2,Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE54514,SIG033,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG033,T3,MixedLM,CONVERGED,3,Random effects covariance is singular | Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE54514,SIG033,T4,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG034,T1,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE54514,SIG034,T2,MixedLM,CONVERGED,2,Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE54514,SIG034,T3,MixedLM,CONVERGED,2,Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE54514,SIG034,T4,MixedLM,CONVERGED,3,Random effects covariance is singular | The MLE may be on the boundary of the parameter space. | The Hessian matrix at the estimated parameter values is not positive definite.
+GSE57065,SIG001,T1,MixedLM,CONVERGED,0,
+GSE57065,SIG001,T2,MixedLM,CONVERGED,0,
+GSE57065,SIG002,T1,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE57065,SIG002,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE57065,SIG003,T1,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE57065,SIG003,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE57065,SIG004,T1,MixedLM,CONVERGED,0,
+GSE57065,SIG004,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE57065,SIG022,T1,MixedLM,CONVERGED,0,
+GSE57065,SIG022,T2,MixedLM,CONVERGED,0,
+GSE57065,SIG023,T1,MixedLM,CONVERGED,0,
+GSE57065,SIG023,T2,MixedLM,CONVERGED,0,
+GSE57065,SIG033,T1,MixedLM,CONVERGED,0,
+GSE57065,SIG033,T2,MixedLM,CONVERGED,0,
+GSE57065,SIG034,T1,MixedLM,CONVERGED,0,
+GSE57065,SIG034,T2,MixedLM,CONVERGED,0,
+GSE8121,SIG001,T2,MixedLM,CONVERGED,0,
+GSE8121,SIG002,T2,MixedLM,CONVERGED,0,
+GSE8121,SIG003,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE8121,SIG004,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE8121,SIG022,T2,MixedLM,CONVERGED,0,
+GSE8121,SIG023,T2,MixedLM,CONVERGED,0,
+GSE8121,SIG033,T2,MixedLM,CONVERGED,2,Random effects covariance is singular | The MLE may be on the boundary of the parameter space.
+GSE8121,SIG034,T2,MixedLM,CONVERGED,0,
+GSE95233,SIG001,T1,MixedLM,CONVERGED,0,
+GSE95233,SIG001,T2,MixedLM,CONVERGED,0,
+GSE95233,SIG002,T1,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE95233,SIG002,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE95233,SIG003,T1,MixedLM,CONVERGED,0,
+GSE95233,SIG003,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE95233,SIG004,T1,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE95233,SIG004,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE95233,SIG022,T1,MixedLM,CONVERGED,0,
+GSE95233,SIG022,T2,MixedLM,CONVERGED,0,
+GSE95233,SIG023,T1,MixedLM,CONVERGED,0,
+GSE95233,SIG023,T2,MixedLM,CONVERGED,0,
+GSE95233,SIG033,T1,MixedLM,CONVERGED,0,
+GSE95233,SIG033,T2,MixedLM,CONVERGED,1,Random effects covariance is singular
+GSE95233,SIG034,T1,MixedLM,CONVERGED,0,
+GSE95233,SIG034,T2,MixedLM,CONVERGED,0,

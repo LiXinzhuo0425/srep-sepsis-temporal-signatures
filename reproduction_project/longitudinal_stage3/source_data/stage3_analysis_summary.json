@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-07-16",
+  "cohorts": 6,
+  "signatures": 8,
+  "dataset_signature_combinations": 48,
+  "score_rows": 7824,
+  "primary_unique_paired_patients": 264,
+  "T24_change_rows": 1376,
+  "T48_change_rows": 1168,
+  "cohort_effect_rows": 96,
+  "primary_meta_rows": 16,
+  "model_converged_rows": 96,
+  "model_fallback_rows": 0,
+  "fixed_threshold_analysis": false,
+  "calibration_or_brier": false,
+  "retraining": false
+}
