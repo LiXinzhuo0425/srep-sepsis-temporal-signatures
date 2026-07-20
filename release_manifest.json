@@ -1277,33 +1277,33 @@
     },
     {
       "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_3_patient_trajectories.pdf",
-      "size_bytes": 53235,
-      "sha256": "c60ae84f3b83b79ebb9cdc4cd83f5765fd52b22540d40b5130ba6082e98ff4b6"
+      "size_bytes": 252349,
+      "sha256": "5ae773771e569d746d5f0e737b3f31a751c6c4cc6d4f2f7935129b0151ebc6e7"
     },
     {
       "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_3_patient_trajectories.png",
-      "size_bytes": 935697,
-      "sha256": "b7158f5b99e07882b20ef4627684c9419db14c230c0410d536629942e034aeca"
+      "size_bytes": 778717,
+      "sha256": "3f6fec2b9d99692f9c1872f19d977e3fdf4254291a2e4c8323179d8baeaa205f"
     },
     {
       "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_3_patient_trajectories.svg",
-      "size_bytes": 324887,
-      "sha256": "01b1ef0113bf63621177d3a6735fc19fce204d66d9a77d7e67aae04bbadeb332"
+      "size_bytes": 324898,
+      "sha256": "ed908d451a8d7ecfbdafe7e656d778a2fdd240844d07b2cdc67c1d72016adf7b"
     },
     {
       "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_4_pathway_heatmap.pdf",
-      "size_bytes": 45629,
-      "sha256": "6bc60df37b1c935df252a20317feb48b4e026bfd7a3521eced666c7101f52492"
+      "size_bytes": 46280,
+      "sha256": "e643c31df133ef1c6573cc853a6d7e2b5c28f9771a6d5ba9bd59e0a634f26d2a"
     },
     {
       "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_4_pathway_heatmap.png",
-      "size_bytes": 225426,
-      "sha256": "055d73f08ddf2be4538e8fb0728b61a23d7132f927b00b7e976bbac21b4917f4"
+      "size_bytes": 228193,
+      "sha256": "35cc57b77d4097bb8de943af0c7fac2e57eac807c7be73fcca2a93401f303630"
     },
     {
       "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_4_pathway_heatmap.svg",
-      "size_bytes": 29669,
-      "sha256": "448340b911e37dd1d0132041694a3c5f500af5d8aa9616a79fbb14bf3c7bd0a2"
+      "size_bytes": 30284,
+      "sha256": "ba033f9af4c08f273b329f047ef1d8a892860dbdec3a94403fa0f048410cb638"
     },
     {
       "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_5_gene_cell_source.pdf",
@@ -1319,21 +1319,6 @@
       "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_5_gene_cell_source.svg",
       "size_bytes": 71920,
       "sha256": "1bbfd68c217f61ff01071f38d518c8880a90cf85573a3fc15ad95683b85a18c0"
-    },
-    {
-      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_6_context_of_use_boundary.pdf",
-      "size_bytes": 40922,
-      "sha256": "491c17f318c89925b726a23bf8fb31ca640257c2d7901e98aa275d74ff3b939f"
-    },
-    {
-      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_6_context_of_use_boundary.png",
-      "size_bytes": 211994,
-      "sha256": "463299b269e86b1dd35e6ea7eff793031972062b29236d1af19b5309ce831bab"
-    },
-    {
-      "path": "reproduction_project/stage6_submission/06_02_revision/04_supplementary/figures/Supplementary_Figure_6_context_of_use_boundary.svg",
-      "size_bytes": 10379,
-      "sha256": "f4a7b43522b68e7cd540ade3c601b2d506dce737eb0dfd2ffdb72be904833a8d"
     },
     {
       "path": "reproduction_project/stage6_submission/06_02_revision/06_figures/main_v1_1/Figure_1_study_design.pdf",
