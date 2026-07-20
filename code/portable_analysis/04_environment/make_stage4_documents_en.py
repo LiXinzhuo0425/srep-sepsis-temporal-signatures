@@ -136,7 +136,7 @@ def pathway_plan() -> None:
     ])
     doc.add_heading("Frozen gene sets", level=1)
     table(doc, ["Tier", "Source", "Contents"], [
-        ["Prespecified primary", "MSigDB Human Hallmark v2026.1.Hs", "Inflammatory response; TNF/NF-kB; IFN-alpha; IFN-gamma; complement; coagulation; oxidative phosphorylation; apoptosis; allograft rejection"],
+        ["Prespecified primary", "MSigDB Human Hallmark v2026.1.Hs", "Inflammatory response; TNF/NF-kB; IFN-α; IFN-γ; complement; coagulation; oxidative phosphorylation; apoptosis; allograft rejection"],
         ["Secondary complete collection", "MSigDB Human Hallmark v2026.1.Hs", "All 50 Hallmark sets, reported as a separate multiplicity family"],
         ["Limited supplement", "Reactome current release downloaded 2026-07-16", "Neutrophil degranulation; particulate-antigen cross-presentation; TCR signalling"],
     ], [3.3, 5.0, 8.2])

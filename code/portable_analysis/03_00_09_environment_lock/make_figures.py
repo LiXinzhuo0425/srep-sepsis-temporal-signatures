@@ -130,7 +130,7 @@ def figure2_primary_forest():
             if math.isfinite(row["prediction_lower"]):
                 ax.plot([row["prediction_lower"], row["prediction_upper"]], [yi-0.17, yi-0.17], color=COLORS[window], lw=0.8, alpha=0.45)
         ax.set_yticks(y); ax.set_yticklabels(SIGNATURES)
-        ax.set_xlabel("Pooled within-patient change (deltaZ)")
+        ax.set_xlabel("Pooled within-patient change (ΔZ)")
         ax.set_title(label, fontsize=9, fontweight="bold")
         ax.text(0.02, 0.02, "Thick: 95% CI\nThin: 95% prediction interval", transform=ax.transAxes, fontsize=6.5, color="#5F6B76")
     panel_label(axes[0], "a"); panel_label(axes[1], "b")
@@ -147,7 +147,7 @@ def figure3_stability_heatmap():
     i2 = np.column_stack([p.xs("T1", level="time_window")["I2_percent"], p.xs("T2", level="time_window")["I2_percent"]])
     piw = np.column_stack([(p.xs("T1", level="time_window")["prediction_upper"] - p.xs("T1", level="time_window")["prediction_lower"]), (p.xs("T2", level="time_window")["prediction_upper"] - p.xs("T2", level="time_window")["prediction_lower"])])
     fig, axes = plt.subplots(1, 3, figsize=(7.2, 4.5), gridspec_kw={"width_ratios": [1, 1, 1]})
-    specs = [(drift, "Pooled deltaZ", "RdBu_r", -np.nanmax(abs(drift)), np.nanmax(abs(drift))), (i2, "I-squared (%)", "Blues", 0, 100), (piw, "Prediction interval width", "Oranges", 0, np.nanmax(piw))]
+    specs = [(drift, "Pooled ΔZ", "RdBu_r", -np.nanmax(abs(drift)), np.nanmax(abs(drift))), (i2, "I² (%)", "Blues", 0, 100), (piw, "Prediction interval width", "Oranges", 0, np.nanmax(piw))]
     for idx, (ax, (matrix, title, cmap, vmin, vmax)) in enumerate(zip(axes, specs)):
         im = ax.imshow(matrix, aspect="auto", cmap=cmap, vmin=vmin, vmax=vmax)
         ax.set_xticks([0, 1]); ax.set_xticklabels(["T24", "T48"])
@@ -204,10 +204,10 @@ def figure4_pilot_validation():
                 arrowprops=dict(arrowstyle="-", color="#7F8C99", lw=0.45, shrinkA=1.5, shrinkB=2.5),
             )
         ax.set_xlim(limits); ax.set_ylim(limits); ax.set_aspect("equal", adjustable="box")
-        ax.set_xlabel("Pilot pooled deltaZ"); ax.set_ylabel("Blinded-validation pooled deltaZ")
+        ax.set_xlabel("Pilot pooled ΔZ"); ax.set_ylabel("Prespecified non-pilot pooled ΔZ")
         ax.set_title("T24" if window == "T1" else "T48", fontweight="bold", fontsize=9)
     panel_label(axes[0], "a"); panel_label(axes[1], "b")
-    fig.suptitle("Pilot and blinded-validation concordance", x=0.02, ha="left", fontsize=11, fontweight="bold")
+    fig.suptitle("Pilot and prespecified non-pilot concordance", x=0.02, ha="left", fontsize=11, fontweight="bold")
     fig.tight_layout(rect=(0, 0, 1, 0.93))
     save(fig, MAIN / "Figure_4_pilot_vs_validation")
 
@@ -271,7 +271,7 @@ def figure6_trajectories():
         ax.axhline(0, color="#767676", ls="--", lw=0.7)
         ax.set_title(sig, fontweight="bold", fontsize=9)
         ax.set_xticks([0, 1, 2]); ax.set_xticklabels(["T0", "T24", "T48"])
-        ax.set_ylabel("Within-patient deltaZ")
+        ax.set_ylabel("Within-patient ΔZ")
     for idx, ax in enumerate(axes.ravel()): panel_label(ax, chr(ord("a") + idx))
     handles = [plt.Line2D([0], [0], color=color, lw=2, label=dataset) for dataset, color in COHORT_COLORS.items()]
     fig.legend(handles=handles, ncol=3, loc="upper center", bbox_to_anchor=(0.5, 0.95), fontsize=6.5)
@@ -303,7 +303,7 @@ def supporting_figures():
             ax.set_yticks([cohort_y[d] for d in cohort_order]); ax.set_yticklabels(cohort_order)
             ax.set_ylim(-0.5, len(cohort_order) - 0.5)
             ax.set_title("T24" if window == "T1" else "T48", fontsize=9, fontweight="bold")
-            ax.set_xlabel("deltaZ")
+            ax.set_xlabel("ΔZ")
         fig.suptitle(f"{sig}: cohort-specific and pooled effects", x=0.02, ha="left", fontsize=10, fontweight="bold")
         fig.tight_layout(rect=(0, 0, 1, 0.93)); save(fig, FORESTS / f"{sig}_forest")
 
@@ -332,7 +332,7 @@ def supporting_figures():
             x = [TARGET for TARGET in [1,2,3,4] if ["T1","T2","T3","T4"][TARGET-1] in order]
             ax.errorbar(x, g["mean"], yerr=1.96*g["sem"], color=COHORT_COLORS[dataset], marker="o", lw=1, ms=3, label=dataset)
         ax.axhline(0, color="#767676", ls="--", lw=0.7); ax.set_xticks([1,2,3,4]); ax.set_xticklabels(["T24","T48","T72","Day 5"])
-        ax.set_ylabel("Mean deltaZ (95% CI)"); ax.set_title(sig, fontweight="bold"); ax.legend(fontsize=5.5, ncol=2)
+        ax.set_ylabel("Mean ΔZ (95% CI)"); ax.set_title(sig, fontweight="bold"); ax.legend(fontsize=5.5, ncol=2)
         fig.tight_layout(); save(fig, TRAJECTORIES / f"{sig}_extended_trajectory")
 
 

@@ -104,8 +104,8 @@ STABILITY_COLORS = {"STABLE": "#2F6B8A", "UNSTABLE": "#D9822B"}
 SHORT_PATH = {
     "HALLMARK_INFLAMMATORY_RESPONSE": "Inflammatory",
     "HALLMARK_TNFA_SIGNALING_VIA_NFKB": "TNF/NF-kB",
-    "HALLMARK_INTERFERON_ALPHA_RESPONSE": "IFN-alpha",
-    "HALLMARK_INTERFERON_GAMMA_RESPONSE": "IFN-gamma",
+    "HALLMARK_INTERFERON_ALPHA_RESPONSE": "IFN-α",
+    "HALLMARK_INTERFERON_GAMMA_RESPONSE": "IFN-γ",
     "HALLMARK_COMPLEMENT": "Complement",
     "HALLMARK_COAGULATION": "Coagulation",
     "HALLMARK_OXIDATIVE_PHOSPHORYLATION": "OxPhos",
@@ -142,6 +142,7 @@ def export(fig: plt.Figure, stem: str) -> None:
     base = OUT / stem
     fig.savefig(base.with_suffix(".svg"), bbox_inches="tight")
     fig.savefig(base.with_suffix(".pdf"), bbox_inches="tight")
+    fig.savefig(base.with_suffix(".eps"), format="eps", bbox_inches="tight")
     fig.savefig(base.with_suffix(".png"), dpi=300, bbox_inches="tight")
     tiff_path = base.with_suffix(".tiff")
     fig.savefig(tiff_path, dpi=600, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})
@@ -234,7 +235,7 @@ def figure2() -> None:
             ax.text(ax.get_xlim()[1] if False else row.pooled_delta_z, yi+0.20, f"{row.pooled_delta_z:.2f}", ha="center", fontsize=5.8, color=color)
         ax.set_yticks(y)
         ax.set_yticklabels([f"{s}  {NAMES[s]}" for s in SIGS], fontsize=6.7)
-        ax.set_xlabel("Pooled within-patient change (delta Z)")
+        ax.set_xlabel("Pooled within-patient change (ΔZ)")
         ax.set_title(title, fontweight="bold")
         ax.text(0.02, 0.02, "Thick: 95% CI\nThin: 95% prediction interval", transform=ax.transAxes, fontsize=6.1, color="#5F6B76")
     panel(axes[0], "a"); panel(axes[1], "b")
@@ -267,11 +268,11 @@ def figure3() -> None:
     profile = pd.read_csv(S3 / "03_06_temporal_stability_profile.csv")
     fig = plt.figure(figsize=(7.2, 7.0))
     gs = fig.add_gridspec(3, 1, height_ratios=[1, 1, 0.85], hspace=0.46)
-    for idx, (window, title) in enumerate([("T1", "T24 cohort-specific mean delta Z"), ("T2", "T48 cohort-specific mean delta Z")]):
+    for idx, (window, title) in enumerate([("T1", "T24 cohort-specific mean ΔZ"), ("T2", "T48 cohort-specific mean ΔZ")]):
         ax = fig.add_subplot(gs[idx]); panel(ax, "a" if idx == 0 else "b")
         sub = effects[effects.time_window == window].pivot(index="dataset", columns="signature_id", values="mean_delta_z").reindex(index=COHORTS, columns=SIGS)
         heat(ax, sub.to_numpy(float), COHORTS, SIGS, vmin=-1.6, vmax=1.6,
-             cmap="RdBu_r", fmt=".2f", title=title, cbar_label="Mean delta Z")
+             cmap="RdBu_r", fmt=".2f", title=title, cbar_label="Mean ΔZ")
         # GSE54514 was retained for transparent cohort-level display but was
         # excluded from the primary independent synthesis for these signatures.
         row_i = COHORTS.index("GSE54514")
@@ -290,7 +291,7 @@ def figure3() -> None:
     widths = (p.prediction_upper - p.prediction_lower).to_numpy(float)
     bars = ax3.barh(y, p.I2_percent, height=0.58, color=COL["sky"])
     ax3.set_yticks(y); ax3.set_yticklabels([f"{s}  {NAMES[s]}" for s in SIGS], fontsize=6.6)
-    ax3.set_xlim(0, 105); ax3.set_xlabel("T48 I-squared (%)")
+    ax3.set_xlim(0, 105); ax3.set_xlabel("T48 I² (%)")
     ax3.axvline(50, color="#999999", lw=0.8, ls="--")
     for bar, i2, width in zip(bars, p.I2_percent, widths):
         ax3.text(min(i2 + 2, 97), bar.get_y()+bar.get_height()/2, f"{i2:.0f}%  |  PI width {width:.2f}", va="center", fontsize=6.1)
@@ -324,7 +325,7 @@ def figure4() -> None:
                          textcoords="offset points", ha="left" if row.pooled_contribution >= 0 else "right", va="center", fontsize=5.8)
     ax1.axvline(0, color="#777777", lw=0.8, ls="--")
     ax1.set_yticks(y); ax1.set_yticklabels([f"{s}  {NAMES[s]}" for s in SIGS], fontsize=6.4)
-    ax1.set_xlabel("Exact gene contribution to T48 delta Z")
+    ax1.set_xlabel("Exact gene contribution to T48 ΔZ")
     ax1.set_title("Two largest pooled mathematical contributions", loc="left", fontweight="bold")
     panel(ax1, "a")
 
@@ -433,7 +434,7 @@ def figure5() -> None:
 
     im = draw_pathway_heatmap(ax3, coupling)
     cbar = fig.colorbar(im, ax=ax3, fraction=0.022, pad=0.02)
-    cbar.set_label("Pooled rho", fontsize=7.6); cbar.ax.tick_params(labelsize=7.0)
+    cbar.set_label("Pooled Spearman ρ", fontsize=7.6); cbar.ax.tick_params(labelsize=7.0)
     ax3.set_title("Primary singscore pathway coupling at T48", loc="left", fontweight="bold"); panel(ax3, "c")
     fig.text(0.01, 0.017,
              "* Primary singscore BH-FDR < 0.05; the corresponding ssGSEA result had FDR=0.066.",
@@ -471,7 +472,7 @@ def figure6() -> None:
         ax.annotate(sig, (2, vals[-1]), xytext=(5, label_dy), textcoords="offset points", va="center", fontsize=6.4, color=color, fontweight="bold")
     ax.axhline(0, color="#777777", lw=0.8, ls="--")
     ax.set_xticks(x); ax.set_xticklabels(["Baseline", "T24", "T48"])
-    ax.set_ylabel("Pooled within-patient change (delta Z)")
+    ax.set_ylabel("Pooled within-patient change (ΔZ)")
     ax.set_xlim(-0.08, 2.35)
     ax.set_ylim(-1.02, 0.78)
     ax.set_title("Pooled trajectories depend on sampling window", loc="left", fontweight="bold")
@@ -570,10 +571,10 @@ def supplementary_figure_1() -> None:
                         fontsize=6.4, ha="left", va="center",
                         arrowprops=dict(arrowstyle="-", color="#7F8C99", lw=0.45, shrinkA=1.5, shrinkB=2.5))
         ax.set_xlim(limits); ax.set_ylim(limits); ax.set_aspect("equal", adjustable="box")
-        ax.set_xlabel("Pilot pooled delta Z"); ax.set_ylabel("Prespecified-validation pooled delta Z")
+        ax.set_xlabel("Pilot pooled ΔZ"); ax.set_ylabel("Prespecified non-pilot pooled ΔZ")
         ax.set_title("T24" if window == "T1" else "T48", fontweight="bold", fontsize=9)
     panel(axes[0], "a"); panel(axes[1], "b")
-    fig.suptitle("Pilot and prespecified-validation concordance", x=0.02, ha="left", fontsize=11, fontweight="bold")
+    fig.suptitle("Pilot and prespecified non-pilot concordance", x=0.02, ha="left", fontsize=11, fontweight="bold")
     fig.tight_layout(rect=(0, 0, 1, 0.93))
     export_to(fig, SUPP_OUT / "Supplementary_Figure_1_pilot_vs_validation")
     data.to_csv(SOURCE_OUT / "Supplementary_Figure_1_source_data.csv", index=False)

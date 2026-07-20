@@ -62,7 +62,7 @@ for sig, d in check.sort_values(keys).groupby("signature_id"):
         "1e-8",
     )
 global_max = float(check["absolute_error"].max())
-record("RECON_ALL", "Exact decomposition", "All gene-level records reconstruct Stage 3 delta Z", f"n={len(check)}; max_error={global_max:.3e}", "n=3344; max_error <= 1e-8", pass_if(len(check) == 3344 and global_max <= TOL), "1e-8")
+record("RECON_ALL", "Exact decomposition", "All gene-level records reconstruct Stage 3 ΔZ", f"n={len(check)}; max_error={global_max:.3e}", "n=3344; max_error <= 1e-8", pass_if(len(check) == 3344 and global_max <= TOL), "1e-8")
 
 
 # 2. Formula methods and gene roster agreement.
@@ -125,7 +125,7 @@ target = meta[
     & (meta.pathway == "HALLMARK_OXIDATIVE_PHOSPHORYLATION")
 ].iloc[0]
 rho_error = abs(pooled_rho - float(target.pooled_spearman_rho))
-record("META_SIG034_OXPHOS_T48", "Meta-analysis input", "Independent inverse-variance Fisher-z pooled rho", f"{pooled_rho:.12f}; cohorts={len(f)}", f"{target.pooled_spearman_rho:.12f}; cohorts=5", pass_if(len(f) == 5 and rho_error <= 1e-10 and float(target.tau2_fisher_z) == 0.0), "1e-10")
+record("META_SIG034_OXPHOS_T48", "Meta-analysis input", "Independent inverse-variance Fisher-z pooled ρ", f"{pooled_rho:.12f}; cohorts={len(f)}", f"{target.pooled_spearman_rho:.12f}; cohorts=5", pass_if(len(f) == 5 and rho_error <= 1e-10 and float(target.tau2_fisher_z) == 0.0), "1e-10")
 
 
 # Recalculate the BH family for the 72 independent-only T48 primary cells.

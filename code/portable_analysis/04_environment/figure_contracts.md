@@ -20,7 +20,7 @@ Backend is frozen to Python/matplotlib. SVG with editable text is the primary ex
 
 - Conclusion: gene-level mathematical contributions have heterogeneous potential blood-cell sources, and only limited pathway coupling is consistently replicated.
 - Evidence: HPA v25.1 blood-cell RNA annotations, primary-independent gene-contribution estimates, and independent-only T48 pathway coupling.
-- Encoding: panel a shows the leading gene, contribution and broad lineage; panel b shows T48 Spearman rho for nine prespecified Hallmark pathways, with an outline for FDR<0.05.
+- Encoding: panel a shows the leading gene, contribution and broad lineage; panel b shows T48 Spearman ρ for nine prespecified Hallmark pathways, with an outline for FDR < 0.05.
 - Review risk: bulk RNA cannot distinguish abundance shifts from within-cell transcription; HPA assignments are potential sources only.
 
 ## Figure 6 — context-of-use evidence matrix

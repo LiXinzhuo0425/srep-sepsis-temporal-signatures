@@ -8,7 +8,7 @@ The six-cohort primary analysis remains frozen. Candidate records identified by 
 
 GSE106878 provides paired pretreatment and 24-hour whole-blood microarray profiles for 47 patients with septic shock from the CORTICUS trial. The public normalized matrix and platform annotation recover all 74 genes after the locked historical-symbol map. All eight scores were independently reconstructed with the v1.1.2 formulas. The overall T24 estimates, with 2,000 paired bootstrap replicates and seed 20260720, were:
 
-- SIG001: -0.972464 delta Z (95% CI -1.138908 to -0.812034)
+- SIG001: -0.972464 ΔZ (95% CI -1.138908 to -0.812034)
 - SIG002: -1.483551 (-1.765863 to -1.201001)
 - SIG003: -1.116821 (-1.367120 to -0.883496)
 - SIG004: +0.917188 (+0.706763 to +1.113164)
