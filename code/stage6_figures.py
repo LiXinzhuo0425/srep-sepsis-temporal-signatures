@@ -596,8 +596,8 @@ def main() -> None:
         if number in selected:
             function()
     manifest = {
-        "freeze_id": "SCIREP-ANALYSIS-v1.1.1-20260720",
-        "scientific_source": "Corrected v1.1.1 Stage 3/4 result tables after the SIG001 formula audit",
+        "freeze_id": "SCIREP-ANALYSIS-v1.1.2-20260720",
+        "scientific_source": "Corrected v1.1.2 Stage 3/4 result tables after the SIG001 formula audit",
         "figures": [p.name for p in sorted(OUT.glob("Figure_*.*"))],
         "source_files": [p.name for p in sorted(SOURCE_OUT.glob("*"))],
         "backend": "Python/matplotlib only",

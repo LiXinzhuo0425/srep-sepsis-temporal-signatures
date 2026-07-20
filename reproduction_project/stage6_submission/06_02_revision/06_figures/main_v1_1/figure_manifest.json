@@ -1,6 +1,6 @@
 {
-  "freeze_id": "SCIREP-ANALYSIS-v1.1.1-20260720",
-  "scientific_source": "Corrected v1.1.1 Stage 3/4 result tables after the SIG001 formula audit",
+  "freeze_id": "SCIREP-ANALYSIS-v1.1.2-20260720",
+  "scientific_source": "Corrected v1.1.2 Stage 3/4 result tables after the SIG001 formula audit",
   "figures": [
     "Figure_1_study_design.pdf",
     "Figure_1_study_design.png",

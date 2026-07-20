@@ -1,6 +1,6 @@
-# v1.1.1 (2026-07-20)
+# v1.1.2 (2026-07-20)
 
-Version 1.1.1 is the corrected submission release.
+Version 1.1.2 is the corrected submission release. It supersedes v1.1.1 for packaging only: v1.1.1 contained the same corrected analyses but retained a redundant legacy Supplementary Figure S6 file in archived engineering materials. Removing that unused file and normalizing release labels did not alter any scientific result, numerical value or interpretation.
 
 ## Inferential sensitivity
 
@@ -25,4 +25,5 @@ Version 1.1.1 is the corrected submission release.
 
 - Adds Supplementary Data Tables S25 and S26.
 - Synchronizes all public Stage 3 and Stage 4 source-table copies with the corrected reproduction project.
-- Records an exact-pixel check for Figures 1, 3, 5 and 6 and a source-data-verified author-layout exception for Figures 2 and 4.
+- Verifies all six author-reviewed submission figures against their 12 public source-data tables and records the permitted presentation-only layout differences separately from numerical checks.
+- Removes the unused legacy Supplementary Figure S6 from archived engineering materials; the submitted Supplementary Information contains five supplementary figures.

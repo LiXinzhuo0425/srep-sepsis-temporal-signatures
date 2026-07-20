@@ -21,7 +21,7 @@ PROJECT = RELEASE / "reproduction_project"
 SCRIPT = PROJECT / "stage6_submission/06_02_revision/08_code/stage6_figures.py"
 OUT = PROJECT / "stage6_submission/06_02_revision/06_figures/main_v1_1"
 PRODUCED_SOURCE = PROJECT / "stage6_submission/06_02_revision/07_source_data_v1_1"
-REFERENCE = RELEASE / "reference_outputs/main_figures_v1.1.1"
+REFERENCE = RELEASE / "reference_outputs/main_figures_v1.1.2"
 REFERENCE_SOURCE = RELEASE / "data/figure_source_data"
 EVIDENCE = RELEASE / "reproducibility_evidence"
 AUTHORED_LAYOUT = {
@@ -122,7 +122,7 @@ for png in sorted(OUT.glob("Figure_*.png")):
     })
 
 result = {
-    "release_id": "srep-sepsis-temporal-signatures-v1.1.1",
+    "release_id": "srep-sepsis-temporal-signatures-v1.1.2",
     "run_date": __import__("datetime").datetime.now().astimezone().isoformat(),
     "command_exit_code": completed.returncode,
     "stdout": completed.stdout,
@@ -152,7 +152,7 @@ result["status"] = (
 PROJECT.mkdir(parents=True, exist_ok=True)
 EVIDENCE.mkdir(parents=True, exist_ok=True)
 serialized = json.dumps(result, indent=2) + "\n"
-(PROJECT / "reproduction_result_v1.1.1.json").write_text(serialized, encoding="utf-8")
-(EVIDENCE / "reproduction_result_v1.1.1.json").write_text(serialized, encoding="utf-8")
+(PROJECT / "reproduction_result_v1.1.2.json").write_text(serialized, encoding="utf-8")
+(EVIDENCE / "reproduction_result_v1.1.2.json").write_text(serialized, encoding="utf-8")
 print(serialized)
 raise SystemExit(0 if result["status"] == "PASS" else 1)
