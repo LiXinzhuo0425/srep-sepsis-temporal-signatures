@@ -4,9 +4,9 @@ Decision date: 20 July 2026
 
 The six-cohort primary analysis remains frozen. Candidate records identified by the updated search were assessed against the same outward eligibility requirements: a human sepsis case population, recoverable patient-level repeated measurements, a source-defined baseline and T24 or T48 window, openly reviewer-accessible expression values, and complete coverage of the 74 component genes required by all eight formulas. No candidate was added retrospectively to the primary meta-analysis.
 
-## GSE106878 — INCLUDE_POST_FREEZE_CONFIRMATION
+## GSE106878 — INCLUDE_POST_FREEZE_DIRECTIONAL_REPLICATION
 
-GSE106878 provides paired pretreatment and 24-hour whole-blood microarray profiles for 47 patients with septic shock from the CORTICUS trial. The public normalized matrix and platform annotation recover all 74 genes after the locked historical-symbol map. All eight scores were independently reconstructed with the source-locked formulas in the v1.2.0 workflow. The overall T24 estimates, with 2,000 paired bootstrap replicates and seed 20260720, were:
+GSE106878 provides paired pretreatment and 24-hour whole-blood microarray profiles for 47 patients with septic shock from the CORTICUS trial. The public normalized matrix and platform annotation recover all 74 genes after the locked historical-symbol map. All eight scores were independently reconstructed with the source-locked formulas in the corrected workflow retained in v1.2.1. The overall T24 estimates, with 2,000 paired bootstrap replicates and seed 20260720, were:
 
 - SIG001: -0.972464 ΔZ (95% CI -1.138908 to -0.812034)
 - SIG002: -1.483551 (-1.765863 to -1.201001)
@@ -17,7 +17,7 @@ GSE106878 provides paired pretreatment and 24-hour whole-blood microarray profil
 - SIG033: +0.207774 (-0.032137 to +0.445220)
 - SIG034: +0.186964 (-0.033315 to +0.432814)
 
-The four main longitudinal directions were concordant in the placebo and hydrocortisone strata. Because this is a randomized treatment cohort identified after the primary freeze, these results are reported as a standalone post-freeze confirmation and are not pooled with the six frozen study families.
+The four main longitudinal directions were concordant in the placebo and hydrocortisone strata. Because this is a randomized treatment cohort identified after the primary freeze, these results are reported as a standalone post-freeze directional replication and are not pooled with the six frozen study families. Treatment-arm estimates are descriptive; no between-arm interaction was tested, and all strata use the signature-specific baseline standard deviation calculated from all 47 baseline samples.
 
 ## E-MEXP-3850 — EXCLUDE
 
@@ -33,4 +33,4 @@ The Ghana cohort has eligible longitudinal sampling at 0, 6, 24, 48 and 72 hours
 
 ## Change-control conclusion
 
-The updated search changes neither the membership nor the estimand of the frozen primary analysis. GSE106878 adds a clearly labelled, standalone confirmation analysis. The other three records have clinically relevant longitudinal designs but fail the public, reproducible expression-input requirement for this submission. No wet-laboratory experiment or new exploratory endpoint was introduced.
+The updated search changes neither the membership nor the estimand of the frozen primary analysis. GSE106878 adds a clearly labelled, standalone directional-replication analysis. The other three records have clinically relevant longitudinal designs but fail the public, reproducible expression-input requirement for this submission. No wet-laboratory experiment or new exploratory endpoint was introduced.

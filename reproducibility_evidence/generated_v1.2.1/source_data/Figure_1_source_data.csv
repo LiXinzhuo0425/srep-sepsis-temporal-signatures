@@ -1,0 +1,7 @@
+cohort,population,sample_type,platform,longitudinal_n,T24_n,T48_n,role
+GSE236713,Adult sepsis,PBL,Agilent,106,93,0,Prespecified non-pilot
+GSE57065,Adult septic shock,Whole blood,Affymetrix,28,28,26,Pilot
+GSE95233,Adult septic shock,Whole blood,Affymetrix,51,20,31,Prespecified non-pilot
+GSE54514,Adult sepsis,Whole blood,Illumina,31,31,28,Pilot
+GSE110487,Adult septic shock,Whole blood,RNA-seq,31,0,31,Prespecified non-pilot
+GSE8121,Pediatric septic shock,Whole blood,Affymetrix,30,0,30,Prespecified non-pilot

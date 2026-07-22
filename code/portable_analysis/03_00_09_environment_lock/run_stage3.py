@@ -767,16 +767,51 @@ def attrition_analysis(scores: pd.DataFrame, changes: pd.DataFrame) -> pd.DataFr
     return pd.DataFrame(rows)
 
 
-def scaling_analysis(scores: pd.DataFrame, changes: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+def scaling_analysis(
+    scores: pd.DataFrame,
+    changes: pd.DataFrame,
+    primary_effects: pd.DataFrame,
+    primary_meta: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Evaluate alternative scaling while using the primary result as the baseline control.
+
+    ``BASELINE_SD`` is the exact primary-analysis definition.  Its cohort and
+    meta-analysis rows are therefore copied from the already generated primary
+    outputs instead of being independently bootstrapped a second time.  This
+    makes the baseline row an exact internal positive control; only the
+    alternative scaling methods are re-estimated here.
+    """
     cohort_rows = []
     score_controls = scores[scores["disease_status"].isin(CONTROL_LABELS)]
     for (dataset, signature, window), group in changes.groupby(["dataset", "signature_id", "time_window"], sort=True):
-        methods = {"BASELINE_SD": group["delta_z"].to_numpy(float)}
+        primary = primary_effects[
+            (primary_effects["dataset"] == dataset)
+            & (primary_effects["signature_id"] == signature)
+            & (primary_effects["time_window"] == window)
+        ]
+        if len(primary) != 1:
+            raise RuntimeError(
+                f"Expected one primary effect for {dataset}/{signature}/{window}; found {len(primary)}"
+            )
+        primary = primary.iloc[0]
+        cohort_rows.append({
+            "record_type": "COHORT",
+            "dataset": dataset,
+            "signature_id": signature,
+            "time_window": window,
+            "scaling_method": "BASELINE_SD",
+            "paired_n": int(primary["paired_n"]),
+            "mean_change": float(primary["mean_delta_z"]),
+            "bootstrap_se": float(primary["bootstrap_se"]),
+            "ci95_lower": float(primary["ci95_lower"]),
+            "ci95_upper": float(primary["ci95_upper"]),
+        })
+        methods = {}
         if np.isfinite(group["delta_z_mad"]).all():
             methods["BASELINE_MAD"] = group["delta_z_mad"].to_numpy(float)
         controls = score_controls[(score_controls["dataset"] == dataset) & (score_controls["signature_id"] == signature)]["oriented_score"].to_numpy(float)
         if len(controls) >= 10 and np.std(controls, ddof=1) > 1e-8:
-            methods["HEALTHY_CONTROL_SD"] = group["raw_change"].to_numpy(float) / np.std(controls, ddof=1)
+            methods["AVAILABLE_COHORT_HEALTHY_CONTROL_SD"] = group["raw_change"].to_numpy(float) / np.std(controls, ddof=1)
         baseline_ref = group["baseline_score"].to_numpy(float)
         sorted_base = np.sort(baseline_ref)
         baseline_pct = np.searchsorted(sorted_base, group["baseline_score"].to_numpy(float), side="right") / len(sorted_base)
@@ -788,13 +823,34 @@ def scaling_analysis(scores: pd.DataFrame, changes: pd.DataFrame) -> tuple[pd.Da
         cohort_rows.append({"record_type": "COHORT", "dataset": dataset, "signature_id": signature, "time_window": window, "scaling_method": "RAW_SCORE", "paired_n": len(group), "mean_change": float(group["raw_change"].mean()), "bootstrap_se": math.nan, "ci95_lower": math.nan, "ci95_upper": math.nan})
     cohort_df = pd.DataFrame(cohort_rows)
     meta_rows = []
-    for (signature, window, method), group in cohort_df[(cohort_df["scaling_method"] != "RAW_SCORE") & np.isfinite(cohort_df["bootstrap_se"])].groupby(["signature_id", "time_window", "scaling_method"]):
+    for (signature, window, method), group in cohort_df[
+        (~cohort_df["scaling_method"].isin(["RAW_SCORE", "BASELINE_SD"]))
+        & np.isfinite(cohort_df["bootstrap_se"])
+    ].groupby(["signature_id", "time_window", "scaling_method"]):
         mask = analysis_set_mask(group.rename(columns={"signature_id": "signature_id"}), signature, "PRIMARY_INDEPENDENT")
         eligible = group[mask]
         if len(eligible) < 2:
             continue
         meta = reml_meta(eligible["mean_change"].to_numpy(), eligible["bootstrap_se"].to_numpy())
         meta_rows.append({"record_type": "META_PRIMARY_INDEPENDENT", "dataset": "POOLED", "signature_id": signature, "time_window": window, "scaling_method": method, "paired_n": int(eligible["paired_n"].sum()), "cohort_n": len(eligible), "mean_change": meta["mu"], "bootstrap_se": meta["se"], "ci95_lower": meta["lower"], "ci95_upper": meta["upper"], "tau2": meta["tau2"], "I2_percent": meta["I2"], "prediction_lower": meta["prediction_lower"], "prediction_upper": meta["prediction_upper"]})
+    for row in primary_meta[primary_meta["analysis_set"] == "PRIMARY_INDEPENDENT"].itertuples(index=False):
+        meta_rows.append({
+            "record_type": "META_PRIMARY_INDEPENDENT",
+            "dataset": "POOLED",
+            "signature_id": row.signature_id,
+            "time_window": row.time_window,
+            "scaling_method": "BASELINE_SD",
+            "paired_n": int(row.patient_n),
+            "cohort_n": int(row.cohort_n),
+            "mean_change": row.pooled_delta_z,
+            "bootstrap_se": row.pooled_se,
+            "ci95_lower": row.ci95_lower,
+            "ci95_upper": row.ci95_upper,
+            "tau2": row.tau2,
+            "I2_percent": row.I2_percent,
+            "prediction_lower": row.prediction_lower,
+            "prediction_upper": row.prediction_upper,
+        })
     return cohort_df, pd.DataFrame(meta_rows)
 
 
@@ -952,7 +1008,7 @@ def analyze(out_root: Path = ROOT) -> None:
     attrition.to_csv(SOURCE_DATA / "03_09_attrition_and_missingness_analysis.csv", index=False)
     heterogeneity = heterogeneity_analysis(effects)
     heterogeneity.to_csv(SOURCE_DATA / "03_10_platform_and_population_heterogeneity.csv", index=False)
-    scaling_cohort, scaling_meta = scaling_analysis(scores, changes)
+    scaling_cohort, scaling_meta = scaling_analysis(scores, changes, effects, meta)
     pd.concat([scaling_cohort, scaling_meta], ignore_index=True, sort=False).to_csv(SOURCE_DATA / "03_11_scaling_sensitivity_analysis.csv", index=False)
     extended = effects[effects["time_window"].isin(EXTENDED_WINDOWS)].copy()
     extended.to_csv(SOURCE_DATA / "03_12_extended_timepoint_analysis.csv", index=False)

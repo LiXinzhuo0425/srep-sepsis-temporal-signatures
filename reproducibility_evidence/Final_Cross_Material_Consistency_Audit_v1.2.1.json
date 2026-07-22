@@ -1,0 +1,747 @@
+{
+  "audit_id": "SCIREP-FINAL-CROSS-MATERIAL-v1.2.1-20260723",
+  "doi": "10.5281/zenodo.21500875",
+  "phase": "pre_manifest",
+  "manifest_verification": "DEFERRED_TO_POST_MANIFEST_READ_ONLY_PHASE",
+  "status": "PASS",
+  "checks": 59,
+  "passed": 59,
+  "failed": 0,
+  "failures": [],
+  "details": [
+    {
+      "name": "Version-specific DOI syntax",
+      "status": "PASS",
+      "observed": "10.5281/zenodo.21500875",
+      "expected": "10.5281/zenodo.<record>"
+    },
+    {
+      "name": "Main uses v1.2.1 version DOI",
+      "status": "PASS",
+      "observed": {
+        "text": 2,
+        "hyperlink": true
+      },
+      "expected": {
+        "text": ">=1",
+        "hyperlink": true
+      }
+    },
+    {
+      "name": "SI uses v1.2.1 version DOI",
+      "status": "PASS",
+      "observed": {
+        "text": 1,
+        "hyperlink": true
+      },
+      "expected": {
+        "text": ">=1",
+        "hyperlink": true
+      }
+    },
+    {
+      "name": "Main uses immutable GitHub release",
+      "status": "PASS",
+      "observed": {
+        "text": 1,
+        "hyperlink": true
+      },
+      "expected": {
+        "text": ">=1",
+        "hyperlink": true
+      }
+    },
+    {
+      "name": "Obsolete release absent from main: v1.1.2",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "Obsolete release absent from SI: v1.1.2",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "Obsolete release absent from main: v1.1.1",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "Obsolete release absent from SI: v1.1.1",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "Obsolete release absent from main: v1.1.0",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "Obsolete release absent from SI: v1.1.0",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "Obsolete release absent from main: v1.1_submission_candidate",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "Obsolete release absent from SI: v1.1_submission_candidate",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "Abstract identifies four diagnostic signatures",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Eight-signature conclusion is bounded",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Signature selection audit is reported",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "S20 and S21 are jointly cited",
+      "status": "PASS",
+      "observed": 2,
+      "expected": ">=2"
+    },
+    {
+      "name": "Robustness cross-reference covers all analyses",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Results robustness paragraph routes to S19b",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Stable q-star plain-text formula is present",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Main native Word equations preserved after q-star repair",
+      "status": "PASS",
+      "observed": 15,
+      "expected": 15
+    },
+    {
+      "name": "SI native Word equations preserved",
+      "status": "PASS",
+      "observed": 65,
+      "expected": 65
+    },
+    {
+      "name": "SI defines the three S10 analyses without implying masking",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "SI separates MAD scaling from S10 denominator",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "SI S2 uses primary-independent terminology",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "SI S3 avoids obsolete pseudo-classifications",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Main routes HPA summary and gene-level mapping",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "SI routes HPA mapping and provenance",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Selection audit sheet is explicitly discoverable",
+      "status": "PASS",
+      "observed": {
+        "main": 1,
+        "si": 2
+      },
+      "expected": {
+        "main": ">=1",
+        "si": ">=1"
+      }
+    },
+    {
+      "name": "Common reporting acronyms are defined",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Clean Word revision state: Scientific_Reports_Manuscript.docx",
+      "status": "PASS",
+      "observed": {
+        "comments_parts": [],
+        "tracked_insertions": 0,
+        "tracked_deletions": 0,
+        "hidden_runs": 0,
+        "track_revisions_setting": false
+      },
+      "expected": {
+        "comments_parts": [],
+        "tracked_insertions": 0,
+        "tracked_deletions": 0,
+        "hidden_runs": 0,
+        "track_revisions_setting": false
+      }
+    },
+    {
+      "name": "Clean Word revision state: Supplementary_Information.docx",
+      "status": "PASS",
+      "observed": {
+        "comments_parts": [],
+        "tracked_insertions": 0,
+        "tracked_deletions": 0,
+        "hidden_runs": 0,
+        "track_revisions_setting": false
+      },
+      "expected": {
+        "comments_parts": [],
+        "tracked_insertions": 0,
+        "tracked_deletions": 0,
+        "hidden_runs": 0,
+        "track_revisions_setting": false
+      }
+    },
+    {
+      "name": "Supplementary Data has 30 visible sheets",
+      "status": "PASS",
+      "observed": {
+        "count": 30,
+        "hidden": []
+      },
+      "expected": {
+        "count": 30,
+        "hidden": []
+      }
+    },
+    {
+      "name": "Submission and release workbooks are byte-identical",
+      "status": "PASS",
+      "observed": {
+        "submission": "c8a4d5da2bc30664fba90e357cf2a34a4a41f9b3633a4c27f5057f8366752481",
+        "release": "c8a4d5da2bc30664fba90e357cf2a34a4a41f9b3633a4c27f5057f8366752481"
+      },
+      "expected": "equal"
+    },
+    {
+      "name": "S2 frozen selection registry is complete",
+      "status": "PASS",
+      "observed": {
+        "rows": 34,
+        "grades": {
+          "A2": 10,
+          "B": 19,
+          "X": 5
+        }
+      },
+      "expected": {
+        "rows": 34,
+        "grades": {
+          "A2": 10,
+          "B": 19,
+          "X": 5
+        }
+      }
+    },
+    {
+      "name": "S2 selects eight protein-coding A2 and excludes two lncRNA A2",
+      "status": "PASS",
+      "observed": {
+        "Included: protein-coding A2 formula reconstructed without refitting in all six primary cohorts": 8,
+        "Not evaluated: incomplete, conflict-affected, or refitting-dependent rule (see grade reason)": 19,
+        "Not evaluated: critical computation inaccessible, proprietary, or irreconcilable (see grade reason)": 5,
+        "Not evaluated: lncRNA A2 panel with unresolved cross-platform feature mapping": 2
+      },
+      "expected": {
+        "included_protein_coding_A2": 8,
+        "excluded_lncRNA_A2": 2
+      }
+    },
+    {
+      "name": "S10 denominator is three for all 16 signature-window rows",
+      "status": "PASS",
+      "observed": {
+        "rows": 16,
+        "denominators": [
+          3
+        ]
+      },
+      "expected": {
+        "rows": 16,
+        "denominators": [
+          3
+        ]
+      }
+    },
+    {
+      "name": "S10 note names the exact three analyses without implying masking",
+      "status": "PASS",
+      "observed": "Table note: The three class-agreement sensitivity analyses were all-cohort, strict-never-used, and prespecified non-pilot-only. The non-pilot-only set corresponds to the frozen internal code label BLINDED_VALIDATION_ONLY and does not imply formal masking. The numerator counts analyses whose stability class matched the primary-independent class. The MAD-scaling estimate was assessed separately for material sign reversal and was not included in this denominator.",
+      "expected": "exact three analyses plus internal-label clarification and separate MAD check"
+    },
+    {
+      "name": "S14b contains complete 74-gene HPA mapping",
+      "status": "PASS",
+      "observed": {
+        "rows": 74,
+        "mapping": {
+          "EXACT": 72,
+          "HISTORICAL_SYMBOL_RESOLVED": 2
+        },
+        "lineages": {
+          "BROAD_OR_UNRESOLVED": 31,
+          "GRANULOCYTE": 23,
+          "MONOCYTE": 8,
+          "T_LYMPHOCYTE": 5,
+          "DENDRITIC": 5,
+          "B_LYMPHOCYTE": 2
+        }
+      },
+      "expected": {
+        "rows": 74,
+        "mapping": {
+          "EXACT": 72,
+          "HISTORICAL_SYMBOL_RESOLVED": 2
+        },
+        "broad_or_unresolved": 31
+      }
+    },
+    {
+      "name": "S14b records HPA v25.1 provenance and SHA-256",
+      "status": "PASS",
+      "observed": {
+        "versions": [
+          "25.1"
+        ],
+        "hashes": [
+          "ad401f8519ecdee5b67b0ad3bf28175d402d1ea0ad6c542b90fcab2bee39b470"
+        ]
+      },
+      "expected": {
+        "versions": [
+          "25.1"
+        ],
+        "hashes": [
+          "ad401f8519ecdee5b67b0ad3bf28175d402d1ea0ad6c542b90fcab2bee39b470"
+        ]
+      }
+    },
+    {
+      "name": "S15 pathway field uses lowest-FDR name",
+      "status": "PASS",
+      "observed": [
+        "T48_lowest_FDR_primary_pathway",
+        "T48_pathway_rho",
+        "T48_pathway_ci",
+        "T48_pathway_prediction_interval",
+        "T48_pathway_FDR",
+        "T48_pathway_passes_FDR",
+        "ssGSEA_same_pathway_rho",
+        "ssGSEA_same_pathway_FDR"
+      ],
+      "expected": [
+        "T48_lowest_FDR_primary_pathway"
+      ]
+    },
+    {
+      "name": "S15 selected pathways equal deterministic lowest-FDR S13 rows",
+      "status": "PASS",
+      "observed": {
+        "SIG001": "HALLMARK_APOPTOSIS",
+        "SIG002": "HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+        "SIG003": "HALLMARK_ALLOGRAFT_REJECTION",
+        "SIG004": "HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+        "SIG022": "HALLMARK_ALLOGRAFT_REJECTION",
+        "SIG023": "HALLMARK_INFLAMMATORY_RESPONSE",
+        "SIG033": "HALLMARK_APOPTOSIS",
+        "SIG034": "HALLMARK_OXIDATIVE_PHOSPHORYLATION"
+      },
+      "expected": {
+        "SIG001": "HALLMARK_APOPTOSIS",
+        "SIG002": "HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+        "SIG003": "HALLMARK_ALLOGRAFT_REJECTION",
+        "SIG004": "HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+        "SIG022": "HALLMARK_ALLOGRAFT_REJECTION",
+        "SIG023": "HALLMARK_INFLAMMATORY_RESPONSE",
+        "SIG033": "HALLMARK_APOPTOSIS",
+        "SIG034": "HALLMARK_OXIDATIVE_PHOSPHORYLATION"
+      }
+    },
+    {
+      "name": "S16 contains all HPA verification records",
+      "status": "PASS",
+      "observed": [
+        "HASH_HPA_PROTEINATLAS",
+        "HPA_MAPPING_DELIVERABLE",
+        "HPA_SOURCE_FILE",
+        "HPA_SOURCE_URL",
+        "HPA_SOURCE_VERSION"
+      ],
+      "expected": [
+        "HASH_HPA_PROTEINATLAS",
+        "HPA_MAPPING_DELIVERABLE",
+        "HPA_SOURCE_FILE",
+        "HPA_SOURCE_URL",
+        "HPA_SOURCE_VERSION"
+      ]
+    },
+    {
+      "name": "S19b contains complete leave-one-out and strata records",
+      "status": "PASS",
+      "observed": {
+        "rows": 452,
+        "families": {
+          "LEAVE_ONE_COHORT_OUT": 220,
+          "PLATFORM_OR_POPULATION_STRATUM": 232
+        },
+        "required_strata_present": [
+          [
+            "age_group",
+            "ADULT"
+          ],
+          [
+            "platform",
+            "AFFYMETRIX"
+          ],
+          [
+            "sample_group",
+            "WHOLE_BLOOD"
+          ]
+        ]
+      },
+      "expected": {
+        "rows": 452,
+        "families": {
+          "PLATFORM_OR_POPULATION_STRATUM": 232,
+          "LEAVE_ONE_COHORT_OUT": 220
+        },
+        "required_strata": [
+          [
+            "age_group",
+            "ADULT"
+          ],
+          [
+            "sample_group",
+            "WHOLE_BLOOD"
+          ],
+          [
+            "platform",
+            "AFFYMETRIX"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "S20 contains six independent primary cohorts",
+      "status": "PASS",
+      "observed": [
+        "GSE236713",
+        "GSE57065",
+        "GSE95233",
+        "GSE54514",
+        "GSE110487",
+        "GSE8121"
+      ],
+      "expected": 6
+    },
+    {
+      "name": "S21 contains related excluded records",
+      "status": "PASS",
+      "observed": [
+        "GSE131411",
+        "GSE13904"
+      ],
+      "expected": [
+        "GSE13904",
+        "GSE131411"
+      ]
+    },
+    {
+      "name": "Supplementary Data contains frozen values only",
+      "status": "PASS",
+      "observed": {
+        "formulas": [],
+        "errors": [],
+        "comments": [],
+        "external_links": 0
+      },
+      "expected": {
+        "formulas": [],
+        "errors": [],
+        "comments": [],
+        "external_links": 0
+      }
+    },
+    {
+      "name": "Clean reproduction status",
+      "status": "PASS",
+      "observed": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "name": "Figure checks use exact intended status classes",
+      "status": "PASS",
+      "observed": {
+        "Figure_1_study_design": "PASS_AUTHORED_LAYOUT",
+        "Figure_2_pooled_longitudinal_change": "PASS",
+        "Figure_3_cross_cohort_transportability": "PASS",
+        "Figure_4_gene_contribution_patterns": "PASS_AUTHORED_LAYOUT",
+        "Figure_5_gene_pathway_cell_integration": "PASS_AUTHORED_LAYOUT",
+        "Figure_6_temporal_measurement_context": "PASS_AUTHORED_LAYOUT"
+      },
+      "expected": {
+        "Figure_1_study_design": "PASS_AUTHORED_LAYOUT",
+        "Figure_2_pooled_longitudinal_change": "PASS",
+        "Figure_3_cross_cohort_transportability": "PASS",
+        "Figure_4_gene_contribution_patterns": "PASS_AUTHORED_LAYOUT",
+        "Figure_5_gene_pathway_cell_integration": "PASS_AUTHORED_LAYOUT",
+        "Figure_6_temporal_measurement_context": "PASS_AUTHORED_LAYOUT"
+      }
+    },
+    {
+      "name": "Twelve source-data files are byte-identical",
+      "status": "PASS",
+      "observed": {
+        "PASS": 12
+      },
+      "expected": {
+        "PASS": 12
+      }
+    },
+    {
+      "name": "Supplementary Figure S1 source data are byte-identical",
+      "status": "PASS",
+      "observed": {
+        "source_file": "Supplementary_Figure_1_source_data.csv",
+        "reference_exists": true,
+        "produced_exists": true,
+        "reference_sha256": "2381792fc0cab626f4781f4ab55817dc85c2f3fba46b95f097c58107388091f9",
+        "produced_sha256": "2381792fc0cab626f4781f4ab55817dc85c2f3fba46b95f097c58107388091f9",
+        "status": "PASS"
+      },
+      "expected": {
+        "source_file": "Supplementary_Figure_1_source_data.csv",
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "Supplementary Figure S1 reproduces in the recorded render environment",
+      "status": "PASS",
+      "observed": {
+        "figure": "Supplementary_Figure_1_pilot_vs_validation",
+        "reference_exists": true,
+        "produced_exists": true,
+        "reference_pixel_sha256": "97ee6eec14e3b71469e53d5c56ae525c18f0a0cce21b436872e061cca4cf3069",
+        "produced_pixel_sha256": "97ee6eec14e3b71469e53d5c56ae525c18f0a0cce21b436872e061cca4cf3069",
+        "reference_decode_error": null,
+        "produced_decode_error": null,
+        "svg_exists": true,
+        "editable_svg_text": true,
+        "svg_decode_error": null,
+        "pdf_exists": true,
+        "valid_pdf_header": true,
+        "source_data_status": "PASS",
+        "status": "PASS"
+      },
+      "expected": {
+        "figure": "Supplementary_Figure_1_pilot_vs_validation",
+        "status": "PASS",
+        "source_data_status": "PASS"
+      }
+    },
+    {
+      "name": "Six generated figure format checks pass",
+      "status": "PASS",
+      "observed": {
+        "PASS": 6
+      },
+      "expected": {
+        "PASS": 6
+      }
+    },
+    {
+      "name": "Six submission TIFFs have expected geometry and encoding",
+      "status": "PASS",
+      "observed": {
+        "Figure_1_study_design.tiff": {
+          "size": [
+            4323,
+            2433
+          ],
+          "mode": "RGB",
+          "dpi": [
+            600,
+            600
+          ],
+          "compression": "tiff_lzw",
+          "frames": 1
+        },
+        "Figure_2_pooled_longitudinal_change.tiff": {
+          "size": [
+            4291,
+            2870
+          ],
+          "mode": "RGB",
+          "dpi": [
+            600,
+            600
+          ],
+          "compression": "tiff_lzw",
+          "frames": 1
+        },
+        "Figure_3_cross_cohort_transportability.tiff": {
+          "size": [
+            4704,
+            4054
+          ],
+          "mode": "RGB",
+          "dpi": [
+            600,
+            600
+          ],
+          "compression": "tiff_lzw",
+          "frames": 1
+        },
+        "Figure_4_gene_contribution_patterns.tiff": {
+          "size": [
+            4323,
+            2432
+          ],
+          "mode": "RGB",
+          "dpi": [
+            600,
+            600
+          ],
+          "compression": "tiff_lzw",
+          "frames": 1
+        },
+        "Figure_5_gene_pathway_cell_integration.tiff": {
+          "size": [
+            4323,
+            5186
+          ],
+          "mode": "RGB",
+          "dpi": [
+            600,
+            600
+          ],
+          "compression": "tiff_lzw",
+          "frames": 1
+        },
+        "Figure_6_temporal_measurement_context.tiff": {
+          "size": [
+            4323,
+            2433
+          ],
+          "mode": "RGB",
+          "dpi": [
+            600,
+            600
+          ],
+          "compression": "tiff_lzw",
+          "frames": 1
+        }
+      },
+      "expected": "expected size; RGB; 600 dpi; LZW; one frame"
+    },
+    {
+      "name": "Current release files use final names",
+      "status": "PASS",
+      "observed": [
+        "code/analyse_gse106878_directional_replication.py",
+        "reproducibility_evidence/S26_GSE106878_directional_replication_effects.csv",
+        "reproducibility_evidence/stage2_signature_selection_audit/README.md",
+        "tables/Signature_Implementation_Registry_v1.2.1.xlsx"
+      ],
+      "expected": [
+        "code/analyse_gse106878_directional_replication.py",
+        "reproducibility_evidence/S26_GSE106878_directional_replication_effects.csv",
+        "reproducibility_evidence/stage2_signature_selection_audit/README.md",
+        "tables/Signature_Implementation_Registry_v1.2.1.xlsx"
+      ]
+    },
+    {
+      "name": "Release metadata contains version DOI",
+      "status": "PASS",
+      "observed": {
+        "doi_count": 5,
+        "pending_count": 0
+      },
+      "expected": {
+        "doi_count": ">=1",
+        "pending_release_placeholders": 0
+      }
+    },
+    {
+      "name": "No obsolete outward-facing terms in release text",
+      "status": "PASS",
+      "observed": [],
+      "expected": []
+    },
+    {
+      "name": "No private absolute paths in release text",
+      "status": "PASS",
+      "observed": [],
+      "expected": []
+    },
+    {
+      "name": "Release tree has no packaging debris or symlinks",
+      "status": "PASS",
+      "observed": {
+        "debris": [],
+        "symlinks": []
+      },
+      "expected": {
+        "debris": [],
+        "symlinks": []
+      }
+    },
+    {
+      "name": "All release files are publicly readable",
+      "status": "PASS",
+      "observed": [],
+      "expected": []
+    }
+  ]
+}

@@ -53,23 +53,22 @@ def integrated_matrix() -> None:
     coupling = coupling[(coupling["analysis_set"] == "INDEPENDENT_ONLY") & (coupling["tier"] == "PRESET_PRIMARY")]
     coupling_ssgsea = pd.read_csv(SOURCE / "04_12_meta_signature_pathway_coupling_ssgsea.csv")
     coupling_ssgsea = coupling_ssgsea[(coupling_ssgsea["analysis_set"] == "INDEPENDENT_ONLY") & (coupling_ssgsea["tier"] == "PRESET_PRIMARY")]
-    interpretation = {
-        "SIG001": "COHORT_DEPENDENT_DRIFT",
-        "SIG002": "CONSISTENT_TEMPORAL_DRIFT",
-        "SIG003": "CONSISTENT_TEMPORAL_DRIFT_SINGLE_GENE_DOMINANT",
-        "SIG004": "CONSISTENT_TEMPORAL_DRIFT_MULTIGENE",
-        "SIG022": "COHORT_DEPENDENT_DRIFT",
-        "SIG023": "RELATIVE_SCORE_STABILITY_WITH_SINGLE_GENE_DOMINANCE",
-        "SIG033": "INTERNAL_CANCELLATION_AND_COHORT_DEPENDENT_STABILITY",
-        "SIG034": "TIME_STABLE_WITH_INTERPRETABLE_CANCELLATION_AND_LIMITED_E2_ANCHOR",
-    }
     rows = []
     for sig in SIGNATURES:
         s1 = stage3[(stage3["signature_id"] == sig) & (stage3["time_window"] == "T1")].iloc[0]
         s2 = stage3[(stage3["signature_id"] == sig) & (stage3["time_window"] == "T2")].iloc[0]
         a = arch[arch["signature_id"] == sig].iloc[0]
         c = cell[(cell["signature_id"] == sig) & (cell["time_window"] == "T2")].iloc[0]
-        q = coupling[(coupling["signature_id"] == sig) & (coupling["time_window"] == "T2")].sort_values("fdr_within_analysis_window_tier")
+        # The integrated table reports the primary pathway with the lowest FDR.
+        # Resolve exact FDR ties lexicographically by pathway so reruns are
+        # deterministic without changing the prespecified selection criterion.
+        q = coupling[
+            (coupling["signature_id"] == sig) & (coupling["time_window"] == "T2")
+        ].sort_values(
+            ["fdr_within_analysis_window_tier", "pathway"],
+            ascending=[True, True],
+            kind="mergesort",
+        )
         best = q.iloc[0]
         q2 = coupling_ssgsea[(coupling_ssgsea["signature_id"] == sig) & (coupling_ssgsea["time_window"] == "T2") & (coupling_ssgsea["pathway"] == best["pathway"])]
         sens = q2.iloc[0] if len(q2) else None
@@ -83,7 +82,6 @@ def integrated_matrix() -> None:
             "T48_ci": f"{s2['ci95_lower']:.3f} to {s2['ci95_upper']:.3f}",
             "T48_prediction_interval": f"{s2['prediction_lower']:.3f} to {s2['prediction_upper']:.3f}",
             "T48_I2_percent": s2["I2_percent"],
-            "T48_evidence_grade": s2["evidence_grade"],
             "drift_architecture": a["drift_architecture"],
             "leading_gene": a["leading_gene"],
             "leading_gene_pooled_absolute_share": a["leading_gene_pooled_absolute_share"],
@@ -91,7 +89,7 @@ def integrated_matrix() -> None:
             "median_cancellation_index": a["median_patient_cancellation_index"],
             "leading_potential_cell_source": c["leading_cell_source"],
             "cell_source_absolute_share": c["leading_cell_source_absolute_share"],
-            "T48_strongest_primary_pathway": best["pathway"],
+            "T48_lowest_FDR_primary_pathway": best["pathway"],
             "T48_pathway_rho": best["pooled_spearman_rho"],
             "T48_pathway_ci": f"{best['ci_low']:.3f} to {best['ci_high']:.3f}",
             "T48_pathway_prediction_interval": f"{best['prediction_low']:.3f} to {best['prediction_high']:.3f}",
@@ -100,8 +98,6 @@ def integrated_matrix() -> None:
             "ssGSEA_same_pathway_rho": sens["pooled_spearman_rho"] if sens is not None else np.nan,
             "ssGSEA_same_pathway_FDR": sens["fdr_within_analysis_window_tier"] if sens is not None else np.nan,
             "formal_clinical_anchor": "NOT_RUN_BY_PREDEFINED_GATE",
-            "development_overlap_robustness": "ASSESSED_IN_STAGE3_AND_GENE_CONTRIBUTION_META",
-            "final_interpretation_level": interpretation[sig],
             "claim_boundary": "Mathematical contribution and association only; no causal, monitoring, prognostic or treatment claim.",
         })
     pd.DataFrame(rows).to_csv(SOURCE / "04_20_integrated_signature_interpretation_matrix.csv", index=False)

@@ -1083,7 +1083,7 @@ L 508.1775 297.70225
      </g>
     </g>
     <g id="text_29">
-     <text style="font: 6.5px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="451.387812" y="262.817562" transform="rotate(-0 451.387812 262.817562)">All</text>
+     <text style="font: 6.5px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="451.387812" y="262.817562" transform="rotate(-0 451.387812 262.817562)">All cohorts</text>
     </g>
     <g id="PathCollection_66">
      <g>
@@ -1091,7 +1091,7 @@ L 508.1775 297.70225
      </g>
     </g>
     <g id="text_30">
-     <text style="font: 6.5px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="451.387812" y="272.095297" transform="rotate(-0 451.387812 272.095297)">Overlap-excluded</text>
+     <text style="font: 6.5px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="451.387812" y="272.095297" transform="rotate(-0 451.387812 272.095297)">Primary independent</text>
     </g>
     <g id="PathCollection_67">
      <g>
@@ -1112,7 +1112,7 @@ L 508.1775 297.70225
    </g>
   </g>
   <g id="text_33">
-   <text style="font: 700 11px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="8.7855" y="15.073594" transform="rotate(-0 8.7855 15.073594)">Robustness to overlap exclusions and scaling</text>
+   <text style="font: 700 11px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="8.7855" y="15.073594" transform="rotate(-0 8.7855 15.073594)">Robustness across analysis sets and scaling</text>
   </g>
  </g>
  <defs>

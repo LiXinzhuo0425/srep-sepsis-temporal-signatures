@@ -216,7 +216,7 @@ def figure5_robustness():
     meta = pd.read_csv(SOURCE / "03_05_signature_level_meta_analysis.csv")
     scaling = pd.read_csv(SOURCE / "03_11_scaling_sensitivity_analysis.csv")
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 4.6), sharey=True)
-    sets = [("ALL_COHORTS", "All", COLORS["all"]), ("PRIMARY_INDEPENDENT", "Overlap-excluded", COLORS["primary"]), ("STRICT_NEVER_USED", "Strict never-used", COLORS["strict"])]
+    sets = [("ALL_COHORTS", "All cohorts", COLORS["all"]), ("PRIMARY_INDEPENDENT", "Primary independent", COLORS["primary"]), ("STRICT_NEVER_USED", "Strict never-used", COLORS["strict"])]
     offsets = [-0.18, -0.06, 0.06, 0.18]
     for ax, window in zip(axes, ["T1", "T2"]):
         y = np.arange(len(SIGNATURES))[::-1]
@@ -239,7 +239,7 @@ def figure5_robustness():
         ax.set_title("T24" if window == "T1" else "T48", fontweight="bold", fontsize=9)
     axes[1].legend(loc="lower right", fontsize=6.5)
     panel_label(axes[0], "a"); panel_label(axes[1], "b")
-    fig.suptitle("Robustness to overlap exclusions and scaling", x=0.02, ha="left", fontsize=11, fontweight="bold")
+    fig.suptitle("Robustness across analysis sets and scaling", x=0.02, ha="left", fontsize=11, fontweight="bold")
     fig.tight_layout(rect=(0, 0, 1, 0.94))
     save(fig, MAIN / "Figure_5_robustness")
 

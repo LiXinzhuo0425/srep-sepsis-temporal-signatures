@@ -101,14 +101,19 @@ ARCH_STYLE = {
     "OVERALL_LOW_CHANGE_STABILITY": {"marker": "v", "linestyle": (0, (1, 1))},
 }
 STABILITY_COLORS = {
-    "STABLE": "#2F6B8A",
-    "BOUNDARY_SENSITIVE": "#8A8A8A",
-    "UNSTABLE": "#D9822B",
+    "LABEL_STABLE": "#2F6B8A",
+    "THRESHOLD_SENSITIVE_ONE_SCENARIO": "#8A8A8A",
+    "THRESHOLD_SENSITIVE_MULTIPLE_SCENARIOS": "#D9822B",
 }
 STABILITY_LABELS = {
-    "STABLE": "Stable across perturbations",
-    "BOUNDARY_SENSITIVE": "Changed in one scenario",
-    "UNSTABLE": "Changed in ≥2 scenarios",
+    "LABEL_STABLE": "Label stable across perturbations",
+    "THRESHOLD_SENSITIVE_ONE_SCENARIO": "Label changed in one scenario",
+    "THRESHOLD_SENSITIVE_MULTIPLE_SCENARIOS": "Label changed in ≥2 scenarios",
+}
+STABILITY_STATUS_PUBLIC = {
+    "STABLE": "LABEL_STABLE",
+    "BOUNDARY_SENSITIVE": "THRESHOLD_SENSITIVE_ONE_SCENARIO",
+    "UNSTABLE": "THRESHOLD_SENSITIVE_MULTIPLE_SCENARIOS",
 }
 SHORT_PATH = {
     "HALLMARK_INFLAMMATORY_RESPONSE": "Inflammatory",
@@ -143,8 +148,8 @@ plt.rcParams.update({
 })
 
 
-def panel(ax, letter: str) -> None:
-    ax.text(-0.10, 1.04, letter, transform=ax.transAxes, ha="left", va="bottom", fontsize=11, fontweight="bold")
+def panel(ax, letter: str, x: float = -0.10) -> None:
+    ax.text(x, 1.04, letter, transform=ax.transAxes, ha="left", va="bottom", fontsize=11, fontweight="bold")
 
 
 def export(fig: plt.Figure, stem: str) -> None:
@@ -365,7 +370,15 @@ def figure4() -> None:
     fig.suptitle("Gene-contribution patterns at T48", x=0.02, y=0.985, ha="left", fontsize=12, fontweight="bold")
     export(fig, "Figure_4_gene_contribution_patterns")
     gene.to_csv(SOURCE_OUT / "Figure_4A_source_data.csv", index=False)
-    arch.to_csv(SOURCE_OUT / "Figure_4B_source_data.csv", index=False)
+    # Keep internal Stage 3 variable names in the analysis objects, but export
+    # reader-facing score labels that match Figure_Source_Data.xlsx.
+    arch.rename(columns={
+        "stage3_pooled_delta_z": "score_pooled_delta_z",
+        "stage3_I2_percent": "score_I2_percent",
+        "stage3_prediction_lower": "score_prediction_lower",
+        "stage3_prediction_upper": "score_prediction_upper",
+        "stage3_direction_consistency": "score_direction_consistency",
+    }).to_csv(SOURCE_OUT / "Figure_4B_source_data.csv", index=False)
 
 
 def coupling_matrix(coupling: pd.DataFrame) -> tuple[np.ndarray, np.ndarray]:
@@ -460,44 +473,92 @@ def figure5() -> None:
 
 def figure6() -> None:
     meta = pd.read_csv(S3 / "03_05_signature_level_meta_analysis.csv")
-    m = meta[(meta.analysis_set == "PRIMARY_INDEPENDENT") & meta.time_window.isin(["T1", "T2"])].pivot(index="signature_id", columns="time_window", values="pooled_delta_z").reindex(SIGS)
-    arch = pd.read_csv(S4 / "04_08_signature_drift_architecture.csv").set_index("signature_id").reindex(SIGS)
-    stability = pd.read_csv(S3 / "10_02_classification_stability_matrix.csv").set_index("signature_id").reindex(SIGS)
-    fig = plt.figure(figsize=(7.2, 5.85))
-    gs = fig.add_gridspec(1, 2, width_ratios=[1.30, 1.08], wspace=0.38)
-    ax = fig.add_subplot(gs[0]); panel(ax, "a")
-    x = np.array([0, 1, 2])
-    signature_colors = dict(zip(SIGS, mpl.colormaps["tab10"](np.linspace(0, 0.9, len(SIGS)))))
-    marker_cycle = dict(zip(SIGS, ["o", "s", "^", "D", "v", "P", "X", "h"]))
-    for sig in SIGS:
-        vals = [0, m.loc[sig, "T1"], m.loc[sig, "T2"]]
-        color = signature_colors[sig]
-        status = stability.loc[sig, "sensitivity_status"]
-        linestyle = {"STABLE": "-", "BOUNDARY_SENSITIVE": ":", "UNSTABLE": "--"}[status]
-        ax.plot(x, vals, marker=marker_cycle[sig], linestyle=linestyle,
-                lw=1.7, ms=4.3, color=color, alpha=0.95)
-        label_dy = {"SIG001": 10, "SIG002": 2, "SIG003": -2, "SIG004": 2,
-                    "SIG022": 2, "SIG023": 8, "SIG033": -8, "SIG034": -2}[sig]
-        ax.annotate(sig, (2, vals[-1]), xytext=(5, label_dy), textcoords="offset points", va="center", fontsize=6.4, color=color, fontweight="bold")
-    ax.axhline(0, color="#777777", lw=0.8, ls="--")
-    ax.set_xticks(x); ax.set_xticklabels(["Baseline", "T24", "T48"])
-    ax.set_ylabel("Pooled within-patient change (ΔZ)")
-    ax.set_xlim(-0.08, 2.35)
-    ax.set_ylim(-1.02, 0.78)
-    ax.set_title("Pooled trajectories depend on sampling window", loc="left", fontweight="bold")
-    handles = [
-        mpl.lines.Line2D([], [], color="#444444", linestyle="-", lw=1.6,
-                         label="Label stable across threshold perturbations"),
-        mpl.lines.Line2D([], [], color="#444444", linestyle=":", lw=1.6,
-                         label="Label changed in one scenario"),
-        mpl.lines.Line2D([], [], color="#444444", linestyle="--", lw=1.6,
-                         label="Label changed in ≥2 scenarios"),
-    ]
-    ax.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.47, -0.13),
-              ncol=1, fontsize=5.9, columnspacing=1.0, handlelength=2.2)
+    fig6_source = meta[
+        (meta.analysis_set == "PRIMARY_INDEPENDENT")
+        & meta.time_window.isin(["T1", "T2"])
+        & meta.signature_id.isin(SIGS)
+    ].copy()
+    expected = {(sig, window) for sig in SIGS for window in ("T1", "T2")}
+    observed = set(zip(fig6_source.signature_id, fig6_source.time_window))
+    if observed != expected or len(fig6_source) != 16:
+        raise ValueError("Figure 6 requires exactly 16 primary-independent signature-window rows")
 
-    ax2 = fig.add_subplot(gs[1]); ax2.set_axis_off(); panel(ax2, "b")
-    ax2.text(0.02, 0.98, "Elements of measurement context", transform=ax2.transAxes,
+    fig = plt.figure(figsize=(7.2, 5.55))
+    gs = fig.add_gridspec(1, 2, width_ratios=[1.72, 1.00], wspace=0.34)
+    subgrid = gs[0].subgridspec(4, 2, hspace=0.50, wspace=0.22)
+    window_styles = {
+        "T1": {"color": COL["blue"], "marker": "o", "mfc": "white", "label": "T24"},
+        "T2": {"color": "#C65D3A", "marker": "s", "mfc": "#C65D3A", "label": "T48"},
+    }
+    atlas_axes = []
+    for col, signatures in enumerate((SIGS[:4], SIGS[4:])):
+        for row, sig in enumerate(signatures):
+            ax = fig.add_subplot(subgrid[row, col])
+            atlas_axes.append(ax)
+            ax.set_facecolor("white")
+            ax.axvspan(-0.045, 0.045, color="#F3F6F7", lw=0, zorder=-2)
+            ax.axvline(0, color="#7B858C", lw=0.9, ls=(0, (3, 2)), zorder=0)
+            ax.axhline(0.5, color="#E8ECEE", lw=0.55, zorder=0)
+            for window, y in (("T1", 0.68), ("T2", 0.28)):
+                record = fig6_source[
+                    (fig6_source.signature_id == sig) & (fig6_source.time_window == window)
+                ].iloc[0]
+                x = float(record.pooled_delta_z)
+                lo = float(record.ci95_lower)
+                hi = float(record.ci95_upper)
+                style = window_styles[window]
+                ax.errorbar(
+                    [x], [y], xerr=np.array([[x - lo], [hi - x]]), fmt=style["marker"],
+                    color=style["color"], ecolor=style["color"], markerfacecolor=style["mfc"],
+                    markeredgecolor=style["color"], markeredgewidth=0.9, markersize=4.2,
+                    elinewidth=1.15, capsize=1.8, capthick=0.9, linestyle="none", zorder=3,
+                )
+            ax.set_xlim(-1.55, 1.25)
+            ax.set_ylim(0.02, 0.96)
+            ax.set_yticks([0.68, 0.28])
+            ax.set_yticklabels(["T24", "T48"], fontsize=5.4, color="#6C7C86")
+            ax.tick_params(axis="y", length=0, pad=2)
+            ax.set_xticks([-1.5, -0.5, 0.5, 1.0])
+            if row == 3:
+                ax.tick_params(axis="x", labelsize=5.4, length=2.5, pad=2)
+            else:
+                ax.set_xticklabels([])
+                ax.tick_params(axis="x", length=0)
+            ax.set_title(f"{sig}  {NAMES[sig]}", loc="left", pad=4.0,
+                         fontsize=6.0, fontweight="bold", color=COL["ink"])
+            for spine in ("left", "right", "top"):
+                ax.spines[spine].set_visible(False)
+            ax.spines["bottom"].set_color("#B8C2C8")
+            ax.spines["bottom"].set_linewidth(0.7)
+
+    atlas_axes[0].text(0.0, 1.30, "DIAGNOSTIC SIGNATURES",
+                       transform=atlas_axes[0].transAxes, ha="left", va="bottom",
+                       fontsize=5.7, color=COL["blue"], fontweight="bold")
+    atlas_axes[4].text(0.0, 1.30, "OTHER INTENDED USES",
+                       transform=atlas_axes[4].transAxes, ha="left", va="bottom",
+                       fontsize=5.7, color=COL["blue"], fontweight="bold")
+    for anchor in (atlas_axes[0], atlas_axes[4]):
+        anchor.plot([0, 1], [1.245, 1.245], transform=anchor.transAxes,
+                    color="#C8D5DB", lw=0.65, clip_on=False)
+
+    fig.text(0.022, 0.965, "a", ha="left", va="top", fontsize=11, fontweight="bold")
+    fig.text(0.063, 0.965, "Landmark atlas", ha="left", va="top",
+             fontsize=9.4, fontweight="bold", color=COL["ink"])
+    fig.text(0.063, 0.937,
+             "Primary-independent pooled change (95% CI); T24 and T48 are separate paired populations",
+             ha="left", va="top", fontsize=6.0, color="#6C7C86")
+    fig.text(0.327, 0.064, "Pooled within-patient change (ΔZ)", ha="center", va="center", fontsize=7.2)
+    handles = [
+        mpl.lines.Line2D([], [], color=COL["blue"], marker="o", markerfacecolor="white",
+                         markeredgecolor=COL["blue"], lw=1.15, markersize=4.2, label="T24"),
+        mpl.lines.Line2D([], [], color="#C65D3A", marker="s", markerfacecolor="#C65D3A",
+                         markeredgecolor="#C65D3A", lw=1.15, markersize=4.2, label="T48"),
+    ]
+    fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.424, 0.974), ncol=2,
+               fontsize=6.2, handlelength=1.5, handletextpad=0.35, columnspacing=0.9)
+
+    ax2 = fig.add_subplot(gs[1]); ax2.set_axis_off(); panel(ax2, "b", x=-0.08)
+    ax2.text(0.02, 0.98, "Measurement context", transform=ax2.transAxes,
              va="top", fontweight="bold", fontsize=9.0)
 
     cards = [
@@ -522,8 +583,8 @@ def figure6() -> None:
                                  transform=ax2.transAxes))
     ax2.text(0.50, 0.505, "Longitudinal interpretation", transform=ax2.transAxes,
              ha="center", va="center", fontweight="bold", fontsize=7.3, color=COL["ink"])
-    ax2.text(0.50, 0.458, "Score trajectory + gene-contribution pattern", transform=ax2.transAxes,
-             ha="center", va="center", fontsize=5.7, color=COL["ink"])
+    ax2.text(0.50, 0.458, "Landmark change +\ngene-contribution pattern", transform=ax2.transAxes,
+             ha="center", va="center", fontsize=5.5, color=COL["ink"], linespacing=1.10)
     for start, end in [((0.23, 0.70), (0.36, 0.57)), ((0.76, 0.70), (0.64, 0.57)),
                        ((0.23, 0.33), (0.36, 0.43)), ((0.76, 0.33), (0.64, 0.43))]:
         ax2.annotate("", xy=end, xytext=start, xycoords=ax2.transAxes,
@@ -536,17 +597,21 @@ def figure6() -> None:
     ax2.text(0.045, 0.104, "Interpretive scope", transform=ax2.transAxes,
              va="center", fontweight="bold", fontsize=6.8)
     ax2.text(0.045, 0.050,
-             "Repeated-measurement behavior only. Clinical monitoring, prognosis, treatment\nresponse, and causal mechanisms remain unestablished.",
-             transform=ax2.transAxes, va="center", fontsize=5.8, linespacing=1.14)
+             "Repeated-measurement behavior only. Clinical monitoring, prognosis,\n"
+             "treatment response, and causal mechanisms remain unestablished.",
+             transform=ax2.transAxes, va="center", fontsize=5.55, linespacing=1.12)
 
-    fig.suptitle("Measurement context of longitudinal transcriptomic scores",
-                 x=0.02, y=0.985, ha="left", fontsize=12, fontweight="bold")
-    fig.subplots_adjust(bottom=0.18, top=0.91)
+    fig.subplots_adjust(left=0.08, right=0.985, bottom=0.12, top=0.855)
     export(fig, "Figure_6_temporal_measurement_context")
-    fig6_source = (m.reset_index()
-                   .merge(arch[["drift_architecture"]].reset_index(), on="signature_id", how="left")
-                   .merge(stability[["sensitivity_status"]].reset_index(), on="signature_id", how="left"))
-    fig6_source["architecture_label"] = fig6_source["drift_architecture"].map(ARCH_SHORT)
+    fig6_source["display_window"] = fig6_source.time_window.map({"T1": "T24", "T2": "T48"})
+    fig6_source["signature_name"] = fig6_source.signature_id.map(NAMES)
+    fig6_source = fig6_source[[
+        "signature_id", "signature_name", "display_window", "time_window",
+        "cohort_n", "patient_n", "pooled_delta_z", "ci95_lower", "ci95_upper",
+        "prediction_lower", "prediction_upper", "I2_percent",
+    ]].copy()
+    fig6_source["signature_order"] = fig6_source.signature_id.map({sig: i for i, sig in enumerate(SIGS)})
+    fig6_source = fig6_source.sort_values(["signature_order", "time_window"]).drop(columns="signature_order")
     fig6_source.to_csv(SOURCE_OUT / "Figure_6_source_data.csv", index=False)
 
 
@@ -567,20 +632,44 @@ def supplementary_figure_1() -> None:
     limits = [float(np.nanmin(data[["pilot", "validation"]].to_numpy())),
               float(np.nanmax(data[["pilot", "validation"]].to_numpy()))]
     margin = max(0.2, (limits[1] - limits[0]) * 0.12); limits = [limits[0] - margin, limits[1] + margin]
+    # Fixed point offsets keep direct labels legible without moving any data
+    # marks.  Point units make the layout deterministic across vector and
+    # raster exports, and the fine leaders preserve unambiguous point-label
+    # correspondence in the crowded T24 panel.
+    label_offsets = {
+        "T1": {
+            "SIG001": (8, -8), "SIG002": (-8, 10), "SIG003": (-8, 8),
+            "SIG004": (8, 10), "SIG022": (8, -10), "SIG023": (8, 22),
+            "SIG033": (-8, -10), "SIG034": (-8, 22),
+        },
+        "T2": {
+            "SIG001": (8, -2), "SIG002": (8, -2), "SIG003": (8, -2),
+            "SIG004": (8, 0), "SIG022": (8, -2), "SIG023": (8, 8),
+            "SIG033": (8, 8), "SIG034": (8, -10),
+        },
+    }
     for ax, window in zip(axes, ["T1", "T2"]):
         sub = data[data.time_window == window]
         ax.plot(limits, limits, color="#A8A8A8", ls="--", lw=0.9)
         ax.axhline(0, color="#E0E0E0", lw=0.6); ax.axvline(0, color="#E0E0E0", lw=0.6)
         ax.scatter(sub.pilot, sub.validation, color=COL["red"], s=30)
-        ordered = sub.sort_values("validation").copy(); label_y = ordered.validation.to_numpy(float).copy()
-        for idx in range(1, len(label_y)): label_y[idx] = max(label_y[idx], label_y[idx - 1] + 0.095)
-        overflow = label_y[-1] - (limits[1] - 0.04)
-        if overflow > 0: label_y -= overflow
-        for idx in range(len(label_y) - 2, -1, -1): label_y[idx] = min(label_y[idx], label_y[idx + 1] - 0.095)
-        for (_, row), text_y in zip(ordered.iterrows(), label_y):
-            ax.annotate(row.signature_id, xy=(row.pilot, row.validation), xytext=(row.pilot + 0.07, text_y),
-                        fontsize=6.4, ha="left", va="center",
-                        arrowprops=dict(arrowstyle="-", color="#7F8C99", lw=0.45, shrinkA=1.5, shrinkB=2.5))
+        for _, row in sub.sort_values("signature_id").iterrows():
+            dx, dy = label_offsets[window][row.signature_id]
+            ax.annotate(
+                row.signature_id,
+                xy=(row.pilot, row.validation),
+                xytext=(dx, dy),
+                textcoords="offset points",
+                fontsize=6.4,
+                color=COL["ink"],
+                ha="left" if dx >= 0 else "right",
+                va="center",
+                annotation_clip=False,
+                arrowprops=dict(
+                    arrowstyle="-", color="#8B99A5", lw=0.45,
+                    shrinkA=1.5, shrinkB=3.0,
+                ),
+            )
         ax.set_xlim(limits); ax.set_ylim(limits); ax.set_aspect("equal", adjustable="box")
         ax.set_xlabel("Pilot pooled ΔZ"); ax.set_ylabel("Prespecified non-pilot pooled ΔZ")
         ax.set_title("T24" if window == "T1" else "T48", fontweight="bold", fontsize=9)
@@ -607,11 +696,20 @@ def main() -> None:
     for number, function in functions.items():
         if number in selected:
             function()
+    supplementary_selected = {
+        value.strip()
+        for value in os.environ.get("STAGE6_SUPPLEMENTARY_SELECTION", "1").split(",")
+        if value.strip()
+    }
+    if "1" in supplementary_selected:
+        supplementary_figure_1()
     manifest = {
+        "package_release": "v1.2.1",
         "freeze_id": "SCIREP-ANALYSIS-v1.2.0-20260722",
         "scientific_source": "Frozen Stage 3 results and corrected v1.2.0 Stage 4 architecture summaries using signature-specific primary-independent cohort sets",
         "figures": [p.name for p in sorted(OUT.glob("Figure_*.*"))],
         "source_files": [p.name for p in sorted(SOURCE_OUT.glob("*"))],
+        "supplementary_figures": [p.name for p in sorted(SUPP_OUT.glob("Supplementary_Figure_1_*"))],
         "backend": "Python/matplotlib only",
         "export": {"SVG": "editable text", "PDF": "fonttype 42", "TIFF": "600 dpi LZW", "PNG": "300 dpi preview"},
     }

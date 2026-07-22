@@ -1,0 +1,186 @@
+{
+  "scope": "Author layout replacement for Figures 1, 4, 5, and 6; frozen numerical source retained.",
+  "numeric_token_checks": {
+    "Figure_1": {
+      "pass": true,
+      "current_only": {},
+      "new_only": {}
+    },
+    "Figure_4": {
+      "pass": true,
+      "current_only": {},
+      "new_only": {}
+    },
+    "Figure_5": {
+      "pass": true,
+      "current_only": {},
+      "new_only": {}
+    },
+    "Figure_6": {
+      "pass": true,
+      "current_only": {},
+      "new_only": {}
+    }
+  },
+  "figure1_wording_check": {
+    "exact_gene_decomposition_present": true,
+    "locked_baseline_present": true,
+    "pass": true
+  },
+  "figure4_SIG001_label_check": {
+    "expected_top2_SIG001_T48": [
+      "CEACAM1",
+      "ZDHHC19"
+    ],
+    "ZDHHC19_present": true,
+    "RPGRIP1_absent": true,
+    "pass": true
+  },
+  "figure6_marker_position_checks": [
+    {
+      "signature": "SIG001",
+      "source_window": "T1",
+      "display_window": "T24",
+      "expected": -0.3785770092566108,
+      "observed_from_render": -0.3797,
+      "absolute_error": 0.0011,
+      "pass": true
+    },
+    {
+      "signature": "SIG002",
+      "source_window": "T1",
+      "display_window": "T24",
+      "expected": -0.0708756857062915,
+      "observed_from_render": -0.0732,
+      "absolute_error": 0.0023,
+      "pass": true
+    },
+    {
+      "signature": "SIG003",
+      "source_window": "T1",
+      "display_window": "T24",
+      "expected": -0.1730886001174061,
+      "observed_from_render": -0.1757,
+      "absolute_error": 0.0026,
+      "pass": true
+    },
+    {
+      "signature": "SIG004",
+      "source_window": "T1",
+      "display_window": "T24",
+      "expected": 0.0269634308019545,
+      "observed_from_render": 0.0122,
+      "absolute_error": 0.0148,
+      "pass": true
+    },
+    {
+      "signature": "SIG022",
+      "source_window": "T1",
+      "display_window": "T24",
+      "expected": -0.0568397988316207,
+      "observed_from_render": -0.0486,
+      "absolute_error": 0.0082,
+      "pass": true
+    },
+    {
+      "signature": "SIG023",
+      "source_window": "T1",
+      "display_window": "T24",
+      "expected": 0.0468090265631662,
+      "observed_from_render": 0.0392,
+      "absolute_error": 0.0076,
+      "pass": true
+    },
+    {
+      "signature": "SIG033",
+      "source_window": "T1",
+      "display_window": "T24",
+      "expected": -0.1622184933545452,
+      "observed_from_render": -0.1642,
+      "absolute_error": 0.002,
+      "pass": true
+    },
+    {
+      "signature": "SIG034",
+      "source_window": "T1",
+      "display_window": "T24",
+      "expected": 0.0301771452166587,
+      "observed_from_render": 0.0243,
+      "absolute_error": 0.0059,
+      "pass": true
+    },
+    {
+      "signature": "SIG001",
+      "source_window": "T2",
+      "display_window": "T48",
+      "expected": -0.8550776766665187,
+      "observed_from_render": -0.8507,
+      "absolute_error": 0.0044,
+      "pass": true
+    },
+    {
+      "signature": "SIG002",
+      "source_window": "T2",
+      "display_window": "T48",
+      "expected": -0.6885895701194436,
+      "observed_from_render": -0.6847,
+      "absolute_error": 0.0039,
+      "pass": true
+    },
+    {
+      "signature": "SIG003",
+      "source_window": "T2",
+      "display_window": "T48",
+      "expected": -0.8986462115572165,
+      "observed_from_render": -0.9067,
+      "absolute_error": 0.008,
+      "pass": true
+    },
+    {
+      "signature": "SIG004",
+      "source_window": "T2",
+      "display_window": "T48",
+      "expected": 0.6972451968898257,
+      "observed_from_render": 0.6799,
+      "absolute_error": 0.0173,
+      "pass": true
+    },
+    {
+      "signature": "SIG022",
+      "source_window": "T2",
+      "display_window": "T48",
+      "expected": 0.1390210567724545,
+      "observed_from_render": 0.1505,
+      "absolute_error": 0.0115,
+      "pass": true
+    },
+    {
+      "signature": "SIG023",
+      "source_window": "T2",
+      "display_window": "T48",
+      "expected": -0.0526105270909897,
+      "observed_from_render": -0.0442,
+      "absolute_error": 0.0084,
+      "pass": true
+    },
+    {
+      "signature": "SIG033",
+      "source_window": "T2",
+      "display_window": "T48",
+      "expected": -0.1197454988812969,
+      "observed_from_render": -0.1238,
+      "absolute_error": 0.0041,
+      "pass": true
+    },
+    {
+      "signature": "SIG034",
+      "source_window": "T2",
+      "display_window": "T48",
+      "expected": -0.0701561181295709,
+      "observed_from_render": -0.0709,
+      "absolute_error": 0.0008,
+      "pass": true
+    }
+  ],
+  "overall_pass": true
+}

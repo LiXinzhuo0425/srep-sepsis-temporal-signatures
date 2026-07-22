@@ -10,7 +10,7 @@ Version 1.1.2 is the corrected submission release. It supersedes v1.1.1 for pack
 
 ## Dataset change control
 
-- Includes GSE106878 as a standalone 47-patient post-freeze T24 confirmation analysis without adding it to the frozen six-cohort primary synthesis.
+- Includes GSE106878 as a standalone 47-patient post-freeze T24 directional-replication analysis without adding it to the frozen six-cohort primary synthesis.
 - Excludes E-MEXP-3850, PRJEB111201 and phs003608 after documented public-input eligibility review.
 
 ## Methods and presentation

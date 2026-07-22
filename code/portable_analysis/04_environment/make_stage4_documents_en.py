@@ -159,7 +159,7 @@ def pathway_plan() -> None:
     bullets(doc, [
         "Pathway changes are synthesized with REML random effects and Hartung–Knapp intervals; tau-squared, I-squared and 95% prediction intervals are reported.",
         "Signature–pathway coupling uses within-cohort Spearman correlation. Fisher-z estimates are meta-analysed with the same random-effects framework.",
-        "All-cohort and development-overlap-excluded results are shown. Leave-one-dataset-out results diagnose influential cohorts.",
+        "All-cohort and primary-independent (development-overlap-excluded) results are shown. Leave-one-dataset-out results diagnose influential cohorts.",
     ])
     doc.add_heading("Multiplicity and reporting", level=1)
     table(doc, ["Analysis family", "Rule"], [

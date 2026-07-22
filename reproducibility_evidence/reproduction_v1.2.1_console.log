@@ -1,0 +1,230 @@
+{
+  "release_id": "srep-sepsis-temporal-signatures-v1.2.1",
+  "run_date": "2026-07-23T01:32:52.158472+08:00",
+  "command_exit_code": 0,
+  "stdout": "",
+  "stderr": "The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.\n",
+  "environment": {
+    "python": "3.12.13 (main, Mar  3 2026, 15:35:03) [Clang 21.1.4 ]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "recorded_render_environment": true,
+    "packages": {
+      "matplotlib": "3.11.0",
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "pillow": "12.2.0",
+      "pyarrow": "25.0.0"
+    }
+  },
+  "comparison_rule": "All 12 CSV source-data files are compared byte for byte and TIFF/SVG/PDF properties are checked independently. Exact decoded RGB pixels are required for Figures 2 and 3 in the recorded macOS arm64/Arial environment. On other rendering environments, a clearly labelled PASS_PLATFORM_RENDER_VARIATION requires exact source-data equality and valid exports. Figures 1, 4, 5, and 6 retain author-reviewed presentation-only layouts under PASS_AUTHORED_LAYOUT.",
+  "figure_checks": [
+    {
+      "figure": "Figure_1_study_design",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_file_sha256": "8d1803ebaba6e5302b0b6f1dc0d95966c337b8fe95eb09f3f02799e9f5b8ad5a",
+      "produced_file_sha256": "2ec04365615c1826c457fc08c80898ca78f814e3a6dedb9936b0f72ae135f849",
+      "reference_pixel_sha256": "41a05a5ed7d4ef56563bedbe505dc6c06104e129726dbda42c83e694191c323c",
+      "produced_pixel_sha256": "a81c326f610177b49f16684f099031a6cf2e4c6913108ad30bc844fce369b768",
+      "status": "PASS_AUTHORED_LAYOUT",
+      "note": "The submission reference retains author-reviewed spacing and label placement. Scientific values are verified independently through the exact source-data comparison."
+    },
+    {
+      "figure": "Figure_2_pooled_longitudinal_change",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_file_sha256": "c722c36165eb94c98c883877bd1e0e2fcc8472b3aaa26b8c73af2c5c5bfb9146",
+      "produced_file_sha256": "c722c36165eb94c98c883877bd1e0e2fcc8472b3aaa26b8c73af2c5c5bfb9146",
+      "reference_pixel_sha256": "71eec6a304d929f8adfa81a6d78c6553021fb015b5ed7f0a720540022cb18b56",
+      "produced_pixel_sha256": "71eec6a304d929f8adfa81a6d78c6553021fb015b5ed7f0a720540022cb18b56",
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_3_cross_cohort_transportability",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_file_sha256": "3769f1f5b19863496e21e88d35c7c5a2353da78a06857e27dbbc0107abd8ca11",
+      "produced_file_sha256": "3769f1f5b19863496e21e88d35c7c5a2353da78a06857e27dbbc0107abd8ca11",
+      "reference_pixel_sha256": "f322ff29ae3306834be2d5cc86ce3f932d48eec9f546f4120c1d90571fe6caf0",
+      "produced_pixel_sha256": "f322ff29ae3306834be2d5cc86ce3f932d48eec9f546f4120c1d90571fe6caf0",
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_4_gene_contribution_patterns",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_file_sha256": "c8fa6c12be5751165b6b5852827ea3da7ee7bbb170995c7c88d574eac008af77",
+      "produced_file_sha256": "117375e71c80a37fbb92ceb7f2dd2f13d5245ead80c843b502a641d403a5ec71",
+      "reference_pixel_sha256": "eb538d4ae50e55a547a8ef305f8cd3d2591db69a0bb99edccd7d6c6250a49ee9",
+      "produced_pixel_sha256": "0201f8b7e282f944e7b5ec20669a1e8f9de98dea486397aeca9a2d526780f32f",
+      "status": "PASS_AUTHORED_LAYOUT",
+      "note": "The submission reference retains author-reviewed spacing and label placement. Scientific values are verified independently through the exact source-data comparison."
+    },
+    {
+      "figure": "Figure_5_gene_pathway_cell_integration",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_file_sha256": "93fec1bf641f6b9becbb13f5150a117167615d3bc0feebcb34b3826729888db1",
+      "produced_file_sha256": "5163aa08eb80ae292b41cee0e79d0c980b90b2ee91a2e74da2d261ac74cee404",
+      "reference_pixel_sha256": "664567a622a03aeaac9264952a1c9545ac8a3ba47475d7fca88a6ddceae69119",
+      "produced_pixel_sha256": "0a8e09def1b31c6d98ba3e341936bfd094c6f2f358fde030b9b5114e0005cb9a",
+      "status": "PASS_AUTHORED_LAYOUT",
+      "note": "The submission reference retains author-reviewed spacing and label placement. Scientific values are verified independently through the exact source-data comparison."
+    },
+    {
+      "figure": "Figure_6_temporal_measurement_context",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_file_sha256": "7fb3446b2ebbc76c4295ec0b9323b61a895d62d1a1f5c616fbac647ee6606ad5",
+      "produced_file_sha256": "6aa0b1c319cb049ecaf116e0fbe4182f25f55ebc2f85804dff96859f0a9e6258",
+      "reference_pixel_sha256": "a20f4c3eef6cbc48a29709e6e097f078a2dd411e8e54ae16118f9e95dc21ec6a",
+      "produced_pixel_sha256": "ebb55444df78ff3e3e3828a2378d82a1aad696276262b96fcf5127eacc1ff625",
+      "status": "PASS_AUTHORED_LAYOUT",
+      "note": "The submission reference retains author-reviewed spacing and label placement. Scientific values are verified independently through the exact source-data comparison."
+    }
+  ],
+  "source_checks": [
+    {
+      "source_file": "Figure_1_source_data.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "4a461e5019352e0db9b7ba4176861f3a4ad3438e7e91bb224c40967f3547d77b",
+      "produced_sha256": "4a461e5019352e0db9b7ba4176861f3a4ad3438e7e91bb224c40967f3547d77b",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_2_source_data.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "db839195729f60251f858bdd3d4f7b9ab1b586b32b8560c4a03fac2ebc80f364",
+      "produced_sha256": "db839195729f60251f858bdd3d4f7b9ab1b586b32b8560c4a03fac2ebc80f364",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_3A_B_source_data.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "1fa0a3f2d09bb7fc2e9921ff668ceafbf40423d7b6eaa4d705e4408ee87351d2",
+      "produced_sha256": "1fa0a3f2d09bb7fc2e9921ff668ceafbf40423d7b6eaa4d705e4408ee87351d2",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_3C_source_data.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "7cc5381a8cf5142b54faf0521c607ec526f5061ac034804faf337dedf6f54035",
+      "produced_sha256": "7cc5381a8cf5142b54faf0521c607ec526f5061ac034804faf337dedf6f54035",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_4A_source_data.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "8a1b807ad5efeedb1e46ea058a0d3c370edda6a2b1c2bb09324e28e79998e33a",
+      "produced_sha256": "8a1b807ad5efeedb1e46ea058a0d3c370edda6a2b1c2bb09324e28e79998e33a",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_4B_source_data.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "a322243f018c34459c0904eee6175527a38521193e8283f5e3a241b57dd1d820",
+      "produced_sha256": "a322243f018c34459c0904eee6175527a38521193e8283f5e3a241b57dd1d820",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_5_04_07_gene_contribution_meta_analysis.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "1c2be12f9447212b5c54ee28cf4285da241876c8d713b71c1718690f3c3a7bdd",
+      "produced_sha256": "1c2be12f9447212b5c54ee28cf4285da241876c8d713b71c1718690f3c3a7bdd",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_5_04_12_meta_signature_pathway_coupling.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "0480a3c4ba8315421e05d8d1fc32aa01cec2311c2e04231a2c488d6a4f294a45",
+      "produced_sha256": "0480a3c4ba8315421e05d8d1fc32aa01cec2311c2e04231a2c488d6a4f294a45",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_5_04_12_meta_signature_pathway_coupling_ssgsea.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "a454d17e413b1798b49e4c6fb25b5e298096534563fc24d758bb46a7a6b7b7c9",
+      "produced_sha256": "a454d17e413b1798b49e4c6fb25b5e298096534563fc24d758bb46a7a6b7b7c9",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_5_04_13_cell_source_annotation.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "a9075edcc415ef4ef637d9a4a33b6f832b87c1dd3903711df92bd5ace725505e",
+      "produced_sha256": "a9075edcc415ef4ef637d9a4a33b6f832b87c1dd3903711df92bd5ace725505e",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_5_04_14_gene_contribution_cell_source_map.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "2a609f9df7ca7dcf1b44af3d00b55103f73a34456e6f9c0c8123a435ee8b60c9",
+      "produced_sha256": "2a609f9df7ca7dcf1b44af3d00b55103f73a34456e6f9c0c8123a435ee8b60c9",
+      "status": "PASS"
+    },
+    {
+      "source_file": "Figure_6_source_data.csv",
+      "reference_exists": true,
+      "produced_exists": true,
+      "reference_sha256": "01ce988de0ed747842dd3ece22974758db69c118013dd9eaa4e6a6157fbd2eec",
+      "produced_sha256": "01ce988de0ed747842dd3ece22974758db69c118013dd9eaa4e6a6157fbd2eec",
+      "status": "PASS"
+    }
+  ],
+  "format_checks": [
+    {
+      "figure": "Figure_1_study_design",
+      "rgb_600dpi_lzw_tiff": true,
+      "editable_svg_text": true,
+      "pdf_exists": true,
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_2_pooled_longitudinal_change",
+      "rgb_600dpi_lzw_tiff": true,
+      "editable_svg_text": true,
+      "pdf_exists": true,
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_3_cross_cohort_transportability",
+      "rgb_600dpi_lzw_tiff": true,
+      "editable_svg_text": true,
+      "pdf_exists": true,
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_4_gene_contribution_patterns",
+      "rgb_600dpi_lzw_tiff": true,
+      "editable_svg_text": true,
+      "pdf_exists": true,
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_5_gene_pathway_cell_integration",
+      "rgb_600dpi_lzw_tiff": true,
+      "editable_svg_text": true,
+      "pdf_exists": true,
+      "status": "PASS"
+    },
+    {
+      "figure": "Figure_6_temporal_measurement_context",
+      "rgb_600dpi_lzw_tiff": true,
+      "editable_svg_text": true,
+      "pdf_exists": true,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}
+

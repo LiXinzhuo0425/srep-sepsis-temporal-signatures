@@ -34,15 +34,35 @@ for path in sorted(ROOT.rglob("*")):
     )
 
 manifest = {
-    "release_id": "srep-sepsis-temporal-signatures-v1.2.0",
+    "release_id": "srep-sepsis-temporal-signatures-v1.2.1",
     "doi": VERSION_DOI,
     "concept_doi": "10.5281/zenodo.21415496",
-    "publication_status": "public immutable release" if VERSION_DOI else "public GitHub release prepared; version DOI pending",
+    "publication_status": "public immutable release" if VERSION_DOI else "local release prepared; GitHub tag and version DOI pending",
     "repository": "https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures",
     "files": files,
 }
 (ROOT / "release_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+
+# The JSON manifest cannot hash itself, but the outer SHA-256 manifest can and
+# should protect it.  Generate that hash only after the JSON file is final.
+manifest_entries = [
+    *files,
+    {
+        "path": "release_manifest.json",
+        "size_bytes": (ROOT / "release_manifest.json").stat().st_size,
+        "sha256": digest(ROOT / "release_manifest.json"),
+    },
+]
 (ROOT / "MANIFEST_SHA256.txt").write_text(
-    "".join(f"{item['sha256']}  {item['path']}\n" for item in files), encoding="utf-8"
+    "".join(f"{item['sha256']}  {item['path']}\n" for item in manifest_entries), encoding="utf-8"
 )
-print(json.dumps({"release_id": manifest["release_id"], "files": len(files)}, indent=2))
+print(
+    json.dumps(
+        {
+            "release_id": manifest["release_id"],
+            "content_files": len(files),
+            "sha256_manifest_entries": len(manifest_entries),
+        },
+        indent=2,
+    )
+)

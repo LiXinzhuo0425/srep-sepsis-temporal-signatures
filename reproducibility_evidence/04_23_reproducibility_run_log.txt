@@ -5,7 +5,7 @@ Python: 3.9.6 (default, Dec  2 2025, 07:27:58)
 Random seed: 20260716
 Force-rebuild pathway caches: true
 
-[2026-07-16 16:40:10] START Exact gene decomposition: /Library/Developer/CommandLineTools/usr/bin/python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_decomposition.py
+[2026-07-16 16:40:10] START Exact gene decomposition: python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_decomposition.py
 {
   "gene_level_rows": 32604,
   "patient_signature_window_records": 3344,
@@ -19,7 +19,7 @@ Force-rebuild pathway caches: true
 
 END Exact gene decomposition: exit=0; elapsed=79.1s
 
-[2026-07-16 16:41:29] START Full-transcriptome pathway analysis: /Library/Developer/CommandLineTools/usr/bin/python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_pathway.py
+[2026-07-16 16:41:29] START Full-transcriptome pathway analysis: python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_pathway.py
 {
   "gate": {
     "independent_cohorts_with_full_transcriptome": 6,
@@ -48,7 +48,7 @@ END Exact gene decomposition: exit=0; elapsed=79.1s
 
 END Full-transcriptome pathway analysis: exit=0; elapsed=240.3s
 
-[2026-07-16 16:45:30] START Cell-source annotation: /Library/Developer/CommandLineTools/usr/bin/python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_cell_annotation.py
+[2026-07-16 16:45:30] START Cell-source annotation: python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_cell_annotation.py
 {
   "signature_gene_count": 74,
   "exact_or_alias_mapped": 74,
@@ -61,7 +61,7 @@ END Full-transcriptome pathway analysis: exit=0; elapsed=240.3s
 
 END Cell-source annotation: exit=0; elapsed=0.7s
 
-[2026-07-16 16:45:30] START Clinical-anchor gate audit: /Library/Developer/CommandLineTools/usr/bin/python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_clinical_audit.py
+[2026-07-16 16:45:30] START Clinical-anchor gate audit: python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_clinical_audit.py
 {
   "formal_gate": "FAIL",
   "formal_module_decision": "STOP_FORMAL_CLINICAL_ANCHORING",
@@ -77,7 +77,7 @@ END Cell-source annotation: exit=0; elapsed=0.7s
 
 END Clinical-anchor gate audit: exit=0; elapsed=0.3s
 
-[2026-07-16 16:45:31] START Integrated interpretation: /Library/Developer/CommandLineTools/usr/bin/python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_integrate.py
+[2026-07-16 16:45:31] START Integrated interpretation: python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_integrate.py
 {
   "evidence_rows": 5,
   "context_rows": 6,
@@ -87,7 +87,7 @@ END Clinical-anchor gate audit: exit=0; elapsed=0.3s
 
 END Integrated interpretation: exit=0; elapsed=0.3s
 
-[2026-07-16 16:45:31] START Publication figure generation: /Library/Developer/CommandLineTools/usr/bin/python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_figures.py
+[2026-07-16 16:45:31] START Publication figure generation: python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/stage4_figures.py
 {
   "main_figures": 4,
   "standalone_figures": 2,
@@ -96,7 +96,7 @@ END Integrated interpretation: exit=0; elapsed=0.3s
 
 END Publication figure generation: exit=0; elapsed=7.9s
 
-[2026-07-16 16:45:39] START Independent verification: /Library/Developer/CommandLineTools/usr/bin/python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/verify_stage4.py
+[2026-07-16 16:45:39] START Independent verification: python3 ${SEPSIS_SIGNATURE_ANALYSIS_ROOT}/04_environment/verify_stage4.py
 {
   "verification_date": "2026-07-16",
   "checks": 38,

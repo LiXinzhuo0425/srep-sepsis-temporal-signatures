@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="521.747pt" height="345.816047pt" viewBox="0 0 521.747 345.816047" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-22T14:42:05.595223</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 345.816047 
+L 521.747 345.816047 
+L 521.747 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 70.8336 307.80288 
+L 460.5408 307.80288 
+L 460.5408 274.53312 
+L 70.8336 274.53312 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #f8fafc"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 207.432 300.36096 
+L 283.7664 300.36096 
+Q 295.8192 300.36096 295.8192 299.04768 
+L 295.8192 283.28832 
+Q 295.8192 281.97504 283.7664 281.97504 
+L 207.432 281.97504 
+Q 195.3792 281.97504 195.3792 283.28832 
+L 195.3792 299.04768 
+Q 195.3792 300.36096 207.432 300.36096 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #b64342"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 70.8336 264.02688 
+L 460.5408 264.02688 
+L 460.5408 230.75712 
+L 70.8336 230.75712 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #eef3f5"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 207.432 256.58496 
+L 283.7664 256.58496 
+Q 295.8192 256.58496 295.8192 255.27168 
+L 295.8192 239.51232 
+Q 295.8192 238.19904 283.7664 238.19904 
+L 207.432 238.19904 
+Q 195.3792 238.19904 195.3792 239.51232 
+L 195.3792 255.27168 
+Q 195.3792 256.58496 207.432 256.58496 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #e9a6a1"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 70.8336 220.25088 
+L 460.5408 220.25088 
+L 460.5408 186.98112 
+L 70.8336 186.98112 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #f8fafc"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 207.432 212.80896 
+L 283.7664 212.80896 
+Q 295.8192 212.80896 295.8192 211.49568 
+L 295.8192 195.73632 
+Q 295.8192 194.42304 283.7664 194.42304 
+L 207.432 194.42304 
+Q 195.3792 194.42304 195.3792 195.73632 
+L 195.3792 211.49568 
+Q 195.3792 212.80896 207.432 212.80896 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #f3c677"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 70.8336 176.47488 
+L 460.5408 176.47488 
+L 460.5408 143.20512 
+L 70.8336 143.20512 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #eef3f5"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 207.432 169.03296 
+L 283.7664 169.03296 
+Q 295.8192 169.03296 295.8192 167.71968 
+L 295.8192 151.96032 
+Q 295.8192 150.64704 283.7664 150.64704 
+L 207.432 150.64704 
+Q 195.3792 150.64704 195.3792 151.96032 
+L 195.3792 167.71968 
+Q 195.3792 169.03296 207.432 169.03296 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #aadca9"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 70.8336 132.69888 
+L 460.5408 132.69888 
+L 460.5408 99.42912 
+L 70.8336 99.42912 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #f8fafc"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 207.432 125.25696 
+L 283.7664 125.25696 
+Q 295.8192 125.25696 295.8192 123.94368 
+L 295.8192 108.18432 
+Q 295.8192 106.87104 283.7664 106.87104 
+L 207.432 106.87104 
+Q 195.3792 106.87104 195.3792 108.18432 
+L 195.3792 123.94368 
+Q 195.3792 125.25696 207.432 125.25696 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #8bcf8b"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 70.8336 88.92288 
+L 460.5408 88.92288 
+L 460.5408 55.65312 
+L 70.8336 55.65312 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #eef3f5"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 207.432 81.48096 
+L 283.7664 81.48096 
+Q 295.8192 81.48096 295.8192 80.16768 
+L 295.8192 64.40832 
+Q 295.8192 63.09504 283.7664 63.09504 
+L 207.432 63.09504 
+Q 195.3792 63.09504 195.3792 64.40832 
+L 195.3792 80.16768 
+Q 195.3792 81.48096 207.432 81.48096 
+z
+" clip-path="url(#p9c07fe49ef)" style="fill: #d9d9d9"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="74.8512" y="42.150006" transform="rotate(-0 74.8512 42.150006)">Use scenario</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="203.4144" y="42.150006" transform="rotate(-0 203.4144 42.150006)">Current evidence</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="307.872" y="42.14985" transform="rotate(-0 307.872 42.14985)">Boundary for interpretation</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="74.8512" y="293.031281" transform="rotate(-0 74.8512 293.031281)">Clinical decision support</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="245.5992" y="292.850129" transform="rotate(-0 245.5992 292.850129)">Not supported</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #374151" x="307.872" y="292.824187" transform="rotate(-0 307.872 292.824187)">Current evidence cannot guide treatment.</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="74.8512" y="249.255211" transform="rotate(-0 74.8512 249.255211)">Prognostic assessment</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #272727" x="245.5992" y="249.074065" transform="rotate(-0 245.5992 249.074065)">Exploratory only</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #374151" x="307.872" y="249.048187" transform="rotate(-0 307.872 249.048187)">No mortality association is interpreted as prognostic validation.</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="74.8512" y="205.479211" transform="rotate(-0 74.8512 205.479211)">Treatment-response monitoring</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #272727" x="245.5992" y="205.298129" transform="rotate(-0 245.5992 205.298129)">Limited E2 anchor</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #374151" x="307.872" y="205.272187" transform="rotate(-0 307.872 205.272187)">Do not use pathway coupling as proof of treatment responsiveness.</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="74.8512" y="161.703211" transform="rotate(-0 74.8512 161.703211)">Repeat testing at 48 h</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #272727" x="245.5992" y="161.522129" transform="rotate(-0 245.5992 161.522129)">Supported with caution</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #374151" x="307.872" y="161.496187" transform="rotate(-0 307.872 161.496187)">T48 evidence is more vulnerable to dropout and recovery-state selection.</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="74.8512" y="117.927211" transform="rotate(-0 74.8512 117.927211)">Repeat testing at 24 h</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #272727" x="245.5992" y="117.746065" transform="rotate(-0 245.5992 117.746065)">Supported: score change</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #374151" x="307.872" y="117.720187" transform="rotate(-0 307.872 117.720187)">Sampling time must be stated with every score.</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="74.8512" y="74.151211" transform="rotate(-0 74.8512 74.151211)">Baseline adjunctive diagnosis</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #272727" x="245.5992" y="73.970129" transform="rotate(-0 245.5992 73.970129)">Indirect</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #374151" x="307.872" y="73.944187" transform="rotate(-0 307.872 73.944187)">Do not describe as newly validated baseline diagnostic performance.</text>
+   </g>
+  </g>
+  <g id="text_22">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="64.224" y="14.480273" transform="rotate(-0 64.224 14.480273)">Context of use for repeated host-response RNA scores</text>
+  </g>
+  <g id="text_23">
+   <text style="font-size: 6.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #555555" x="7.2" y="337.248" transform="rotate(-0 7.2 337.248)">The current study supports temporal description, not assay thresholds, prognostic validation or treatment decisions.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9c07fe49ef">
+   <rect x="66.816" y="50.4" width="401.76" height="262.656"/>
+  </clipPath>
+ </defs>
+</svg>

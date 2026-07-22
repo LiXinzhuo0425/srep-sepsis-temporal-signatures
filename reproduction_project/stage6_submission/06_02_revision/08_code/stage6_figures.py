@@ -567,20 +567,44 @@ def supplementary_figure_1() -> None:
     limits = [float(np.nanmin(data[["pilot", "validation"]].to_numpy())),
               float(np.nanmax(data[["pilot", "validation"]].to_numpy()))]
     margin = max(0.2, (limits[1] - limits[0]) * 0.12); limits = [limits[0] - margin, limits[1] + margin]
+    # Fixed point offsets keep direct labels legible without moving any data
+    # marks.  Point units make the layout deterministic across vector and
+    # raster exports, and the fine leaders preserve unambiguous point-label
+    # correspondence in the crowded T24 panel.
+    label_offsets = {
+        "T1": {
+            "SIG001": (8, -8), "SIG002": (-8, 10), "SIG003": (-8, 8),
+            "SIG004": (8, 10), "SIG022": (8, -10), "SIG023": (8, 22),
+            "SIG033": (-8, -10), "SIG034": (-8, 22),
+        },
+        "T2": {
+            "SIG001": (8, -2), "SIG002": (8, -2), "SIG003": (8, -2),
+            "SIG004": (8, 0), "SIG022": (8, -2), "SIG023": (8, 8),
+            "SIG033": (8, 8), "SIG034": (8, -10),
+        },
+    }
     for ax, window in zip(axes, ["T1", "T2"]):
         sub = data[data.time_window == window]
         ax.plot(limits, limits, color="#A8A8A8", ls="--", lw=0.9)
         ax.axhline(0, color="#E0E0E0", lw=0.6); ax.axvline(0, color="#E0E0E0", lw=0.6)
         ax.scatter(sub.pilot, sub.validation, color=COL["red"], s=30)
-        ordered = sub.sort_values("validation").copy(); label_y = ordered.validation.to_numpy(float).copy()
-        for idx in range(1, len(label_y)): label_y[idx] = max(label_y[idx], label_y[idx - 1] + 0.095)
-        overflow = label_y[-1] - (limits[1] - 0.04)
-        if overflow > 0: label_y -= overflow
-        for idx in range(len(label_y) - 2, -1, -1): label_y[idx] = min(label_y[idx], label_y[idx + 1] - 0.095)
-        for (_, row), text_y in zip(ordered.iterrows(), label_y):
-            ax.annotate(row.signature_id, xy=(row.pilot, row.validation), xytext=(row.pilot + 0.07, text_y),
-                        fontsize=6.4, ha="left", va="center",
-                        arrowprops=dict(arrowstyle="-", color="#7F8C99", lw=0.45, shrinkA=1.5, shrinkB=2.5))
+        for _, row in sub.sort_values("signature_id").iterrows():
+            dx, dy = label_offsets[window][row.signature_id]
+            ax.annotate(
+                row.signature_id,
+                xy=(row.pilot, row.validation),
+                xytext=(dx, dy),
+                textcoords="offset points",
+                fontsize=6.4,
+                color=COL["ink"],
+                ha="left" if dx >= 0 else "right",
+                va="center",
+                annotation_clip=False,
+                arrowprops=dict(
+                    arrowstyle="-", color="#8B99A5", lw=0.45,
+                    shrinkA=1.5, shrinkB=3.0,
+                ),
+            )
         ax.set_xlim(limits); ax.set_ylim(limits); ax.set_aspect("equal", adjustable="box")
         ax.set_xlabel("Pilot pooled ΔZ"); ax.set_ylabel("Prespecified non-pilot pooled ΔZ")
         ax.set_title("T24" if window == "T1" else "T48", fontweight="bold", fontsize=9)
@@ -607,11 +631,19 @@ def main() -> None:
     for number, function in functions.items():
         if number in selected:
             function()
+    supplementary_selected = {
+        value.strip()
+        for value in os.environ.get("STAGE6_SUPPLEMENTARY_SELECTION", "1").split(",")
+        if value.strip()
+    }
+    if "1" in supplementary_selected:
+        supplementary_figure_1()
     manifest = {
         "freeze_id": "SCIREP-ANALYSIS-v1.2.0-20260722",
         "scientific_source": "Frozen Stage 3 results and corrected v1.2.0 Stage 4 architecture summaries using signature-specific primary-independent cohort sets",
         "figures": [p.name for p in sorted(OUT.glob("Figure_*.*"))],
         "source_files": [p.name for p in sorted(SOURCE_OUT.glob("*"))],
+        "supplementary_figures": [p.name for p in sorted(SUPP_OUT.glob("Supplementary_Figure_1_*"))],
         "backend": "Python/matplotlib only",
         "export": {"SVG": "editable text", "PDF": "fonttype 42", "TIFF": "600 dpi LZW", "PNG": "300 dpi preview"},
     }

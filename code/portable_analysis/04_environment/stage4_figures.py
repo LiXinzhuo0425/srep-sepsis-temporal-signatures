@@ -198,6 +198,8 @@ def draw_heatmap(ax, coupling: pd.DataFrame, annotate=True) -> None:
                 ax.text(j, i, f"{matrix[i,j]:.2f}", ha="center", va="center", fontsize=5.6, color=color)
             if np.isfinite(fdr[i, j]) and fdr[i, j] < 0.05:
                 ax.add_patch(mpl.patches.Rectangle((j - 0.48, i - 0.48), 0.96, 0.96, fill=False, ec="#FFD700", lw=1.8))
+                ax.text(j + 0.34, i - 0.30, "*", ha="center", va="center", fontsize=9,
+                        color="black", fontweight="bold", zorder=5)
     return im
 
 
@@ -207,7 +209,7 @@ def pathway_heatmap(coupling: pd.DataFrame) -> None:
     cbar = fig.colorbar(im, ax=ax, fraction=0.025, pad=0.02)
     cbar.set_label("Independent-only pooled Spearman ρ", fontsize=7)
     ax.set_title("T48 coupling between fixed-signature change and prespecified pathway change", loc="left", fontweight="bold")
-    fig.text(0.01, 0.01, "Gold outline: BH-FDR < 0.05 within the independent-only T48 primary Hallmark family. All prespecified cells are shown.", fontsize=6.5, color="#555555")
+    fig.text(0.01, 0.01, "Gold outline and black asterisk: Benjamini–Hochberg FDR < 0.05 within the independent-only T48 primary Hallmark family. All prespecified cells are shown.", fontsize=6.5, color="#555555")
     fig.subplots_adjust(bottom=0.26)
     export(fig, ROOT / "04_12_signature_pathway_heatmap")
 

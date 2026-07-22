@@ -10,8 +10,9 @@ https://creativecommons.org/licenses/by/4.0/legalcode
 
 Recommended attribution:
 Li X, Tu X, Yan Z, Gong Y. Fixed blood transcriptomic signatures show distinct
-temporal architectures across sepsis cohorts: code and data release, version
-1.0.1 (2026). https://doi.org/10.5281/zenodo.21417810
+longitudinal behavior and gene-contribution patterns across sepsis cohorts:
+code and derived data release, version 1.2.1 (2026). Version-specific Zenodo
+DOI 10.5281/zenodo.21500875.
 
 This license does not apply to third-party source data or software. Original
 NCBI GEO records and third-party dependencies remain subject to their own

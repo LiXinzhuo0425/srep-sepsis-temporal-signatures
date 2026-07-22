@@ -5658,7 +5658,7 @@
     {
       "component": "python",
       "version": "3.9.6 (default, Dec  2 2025, 07:27:58)  [Clang 17.0.0 (clang-1700.6.3.2)]",
-      "executable": "/Library/Developer/CommandLineTools/usr/bin/python3"
+      "executable": "python3"
     },
     {
       "component": "numpy",
