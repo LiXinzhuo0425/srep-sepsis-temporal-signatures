@@ -132,7 +132,7 @@ L -3.5 0
      </g>
     </g>
     <g id="text_7">
-     <text style="font: 8px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="12.92625" y="156.7074" transform="rotate(-90 12.92625 156.7074)">Within-patient deltaZ</text>
+     <text style="font: 8px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="12.92625" y="156.7074" transform="rotate(-90 12.92625 156.7074)">Within-patient ΔZ</text>
     </g>
    </g>
    <g id="line2d_10">
@@ -1964,7 +1964,7 @@ z
      </g>
     </g>
     <g id="text_16">
-     <text style="font: 8px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="270.01125" y="156.7074" transform="rotate(-90 270.01125 156.7074)">Within-patient deltaZ</text>
+     <text style="font: 8px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="270.01125" y="156.7074" transform="rotate(-90 270.01125 156.7074)">Within-patient ΔZ</text>
     </g>
    </g>
    <g id="line2d_338">
@@ -3737,7 +3737,7 @@ z
      </g>
     </g>
     <g id="text_29">
-     <text style="font: 8px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="12.92625" y="323.5094" transform="rotate(-90 12.92625 323.5094)">Within-patient deltaZ</text>
+     <text style="font: 8px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="12.92625" y="323.5094" transform="rotate(-90 12.92625 323.5094)">Within-patient ΔZ</text>
     </g>
    </g>
    <g id="line2d_667">
@@ -5510,7 +5510,7 @@ z
      </g>
     </g>
     <g id="text_42">
-     <text style="font: 8px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="265.5625" y="323.5094" transform="rotate(-90 265.5625 323.5094)">Within-patient deltaZ</text>
+     <text style="font: 8px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="265.5625" y="323.5094" transform="rotate(-90 265.5625 323.5094)">Within-patient ΔZ</text>
     </g>
    </g>
    <g id="line2d_996">
@@ -7171,7 +7171,7 @@ L 508.34375 393.608
    </g>
   </g>
   <g id="text_45">
-   <text style="font: 700 11px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="8.95175" y="15.207656" transform="rotate(-0 8.95175 15.207656)">Patient-level trajectories from pre-coded evidence archetypes</text>
+   <text style="font: 700 11px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="8.95175" y="15.207656" transform="rotate(-0 8.95175 15.207656)">Illustrative patient-level trajectories for four prespecified signatures</text>
   </g>
   <g id="legend_1">
    <g id="line2d_1315">

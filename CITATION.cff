@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this code or data, cite the associated article."
 title: "Fixed blood transcriptomic signatures show distinct longitudinal behavior and gene-contribution patterns across sepsis cohorts: code and data"
-version: "1.1.1"
+version: "1.1.2"
 date-released: "2026-07-20"
 repository-code: "https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures"
 license: "MIT"

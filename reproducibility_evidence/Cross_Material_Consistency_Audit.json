@@ -1,325 +1,352 @@
 {
-  "audit_id": "SCIREP-CROSS-MATERIAL-v1.1.1-20260720",
+  "audit_id": "SCIREP-CROSS-MATERIAL-v1.2.0-20260722",
   "status": "PASS",
-  "checks": [
+  "checks": 48,
+  "passed": 48,
+  "failed": 0,
+  "failures": [],
+  "details": [
     {
-      "check": "S11_GeneArch",
-      "observed_rows": 8,
-      "expected_rows": 8,
-      "columns_checked": 15,
-      "max_abs_numeric_diff": 2.220446049250313e-16,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Main version v1.2.0 present",
+      "status": "PASS",
+      "observed": 5,
+      "expected": ">=1"
     },
     {
-      "check": "S12_GeneMeta",
-      "observed_rows": 1141,
-      "expected_rows": 1141,
-      "columns_checked": 15,
-      "max_abs_numeric_diff": 1.4210854715202004e-14,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "SI version v1.2.0 present",
+      "status": "PASS",
+      "observed": 13,
+      "expected": ">=1"
     },
     {
-      "check": "S13_Pathway",
-      "observed_rows": 1664,
-      "expected_rows": 1664,
-      "columns_checked": 13,
-      "max_abs_numeric_diff": 1.4210854715202004e-14,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Obsolete version absent from main: v1.1.2",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
     },
     {
-      "check": "S14_CellSource",
-      "observed_rows": 96,
-      "expected_rows": 96,
-      "columns_checked": 4,
-      "max_abs_numeric_diff": 1.1102230246251565e-16,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Obsolete version absent from SI: v1.1.2",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
     },
     {
-      "check": "S15_Integrated",
-      "observed_rows": 8,
-      "expected_rows": 8,
-      "columns_checked": 28,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Obsolete version absent from main: v1.1.1",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
     },
     {
-      "check": "S16_Verification",
-      "observed_rows": 38,
-      "all_workbook_checks_pass": true,
-      "public_figure_rerun": "PASS",
-      "status": "PASS"
+      "name": "Obsolete version absent from SI: v1.1.1",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
     },
     {
-      "check": "S17_ThresholdSensitivity",
-      "observed_rows": 8,
-      "expected_rows": 8,
-      "columns_checked": 7,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Obsolete version absent from main: v1.1.0",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
     },
     {
-      "check": "S18_MetaInputs",
-      "observed_rows": 66,
-      "expected_rows": 66,
-      "columns_checked": 11,
-      "max_abs_numeric_diff": 7.105427357601002e-15,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Obsolete version absent from SI: v1.1.0",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
     },
     {
-      "check": "S19_MetaComposition",
-      "observed_rows": 57,
-      "expected_rows": 57,
-      "columns_checked": 7,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Obsolete version absent from main: v1.1_submission_candidate",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
     },
     {
-      "check": "S20_CohortIndependence",
-      "observed_rows": 6,
-      "expected_rows": 6,
-      "columns_checked": 9,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Obsolete version absent from SI: v1.1_submission_candidate",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
     },
     {
-      "check": "S21_DatasetSearch",
-      "observed_rows": 15,
-      "candidate_decisions": {
-        "GSE106878": "INCLUDE_POST_FREEZE_CONFIRMATION",
-        "E-MEXP-3850": "EXCLUDE",
-        "PRJEB111201": "EXCLUDE",
-        "phs003608.v1.p1": "EXCLUDE"
-      },
-      "status": "PASS"
+      "name": "Main statement: five eligible T48 cohorts rather than the four-cohort p",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "S22_LandmarkMissingness",
-      "observed_rows": 12,
-      "expected_rows": 12,
-      "columns_checked": 13,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Main statement: SIG004 label from single-gene-dominant to consistent mu",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "S23_BaselineSignatureSMD",
-      "observed_rows": 72,
-      "expected_rows": 72,
-      "columns_checked": 9,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Main statement: did not change Stage 3 pooled effects, confidence inter",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "S23_BaselineCovariateSMD",
-      "observed_rows": 30,
-      "expected_rows": 30,
-      "columns_checked": 7,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Main statement: exact signature-specific primary-independent cohort set",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "S24_TippingPoint",
-      "observed_rows": 16,
-      "expected_rows": 16,
-      "columns_checked": 11,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Main statement: median within each cohort and then aggregated as the un",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "S25_ModifiedHK",
-      "observed_rows": 8,
-      "expected_rows": 8,
-      "columns_checked": 15,
-      "max_abs_numeric_diff": 6.938893903907228e-17,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Main statement: \u2020Label changed in at least two of four uniform threshol",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "S26_PostFreezeConfirm",
-      "observed_rows": 24,
-      "expected_rows": 24,
-      "columns_checked": 8,
-      "max_abs_numeric_diff": 2.220446049250313e-16,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Main statement: \u2021Label changed only in the +20% scenario",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "FigureSource:Fig1",
-      "observed_rows": 6,
-      "expected_rows": 6,
-      "columns_checked": 7,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "SI statement: five eligible T48 cohorts rather than their four-cohort",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "FigureSource:Fig2",
-      "observed_rows": 16,
-      "expected_rows": 16,
-      "columns_checked": 14,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "SI statement: SIG004 label from single-gene-dominant to consistent mu",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "FigureSource:Fig3_AB",
-      "observed_rows": 96,
-      "expected_rows": 96,
-      "columns_checked": 17,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "SI statement: left Stage 3 pooled effects and all inferential results",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "FigureSource:Fig3_C",
-      "observed_rows": 29,
-      "expected_rows": 29,
-      "columns_checked": 16,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "SI statement: all inputs to the label used the exact primary-independ",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "FigureSource:Fig4_A",
-      "observed_rows": 78,
-      "expected_rows": 78,
-      "columns_checked": 16,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "SI statement: Labels changing in at least two scenarios were flagged ",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "FigureSource:Fig4_B",
-      "observed_rows": 8,
-      "expected_rows": 8,
-      "columns_checked": 22,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "SI statement: the SIG003 label changed only in the +20% scenario",
+      "status": "PASS",
+      "observed": true,
+      "expected": true
     },
     {
-      "check": "FigureSource:Fig5_GeneMeta",
-      "observed_rows": 1141,
-      "expected_rows": 1141,
-      "columns_checked": 15,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Main native Word equations preserved",
+      "status": "PASS",
+      "observed": 16,
+      "expected": 16
     },
     {
-      "check": "FigureSource:Fig5_Pathway",
-      "observed_rows": 1664,
-      "expected_rows": 1664,
-      "columns_checked": 15,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "SI native Word equations preserved",
+      "status": "PASS",
+      "observed": 65,
+      "expected": 65
     },
     {
-      "check": "FigureSource:Fig5_ssGSEA",
-      "observed_rows": 1664,
-      "expected_rows": 1664,
-      "columns_checked": 15,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Architecture workbook assertions",
+      "status": "PASS",
+      "observed": "PASS",
+      "expected": "PASS"
     },
     {
-      "check": "FigureSource:Fig5_CellSource",
-      "observed_rows": 74,
-      "expected_rows": 74,
-      "columns_checked": 13,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Workbook change boundary",
+      "status": "PASS",
+      "observed": "PASS",
+      "expected": "PASS"
     },
     {
-      "check": "FigureSource:Fig5_GeneCell",
-      "observed_rows": 96,
-      "expected_rows": 96,
-      "columns_checked": 4,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Primary-set verification",
+      "status": "PASS",
+      "observed": "PASS",
+      "expected": "PASS"
     },
     {
-      "check": "FigureSource:Fig6",
-      "observed_rows": 8,
-      "expected_rows": 8,
-      "columns_checked": 5,
-      "max_abs_numeric_diff": 0.0,
-      "text_mismatches": 0,
-      "status": "PASS"
+      "name": "Full Stage 4 semantic rerun",
+      "status": "PASS",
+      "observed": 15,
+      "expected": 15
     },
     {
-      "check": "Main_SI_text_assertions",
-      "main_reports_six_primary": true,
-      "main_reports_four_modified": true,
-      "main_discloses_5_6_correction": true,
-      "main_reports_confirmation": true,
-      "si_defines_shapley": true,
-      "si_defines_owen": true,
-      "si_names_s25_s26": true,
-      "old_governance_claim_absent": true,
-      "status": "PASS"
-    },
-    {
-      "check": "Release_source_table_sync",
-      "files": [
-        {
-          "file": "03_04_cohort_signature_primary_effects.csv",
-          "same_sha256": true
-        },
-        {
-          "file": "03_05_signature_level_meta_analysis.csv",
-          "same_sha256": true
-        },
-        {
-          "file": "03_06_temporal_stability_profile.csv",
-          "same_sha256": true
-        },
-        {
-          "file": "04_07_gene_contribution_meta_analysis.csv",
-          "same_sha256": true
-        },
-        {
-          "file": "04_08_signature_drift_architecture.csv",
-          "same_sha256": true
-        },
-        {
-          "file": "04_12_meta_signature_pathway_coupling.csv",
-          "same_sha256": true
-        },
-        {
-          "file": "04_12_meta_signature_pathway_coupling_ssgsea.csv",
-          "same_sha256": true
-        },
-        {
-          "file": "04_13_cell_source_annotation.csv",
-          "same_sha256": true
-        },
-        {
-          "file": "04_14_gene_contribution_cell_source_map.csv",
-          "same_sha256": true
-        },
-        {
-          "file": "04_20_integrated_signature_interpretation_matrix.csv",
-          "same_sha256": true
-        }
+      "name": "Public figure reproduction",
+      "status": "PASS",
+      "observed": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
       ],
-      "status": "PASS"
+      "expected": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "name": "Public source-data reproduction",
+      "status": "PASS",
+      "observed": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "expected": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "name": "Public figure-format checks",
+      "status": "PASS",
+      "observed": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "expected": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "name": "Stage 3 source outputs unchanged from v1.1.2 base",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "Release sync: 04_06_cohort_level_signature_architecture_metrics.csv",
+      "status": "PASS",
+      "observed": "3c5490eae355f1ab20a35d0fa1bbb445dee7350b1b68f8913750a4d0159393a2",
+      "expected": "3c5490eae355f1ab20a35d0fa1bbb445dee7350b1b68f8913750a4d0159393a2"
+    },
+    {
+      "name": "Release sync: 04_08_signature_drift_architecture.csv",
+      "status": "PASS",
+      "observed": "5ad171a29e0e05b9d0fc7c5ccd33122f3e21d8ea25b0f1fe4cea65f9d288d658",
+      "expected": "5ad171a29e0e05b9d0fc7c5ccd33122f3e21d8ea25b0f1fe4cea65f9d288d658"
+    },
+    {
+      "name": "Release sync: 04_20_integrated_signature_interpretation_matrix.csv",
+      "status": "PASS",
+      "observed": "0f8e0c7b3ff28ed02cc35b801dbbff3602cda48374624ef8c66e2318de1b1c44",
+      "expected": "0f8e0c7b3ff28ed02cc35b801dbbff3602cda48374624ef8c66e2318de1b1c44"
+    },
+    {
+      "name": "Release sync: 10_02_classification_stability_matrix.csv",
+      "status": "PASS",
+      "observed": "522c0596db8905f05f388af4a81c72b04f8d4e5004dbae7d76c0d654c3997e37",
+      "expected": "522c0596db8905f05f388af4a81c72b04f8d4e5004dbae7d76c0d654c3997e37"
+    },
+    {
+      "name": "Release sync: 10_02_scenario_classifications.csv",
+      "status": "PASS",
+      "observed": "fe5b6370243fb53cd49d1ef7d1fff8278c79cce969c074631db9b5e6d16f78fd",
+      "expected": "fe5b6370243fb53cd49d1ef7d1fff8278c79cce969c074631db9b5e6d16f78fd"
+    },
+    {
+      "name": "Release sync: 10_16_architecture_primary_set_verification.json",
+      "status": "PASS",
+      "observed": "a31fe7a46a1d56845c44a1b5da12ccec3c6403ca6d863c0aa82205b33b6f9618",
+      "expected": "a31fe7a46a1d56845c44a1b5da12ccec3c6403ca6d863c0aa82205b33b6f9618"
+    },
+    {
+      "name": "Analysis SIG002 cohort count",
+      "status": "PASS",
+      "observed": 4,
+      "expected": 4
+    },
+    {
+      "name": "Analysis SIG002 patient count",
+      "status": "PASS",
+      "observed": 118,
+      "expected": 118
+    },
+    {
+      "name": "Analysis SIG002 label",
+      "status": "PASS",
+      "observed": "CONSISTENT_MULTIGENE_DRIFT",
+      "expected": "CONSISTENT_MULTIGENE_DRIFT"
+    },
+    {
+      "name": "Analysis SIG003 cohort count",
+      "status": "PASS",
+      "observed": 4,
+      "expected": 4
+    },
+    {
+      "name": "Analysis SIG003 patient count",
+      "status": "PASS",
+      "observed": 118,
+      "expected": 118
+    },
+    {
+      "name": "Analysis SIG003 label",
+      "status": "PASS",
+      "observed": "SINGLE_GENE_DOMINANT_DRIFT",
+      "expected": "SINGLE_GENE_DOMINANT_DRIFT"
+    },
+    {
+      "name": "Analysis SIG004 cohort count",
+      "status": "PASS",
+      "observed": 4,
+      "expected": 4
+    },
+    {
+      "name": "Analysis SIG004 patient count",
+      "status": "PASS",
+      "observed": 118,
+      "expected": 118
+    },
+    {
+      "name": "Analysis SIG004 label",
+      "status": "PASS",
+      "observed": "CONSISTENT_MULTIGENE_DRIFT",
+      "expected": "CONSISTENT_MULTIGENE_DRIFT"
     }
   ]
 }

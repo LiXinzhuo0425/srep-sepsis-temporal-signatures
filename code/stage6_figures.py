@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Stage 6 Scientific Reports figures from frozen Stage 3/4 results.
+"""Generate Scientific Reports figures from frozen Stage 3 and corrected Stage 4 results.
 
 Only presentation and reviewer-facing terminology change here; all plotted
 scientific values are read from the frozen Stage 3/4 result tables.
@@ -100,12 +100,21 @@ ARCH_STYLE = {
     "INTERNAL_CANCELLATION_STABILITY": {"marker": "D", "linestyle": "-."},
     "OVERALL_LOW_CHANGE_STABILITY": {"marker": "v", "linestyle": (0, (1, 1))},
 }
-STABILITY_COLORS = {"STABLE": "#2F6B8A", "UNSTABLE": "#D9822B"}
+STABILITY_COLORS = {
+    "STABLE": "#2F6B8A",
+    "BOUNDARY_SENSITIVE": "#8A8A8A",
+    "UNSTABLE": "#D9822B",
+}
+STABILITY_LABELS = {
+    "STABLE": "Stable across perturbations",
+    "BOUNDARY_SENSITIVE": "Changed in one scenario",
+    "UNSTABLE": "Changed in ≥2 scenarios",
+}
 SHORT_PATH = {
     "HALLMARK_INFLAMMATORY_RESPONSE": "Inflammatory",
     "HALLMARK_TNFA_SIGNALING_VIA_NFKB": "TNF/NF-kB",
-    "HALLMARK_INTERFERON_ALPHA_RESPONSE": "IFN-alpha",
-    "HALLMARK_INTERFERON_GAMMA_RESPONSE": "IFN-gamma",
+    "HALLMARK_INTERFERON_ALPHA_RESPONSE": "IFN-α",
+    "HALLMARK_INTERFERON_GAMMA_RESPONSE": "IFN-γ",
     "HALLMARK_COMPLEMENT": "Complement",
     "HALLMARK_COAGULATION": "Coagulation",
     "HALLMARK_OXIDATIVE_PHOSPHORYLATION": "OxPhos",
@@ -142,6 +151,7 @@ def export(fig: plt.Figure, stem: str) -> None:
     base = OUT / stem
     fig.savefig(base.with_suffix(".svg"), bbox_inches="tight")
     fig.savefig(base.with_suffix(".pdf"), bbox_inches="tight")
+    fig.savefig(base.with_suffix(".eps"), format="eps", bbox_inches="tight")
     fig.savefig(base.with_suffix(".png"), dpi=300, bbox_inches="tight")
     tiff_path = base.with_suffix(".tiff")
     fig.savefig(tiff_path, dpi=600, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})
@@ -234,7 +244,7 @@ def figure2() -> None:
             ax.text(ax.get_xlim()[1] if False else row.pooled_delta_z, yi+0.20, f"{row.pooled_delta_z:.2f}", ha="center", fontsize=5.8, color=color)
         ax.set_yticks(y)
         ax.set_yticklabels([f"{s}  {NAMES[s]}" for s in SIGS], fontsize=6.7)
-        ax.set_xlabel("Pooled within-patient change (delta Z)")
+        ax.set_xlabel("Pooled within-patient change (ΔZ)")
         ax.set_title(title, fontweight="bold")
         ax.text(0.02, 0.02, "Thick: 95% CI\nThin: 95% prediction interval", transform=ax.transAxes, fontsize=6.1, color="#5F6B76")
     panel(axes[0], "a"); panel(axes[1], "b")
@@ -267,11 +277,11 @@ def figure3() -> None:
     profile = pd.read_csv(S3 / "03_06_temporal_stability_profile.csv")
     fig = plt.figure(figsize=(7.2, 7.0))
     gs = fig.add_gridspec(3, 1, height_ratios=[1, 1, 0.85], hspace=0.46)
-    for idx, (window, title) in enumerate([("T1", "T24 cohort-specific mean delta Z"), ("T2", "T48 cohort-specific mean delta Z")]):
+    for idx, (window, title) in enumerate([("T1", "T24 cohort-specific mean ΔZ"), ("T2", "T48 cohort-specific mean ΔZ")]):
         ax = fig.add_subplot(gs[idx]); panel(ax, "a" if idx == 0 else "b")
         sub = effects[effects.time_window == window].pivot(index="dataset", columns="signature_id", values="mean_delta_z").reindex(index=COHORTS, columns=SIGS)
         heat(ax, sub.to_numpy(float), COHORTS, SIGS, vmin=-1.6, vmax=1.6,
-             cmap="RdBu_r", fmt=".2f", title=title, cbar_label="Mean delta Z")
+             cmap="RdBu_r", fmt=".2f", title=title, cbar_label="Mean ΔZ")
         # GSE54514 was retained for transparent cohort-level display but was
         # excluded from the primary independent synthesis for these signatures.
         row_i = COHORTS.index("GSE54514")
@@ -290,7 +300,7 @@ def figure3() -> None:
     widths = (p.prediction_upper - p.prediction_lower).to_numpy(float)
     bars = ax3.barh(y, p.I2_percent, height=0.58, color=COL["sky"])
     ax3.set_yticks(y); ax3.set_yticklabels([f"{s}  {NAMES[s]}" for s in SIGS], fontsize=6.6)
-    ax3.set_xlim(0, 105); ax3.set_xlabel("T48 I-squared (%)")
+    ax3.set_xlim(0, 105); ax3.set_xlabel("T48 I² (%)")
     ax3.axvline(50, color="#999999", lw=0.8, ls="--")
     for bar, i2, width in zip(bars, p.I2_percent, widths):
         ax3.text(min(i2 + 2, 97), bar.get_y()+bar.get_height()/2, f"{i2:.0f}%  |  PI width {width:.2f}", va="center", fontsize=6.1)
@@ -324,9 +334,9 @@ def figure4() -> None:
                          textcoords="offset points", ha="left" if row.pooled_contribution >= 0 else "right", va="center", fontsize=5.8)
     ax1.axvline(0, color="#777777", lw=0.8, ls="--")
     ax1.set_yticks(y); ax1.set_yticklabels([f"{s}  {NAMES[s]}" for s in SIGS], fontsize=6.4)
-    ax1.set_xlabel("Exact gene contribution to T48 delta Z")
+    ax1.set_xlabel("Exact gene contribution to T48 ΔZ")
     ax1.set_title("Two largest pooled mathematical contributions", loc="left", fontweight="bold")
-    panel(ax1, "a")
+    ax1.text(-0.14, 1.035, "a", transform=ax1.transAxes, ha="left", va="bottom", fontsize=11, fontweight="bold")
 
     for row in arch.itertuples(index=False):
         color = STABILITY_COLORS.get(row.sensitivity_status, COL["grey"])
@@ -340,19 +350,19 @@ def figure4() -> None:
         ax2.annotate(row.signature_id, (row.median_patient_dominance_ratio, row.median_patient_cancellation_index), xytext=(dx, dy), textcoords="offset points", fontsize=6.6, fontweight="bold", ha=label_ha)
     ax2.axvline(0.60, color="#8A8A8A", lw=0.8, ls="--"); ax2.axhline(0.50, color="#8A8A8A", lw=0.8, ls="--")
     ax2.set_xlim(-0.03, 0.83); ax2.set_ylim(-0.04, 0.90)
-    ax2.set_xlabel("Median patient dominance ratio"); ax2.set_ylabel("Median patient cancellation index")
+    ax2.set_xlabel("Median cohort dominance"); ax2.set_ylabel("Median cohort cancellation")
     ax2.set_title("Continuous metrics and label sensitivity", loc="left", fontweight="bold")
-    panel(ax2, "b")
+    ax2.text(-0.14, 1.035, "b", transform=ax2.transAxes, ha="left", va="bottom", fontsize=11, fontweight="bold")
     handles = [
         mpl.lines.Line2D([], [], marker="o", ls="", color=color,
-                         label="Stable label" if status == "STABLE" else "Threshold-sensitive label",
+                         label=STABILITY_LABELS[status],
                          markersize=6)
         for status, color in STABILITY_COLORS.items()
     ]
-    ax2.legend(handles=handles, fontsize=6.0, loc="upper center", bbox_to_anchor=(0.5, -0.18), ncol=1)
-    fig.text(0.01, 0.01, "Continuous metrics are primary; colors summarize label stability across uniform ±10% and ±20% threshold perturbations. Contributions are mathematical, not causal.", fontsize=6.2, color="#5F6B76")
-    fig.subplots_adjust(bottom=0.24, top=0.91)
-    fig.suptitle("Gene-contribution patterns at T48", x=0.02, y=0.98, ha="left", fontsize=12, fontweight="bold")
+    ax2.legend(handles=handles, fontsize=5.8, loc="upper center", bbox_to_anchor=(0.5, -0.18), ncol=1)
+    fig.text(0.01, 0.012, "Continuous metrics are primary. Each point is the median of cohort-specific patient medians from the same primary-independent set used for score synthesis.\nColors summarize label sensitivity under uniform ±10% and ±20% threshold perturbations; contributions are mathematical, not causal.", fontsize=5.8, color="#5F6B76", linespacing=1.18)
+    fig.subplots_adjust(bottom=0.25, top=0.86)
+    fig.suptitle("Gene-contribution patterns at T48", x=0.02, y=0.985, ha="left", fontsize=12, fontweight="bold")
     export(fig, "Figure_4_gene_contribution_patterns")
     gene.to_csv(SOURCE_OUT / "Figure_4A_source_data.csv", index=False)
     arch.to_csv(SOURCE_OUT / "Figure_4B_source_data.csv", index=False)
@@ -433,7 +443,7 @@ def figure5() -> None:
 
     im = draw_pathway_heatmap(ax3, coupling)
     cbar = fig.colorbar(im, ax=ax3, fraction=0.022, pad=0.02)
-    cbar.set_label("Pooled rho", fontsize=7.6); cbar.ax.tick_params(labelsize=7.0)
+    cbar.set_label("Pooled Spearman ρ", fontsize=7.6); cbar.ax.tick_params(labelsize=7.0)
     ax3.set_title("Primary singscore pathway coupling at T48", loc="left", fontweight="bold"); panel(ax3, "c")
     fig.text(0.01, 0.017,
              "* Primary singscore BH-FDR < 0.05; the corresponding ssGSEA result had FDR=0.066.",
@@ -463,7 +473,7 @@ def figure6() -> None:
         vals = [0, m.loc[sig, "T1"], m.loc[sig, "T2"]]
         color = signature_colors[sig]
         status = stability.loc[sig, "sensitivity_status"]
-        linestyle = "-" if status == "STABLE" else "--"
+        linestyle = {"STABLE": "-", "BOUNDARY_SENSITIVE": ":", "UNSTABLE": "--"}[status]
         ax.plot(x, vals, marker=marker_cycle[sig], linestyle=linestyle,
                 lw=1.7, ms=4.3, color=color, alpha=0.95)
         label_dy = {"SIG001": 10, "SIG002": 2, "SIG003": -2, "SIG004": 2,
@@ -471,15 +481,17 @@ def figure6() -> None:
         ax.annotate(sig, (2, vals[-1]), xytext=(5, label_dy), textcoords="offset points", va="center", fontsize=6.4, color=color, fontweight="bold")
     ax.axhline(0, color="#777777", lw=0.8, ls="--")
     ax.set_xticks(x); ax.set_xticklabels(["Baseline", "T24", "T48"])
-    ax.set_ylabel("Pooled within-patient change (delta Z)")
+    ax.set_ylabel("Pooled within-patient change (ΔZ)")
     ax.set_xlim(-0.08, 2.35)
     ax.set_ylim(-1.02, 0.78)
     ax.set_title("Pooled trajectories depend on sampling window", loc="left", fontweight="bold")
     handles = [
         mpl.lines.Line2D([], [], color="#444444", linestyle="-", lw=1.6,
                          label="Label stable across threshold perturbations"),
+        mpl.lines.Line2D([], [], color="#444444", linestyle=":", lw=1.6,
+                         label="Label changed in one scenario"),
         mpl.lines.Line2D([], [], color="#444444", linestyle="--", lw=1.6,
-                         label="Label threshold-sensitive"),
+                         label="Label changed in ≥2 scenarios"),
     ]
     ax.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.47, -0.13),
               ncol=1, fontsize=5.9, columnspacing=1.0, handlelength=2.2)
@@ -570,10 +582,10 @@ def supplementary_figure_1() -> None:
                         fontsize=6.4, ha="left", va="center",
                         arrowprops=dict(arrowstyle="-", color="#7F8C99", lw=0.45, shrinkA=1.5, shrinkB=2.5))
         ax.set_xlim(limits); ax.set_ylim(limits); ax.set_aspect("equal", adjustable="box")
-        ax.set_xlabel("Pilot pooled delta Z"); ax.set_ylabel("Prespecified-validation pooled delta Z")
+        ax.set_xlabel("Pilot pooled ΔZ"); ax.set_ylabel("Prespecified non-pilot pooled ΔZ")
         ax.set_title("T24" if window == "T1" else "T48", fontweight="bold", fontsize=9)
     panel(axes[0], "a"); panel(axes[1], "b")
-    fig.suptitle("Pilot and prespecified-validation concordance", x=0.02, ha="left", fontsize=11, fontweight="bold")
+    fig.suptitle("Pilot and prespecified non-pilot concordance", x=0.02, ha="left", fontsize=11, fontweight="bold")
     fig.tight_layout(rect=(0, 0, 1, 0.93))
     export_to(fig, SUPP_OUT / "Supplementary_Figure_1_pilot_vs_validation")
     data.to_csv(SOURCE_OUT / "Supplementary_Figure_1_source_data.csv", index=False)
@@ -596,8 +608,8 @@ def main() -> None:
         if number in selected:
             function()
     manifest = {
-        "freeze_id": "SCIREP-ANALYSIS-v1.1.1-20260720",
-        "scientific_source": "Corrected v1.1.1 Stage 3/4 result tables after the SIG001 formula audit",
+        "freeze_id": "SCIREP-ANALYSIS-v1.2.0-20260722",
+        "scientific_source": "Frozen Stage 3 results and corrected v1.2.0 Stage 4 architecture summaries using signature-specific primary-independent cohort sets",
         "figures": [p.name for p in sorted(OUT.glob("Figure_*.*"))],
         "source_files": [p.name for p in sorted(SOURCE_OUT.glob("*"))],
         "backend": "Python/matplotlib only",

@@ -1,0 +1,125 @@
+{
+  "analysis_release": "v1.2.0",
+  "check": "Stage 4 architecture metrics use the exact Stage 3 PRIMARY_INDEPENDENT cohort set",
+  "status": "PASS",
+  "checked_signatures": [
+    {
+      "signature_id": "SIG001",
+      "window": "T2",
+      "cohort_n": 5,
+      "patient_n": 146,
+      "cohorts": [
+        "GSE110487",
+        "GSE54514",
+        "GSE57065",
+        "GSE8121",
+        "GSE95233"
+      ],
+      "modal_agreement": 0.6,
+      "label": "COHORT_DEPENDENT_DRIFT"
+    },
+    {
+      "signature_id": "SIG002",
+      "window": "T2",
+      "cohort_n": 4,
+      "patient_n": 118,
+      "cohorts": [
+        "GSE110487",
+        "GSE57065",
+        "GSE8121",
+        "GSE95233"
+      ],
+      "modal_agreement": 1.0,
+      "label": "CONSISTENT_MULTIGENE_DRIFT"
+    },
+    {
+      "signature_id": "SIG003",
+      "window": "T2",
+      "cohort_n": 4,
+      "patient_n": 118,
+      "cohorts": [
+        "GSE110487",
+        "GSE57065",
+        "GSE8121",
+        "GSE95233"
+      ],
+      "modal_agreement": 0.75,
+      "label": "SINGLE_GENE_DOMINANT_DRIFT"
+    },
+    {
+      "signature_id": "SIG004",
+      "window": "T2",
+      "cohort_n": 4,
+      "patient_n": 118,
+      "cohorts": [
+        "GSE110487",
+        "GSE57065",
+        "GSE8121",
+        "GSE95233"
+      ],
+      "modal_agreement": 0.75,
+      "label": "CONSISTENT_MULTIGENE_DRIFT"
+    },
+    {
+      "signature_id": "SIG022",
+      "window": "T2",
+      "cohort_n": 5,
+      "patient_n": 146,
+      "cohorts": [
+        "GSE110487",
+        "GSE54514",
+        "GSE57065",
+        "GSE8121",
+        "GSE95233"
+      ],
+      "modal_agreement": 0.8,
+      "label": "COHORT_DEPENDENT_DRIFT"
+    },
+    {
+      "signature_id": "SIG023",
+      "window": "T2",
+      "cohort_n": 5,
+      "patient_n": 146,
+      "cohorts": [
+        "GSE110487",
+        "GSE54514",
+        "GSE57065",
+        "GSE8121",
+        "GSE95233"
+      ],
+      "modal_agreement": 0.8,
+      "label": "SINGLE_GENE_DOMINANT_DRIFT"
+    },
+    {
+      "signature_id": "SIG033",
+      "window": "T2",
+      "cohort_n": 5,
+      "patient_n": 146,
+      "cohorts": [
+        "GSE110487",
+        "GSE54514",
+        "GSE57065",
+        "GSE8121",
+        "GSE95233"
+      ],
+      "modal_agreement": 0.4,
+      "label": "COHORT_DEPENDENT_DRIFT"
+    },
+    {
+      "signature_id": "SIG034",
+      "window": "T2",
+      "cohort_n": 5,
+      "patient_n": 146,
+      "cohorts": [
+        "GSE110487",
+        "GSE54514",
+        "GSE57065",
+        "GSE8121",
+        "GSE95233"
+      ],
+      "modal_agreement": 0.2,
+      "label": "COHORT_DEPENDENT_DRIFT"
+    }
+  ],
+  "failures": []
+}

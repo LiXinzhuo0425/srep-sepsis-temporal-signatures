@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Clean Stage 4 rerun with semantic numerical comparison to the frozen outputs."""
+"""Clean Stage 4 rerun with semantic comparison to the v1.2.0 outputs."""
 from __future__ import annotations
 
 import hashlib
@@ -28,6 +28,9 @@ CANONICAL = [
     SOURCE / "04_06_cohort_level_gene_contributions.csv",
     SOURCE / "04_07_gene_contribution_meta_analysis.csv",
     SOURCE / "04_08_signature_drift_architecture.csv",
+    SOURCE / "10_02_classification_stability_matrix.csv",
+    SOURCE / "10_02_scenario_classifications.csv",
+    SOURCE / "10_02_continuous_metrics_scenario_E.csv",
     SOURCE / "04_09_pathway_gene_coverage.csv",
     ROOT / "04_pathway_data/patient_level_pathway_changes.parquet",
     SOURCE / "04_11_meta_longitudinal_pathway_changes.csv",
@@ -68,7 +71,7 @@ def run_step(name: str, command: list[str], env: dict | None, records: list[dict
     log_handle.write(completed.stderr)
     log_handle.write(f"\nEND {name}: exit={completed.returncode}; elapsed={elapsed:.1f}s\n\n")
     log_handle.flush()
-    records.append({"step": name, "exit_code": completed.returncode, "elapsed_seconds": round(elapsed, 1)})
+    records.append({"step": name, "exit_code": completed.returncode, "elapsed_seconds": round(elapsed, 1), "status": "PASS" if completed.returncode == 0 else "FAIL"})
     if completed.returncode != 0:
         raise RuntimeError(f"{name} failed with exit code {completed.returncode}")
     print(f"DONE {name} ({elapsed:.1f}s)", flush=True)
@@ -77,12 +80,14 @@ def run_step(name: str, command: list[str], env: dict | None, records: list[dict
 before = {str(p.relative_to(ROOT)): digest(p) for p in CANONICAL}
 records: list[dict] = []
 with LOG.open("w", encoding="utf-8") as log_handle:
-    log_handle.write("Stage 4 reproducibility rerun\n")
-    log_handle.write("Date: 2026-07-16\n")
+    log_handle.write("Stage 4 reproducibility rerun for analysis release v1.2.0\n")
+    log_handle.write(f"Date: {time.strftime('%Y-%m-%d')}\n")
     log_handle.write(f"Python: {sys.version}\n")
     log_handle.write("Random seed: 20260716\n")
     log_handle.write("Force-rebuild pathway caches: true\n\n")
     run_step("Exact gene decomposition", [sys.executable, str(ENV / "stage4_decomposition.py")], None, records, log_handle)
+    run_step("Architecture threshold sensitivity", [sys.executable, str(ENV / "architecture_threshold_sensitivity.py")], None, records, log_handle)
+    run_step("Primary-set architecture verification", [sys.executable, str(ENV / "verify_architecture_primary_set.py")], None, records, log_handle)
     force_env = os.environ.copy()
     force_env["STAGE4_FORCE_REBUILD"] = "1"
     run_step("Full-transcriptome pathway analysis", [sys.executable, str(ENV / "stage4_pathway.py")], force_env, records, log_handle)
@@ -92,7 +97,13 @@ with LOG.open("w", encoding="utf-8") as log_handle:
     run_step("Publication figure generation", [sys.executable, str(ENV / "stage4_figures.py")], None, records, log_handle)
     run_step("Independent verification", [sys.executable, str(ENV / "verify_stage4.py")], None, records, log_handle)
     run_step("Method documents", [BUNDLED_PY, str(ENV / "make_stage4_documents_en.py")], None, records, log_handle)
-    run_step("Artifact-tool workbooks", [NODE, str(ENV / "build_stage4_workbooks.mjs")], None, records, log_handle)
+    if os.environ.get("ARTIFACT_TOOL_MJS"):
+        run_step("Artifact-tool workbooks", [NODE, str(ENV / "build_stage4_workbooks.mjs")], None, records, log_handle)
+    else:
+        message = "SKIP Artifact-tool workbooks: optional presentation-file assembly; scientific CSV/parquet outputs are complete.\n"
+        print(message.strip(), flush=True)
+        log_handle.write(message)
+        records.append({"step": "Artifact-tool workbooks (optional)", "exit_code": 0, "elapsed_seconds": 0.0, "status": "SKIP"})
 
 after = {str(p.relative_to(ROOT)): digest(p) for p in CANONICAL}
 comparisons = []
@@ -106,7 +117,7 @@ qa_csv = SOURCE / "04_23_reproducibility_comparison.csv"
 pd.DataFrame(comparisons).to_csv(qa_csv, index=False)
 
 step_rows = "".join(
-    f"<tr><td>{html.escape(r['step'])}</td><td>{r['exit_code']}</td><td>{r['elapsed_seconds']:.1f}</td><td class='pass'>PASS</td></tr>"
+    f"<tr><td>{html.escape(r['step'])}</td><td>{r['exit_code']}</td><td>{r['elapsed_seconds']:.1f}</td><td class='pass'>{r['status']}</td></tr>"
     for r in records
 )
 file_rows = "".join(

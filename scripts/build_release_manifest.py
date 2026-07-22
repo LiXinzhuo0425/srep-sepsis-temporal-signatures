@@ -34,7 +34,7 @@ for path in sorted(ROOT.rglob("*")):
     )
 
 manifest = {
-    "release_id": "srep-sepsis-temporal-signatures-v1.1.1",
+    "release_id": "srep-sepsis-temporal-signatures-v1.2.0",
     "doi": VERSION_DOI,
     "concept_doi": "10.5281/zenodo.21415496",
     "publication_status": "public immutable release" if VERSION_DOI else "public GitHub release prepared; version DOI pending",

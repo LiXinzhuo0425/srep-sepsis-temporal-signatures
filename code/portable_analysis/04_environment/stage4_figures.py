@@ -50,8 +50,8 @@ NAMES = {
 SHORT_PATH = {
     "HALLMARK_INFLAMMATORY_RESPONSE": "Inflammatory",
     "HALLMARK_TNFA_SIGNALING_VIA_NFKB": "TNF/NF-kB",
-    "HALLMARK_INTERFERON_ALPHA_RESPONSE": "IFN-alpha",
-    "HALLMARK_INTERFERON_GAMMA_RESPONSE": "IFN-gamma",
+    "HALLMARK_INTERFERON_ALPHA_RESPONSE": "IFN-α",
+    "HALLMARK_INTERFERON_GAMMA_RESPONSE": "IFN-γ",
     "HALLMARK_COMPLEMENT": "Complement",
     "HALLMARK_COAGULATION": "Coagulation",
     "HALLMARK_OXIDATIVE_PHOSPHORYLATION": "OxPhos",
@@ -120,7 +120,7 @@ def figure_4a(stage3: pd.DataFrame, gene: pd.DataFrame, ann: pd.DataFrame) -> No
     ax1.axvline(0, color="#767676", ls="--", lw=0.8)
     ax1.set_yticks(y)
     ax1.set_yticklabels(labels, fontsize=7)
-    ax1.set_xlabel("T48 pooled score change, delta Z")
+    ax1.set_xlabel("T48 pooled score change, ΔZ")
     ax1.set_title("Total fixed-signature drift", loc="left", fontweight="bold")
     panel_label(ax1, "a")
 
@@ -139,7 +139,7 @@ def figure_4a(stage3: pd.DataFrame, gene: pd.DataFrame, ann: pd.DataFrame) -> No
     ax2.axvline(0, color="#767676", ls="--", lw=0.8)
     ax2.set_yticks(y)
     ax2.set_yticklabels([])
-    ax2.set_xlabel("Exact gene contribution to delta Z")
+    ax2.set_xlabel("Exact gene contribution to ΔZ")
     ax2.set_title("Two largest mathematical contributors", loc="left", fontweight="bold")
     panel_label(ax2, "b")
     fig.text(0.01, 0.01, "T48 primary-independent estimates. Gene-specific random-effects weights differ; contribution points are not stacked into the total meta-estimate.", fontsize=6.5, color="#555555")
@@ -205,7 +205,7 @@ def pathway_heatmap(coupling: pd.DataFrame) -> None:
     fig, ax = plt.subplots(figsize=(7.2, 4.4))
     im = draw_heatmap(ax, coupling)
     cbar = fig.colorbar(im, ax=ax, fraction=0.025, pad=0.02)
-    cbar.set_label("Independent-only pooled Spearman rho", fontsize=7)
+    cbar.set_label("Independent-only pooled Spearman ρ", fontsize=7)
     ax.set_title("T48 coupling between fixed-signature change and prespecified pathway change", loc="left", fontweight="bold")
     fig.text(0.01, 0.01, "Gold outline: BH-FDR < 0.05 within the independent-only T48 primary Hallmark family. All prespecified cells are shown.", fontsize=6.5, color="#555555")
     fig.subplots_adjust(bottom=0.26)
@@ -251,7 +251,7 @@ def figure_5(gene: pd.DataFrame, ann: pd.DataFrame, cell: pd.DataFrame, coupling
 
     im = draw_heatmap(ax3, coupling)
     cbar = fig.colorbar(im, ax=ax3, fraction=0.022, pad=0.02)
-    cbar.set_label("Pooled rho", fontsize=7)
+    cbar.set_label("Pooled Spearman ρ", fontsize=7)
     ax3.set_title("Prespecified pathway coupling at T48", loc="left", fontweight="bold")
     panel_label(ax3, "c")
     fig.text(0.01, 0.005, "Cell sources are HPA-based potential sources; bulk RNA cannot separate abundance from within-cell expression. Gold outline denotes BH-FDR < 0.05.", fontsize=6.2, color="#555555")
@@ -338,7 +338,7 @@ def contribution_forests(gene: pd.DataFrame) -> None:
         ax.axvline(0, color="#767676", ls="--", lw=0.8)
         ax.set_yticks(y)
         ax.set_yticklabels(g["gene"], fontsize=6.5)
-        ax.set_xlabel("Pooled exact contribution to T48 delta Z")
+        ax.set_xlabel("Pooled exact contribution to T48 ΔZ")
         ax.set_title(f"{sig} — {NAMES[sig]}\nPrimary-independent gene contributions", loc="left", fontweight="bold")
         fig.text(0.01, 0.012, f"All {len(g)} component genes are shown; random-effects 95% confidence intervals. No significance filter.", fontsize=6.2, color="#555555")
         bottom_margin = min(0.24, max(0.10, 0.75 / height))
