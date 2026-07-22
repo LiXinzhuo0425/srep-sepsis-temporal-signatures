@@ -1,0 +1,5 @@
+artifact,version_or_commit,frozen_or_committed_at,sha256_or_git_blob,evidentiary_role
+04_01_stage4_scope_freeze_v1.0.md,Stage 4 scope freeze v1.0,2026-07-16 11:40:18 +0800,7a16a3cad78747b5ddefa2cdfe8d241b5419deaf2eb4d011a49236262ecefcd9,Human-readable pre-result classification rules and priority
+04_environment/stage4_config.json,stage4_extension_v1.0,2026-07-16 11:40:18 +0800,5dd1534de29dabb2b548f0d8bf41e490a7894eb183e98387e3f36d084244d5f9,Machine-readable thresholds used by code
+Public code/data release v1.0.1,67b43348fa3fb2bec6ac7ec4313eae0fad505d66,2026-07-18 01:29:12 +0800,stage4_config git blob 9602e94c92173c3f807f6c9143f18afcf90ab055,Public release containing the byte-identical threshold configuration
+03_00_07_statistical_analysis_plan_frozen_v1.0.docx,Stage 3 SAP v1.0,2026-07-16 09:10:44 +0800,8ce694da9e383ffe5234d648b60bfaec676f440620616aca59bfefd01ccbef8e,Parent SAP for total-score temporal classification; gene-contribution architecture rules were added in the separately frozen Stage 4 scope

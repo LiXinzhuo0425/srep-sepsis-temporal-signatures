@@ -1,0 +1,30 @@
+{
+  "analysis": "architecture classification threshold sensitivity",
+  "baseline_reconstruction_pass": true,
+  "baseline_reconstruction_pass_n": 8,
+  "baseline_reconstruction_total_n": 8,
+  "stable_signature_n": 4,
+  "boundary_sensitive_signature_n": 1,
+  "unstable_signature_n": 3,
+  "signatures_with_any_change": [
+    "SIG002",
+    "SIG003",
+    "SIG004",
+    "SIG022"
+  ],
+  "signatures_with_two_or_more_changes": [
+    "SIG002",
+    "SIG004",
+    "SIG022"
+  ],
+  "title_weakening_trigger": true,
+  "threshold_perturbation_note": "Every numeric cutoff was multiplied uniformly. Count gates were compared as real-valued cutoffs, so increases move to the next attainable integer.",
+  "classification_priority": [
+    "cohort-dependent",
+    "single-gene-dominant",
+    "internal cancellation",
+    "consistent multigene",
+    "overall low change",
+    "insufficient evidence"
+  ]
+}

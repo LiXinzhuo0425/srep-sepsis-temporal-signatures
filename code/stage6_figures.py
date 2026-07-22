@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Stage 6 Scientific Reports figures from frozen Stage 3/4 results.
+"""Generate Scientific Reports figures from frozen Stage 3 and corrected Stage 4 results.
 
 Only presentation and reviewer-facing terminology change here; all plotted
 scientific values are read from the frozen Stage 3/4 result tables.
@@ -100,7 +100,16 @@ ARCH_STYLE = {
     "INTERNAL_CANCELLATION_STABILITY": {"marker": "D", "linestyle": "-."},
     "OVERALL_LOW_CHANGE_STABILITY": {"marker": "v", "linestyle": (0, (1, 1))},
 }
-STABILITY_COLORS = {"STABLE": "#2F6B8A", "UNSTABLE": "#D9822B"}
+STABILITY_COLORS = {
+    "STABLE": "#2F6B8A",
+    "BOUNDARY_SENSITIVE": "#8A8A8A",
+    "UNSTABLE": "#D9822B",
+}
+STABILITY_LABELS = {
+    "STABLE": "Stable across perturbations",
+    "BOUNDARY_SENSITIVE": "Changed in one scenario",
+    "UNSTABLE": "Changed in ≥2 scenarios",
+}
 SHORT_PATH = {
     "HALLMARK_INFLAMMATORY_RESPONSE": "Inflammatory",
     "HALLMARK_TNFA_SIGNALING_VIA_NFKB": "TNF/NF-kB",
@@ -327,7 +336,7 @@ def figure4() -> None:
     ax1.set_yticks(y); ax1.set_yticklabels([f"{s}  {NAMES[s]}" for s in SIGS], fontsize=6.4)
     ax1.set_xlabel("Exact gene contribution to T48 ΔZ")
     ax1.set_title("Two largest pooled mathematical contributions", loc="left", fontweight="bold")
-    panel(ax1, "a")
+    ax1.text(-0.14, 1.035, "a", transform=ax1.transAxes, ha="left", va="bottom", fontsize=11, fontweight="bold")
 
     for row in arch.itertuples(index=False):
         color = STABILITY_COLORS.get(row.sensitivity_status, COL["grey"])
@@ -341,19 +350,19 @@ def figure4() -> None:
         ax2.annotate(row.signature_id, (row.median_patient_dominance_ratio, row.median_patient_cancellation_index), xytext=(dx, dy), textcoords="offset points", fontsize=6.6, fontweight="bold", ha=label_ha)
     ax2.axvline(0.60, color="#8A8A8A", lw=0.8, ls="--"); ax2.axhline(0.50, color="#8A8A8A", lw=0.8, ls="--")
     ax2.set_xlim(-0.03, 0.83); ax2.set_ylim(-0.04, 0.90)
-    ax2.set_xlabel("Median patient dominance ratio"); ax2.set_ylabel("Median patient cancellation index")
+    ax2.set_xlabel("Median cohort dominance"); ax2.set_ylabel("Median cohort cancellation")
     ax2.set_title("Continuous metrics and label sensitivity", loc="left", fontweight="bold")
-    panel(ax2, "b")
+    ax2.text(-0.14, 1.035, "b", transform=ax2.transAxes, ha="left", va="bottom", fontsize=11, fontweight="bold")
     handles = [
         mpl.lines.Line2D([], [], marker="o", ls="", color=color,
-                         label="Stable label" if status == "STABLE" else "Threshold-sensitive label",
+                         label=STABILITY_LABELS[status],
                          markersize=6)
         for status, color in STABILITY_COLORS.items()
     ]
-    ax2.legend(handles=handles, fontsize=6.0, loc="upper center", bbox_to_anchor=(0.5, -0.18), ncol=1)
-    fig.text(0.01, 0.01, "Continuous metrics are primary; colors summarize label stability across uniform ±10% and ±20% threshold perturbations. Contributions are mathematical, not causal.", fontsize=6.2, color="#5F6B76")
-    fig.subplots_adjust(bottom=0.24, top=0.91)
-    fig.suptitle("Gene-contribution patterns at T48", x=0.02, y=0.98, ha="left", fontsize=12, fontweight="bold")
+    ax2.legend(handles=handles, fontsize=5.8, loc="upper center", bbox_to_anchor=(0.5, -0.18), ncol=1)
+    fig.text(0.01, 0.012, "Continuous metrics are primary. Each point is the median of cohort-specific patient medians from the same primary-independent set used for score synthesis.\nColors summarize label sensitivity under uniform ±10% and ±20% threshold perturbations; contributions are mathematical, not causal.", fontsize=5.8, color="#5F6B76", linespacing=1.18)
+    fig.subplots_adjust(bottom=0.25, top=0.86)
+    fig.suptitle("Gene-contribution patterns at T48", x=0.02, y=0.985, ha="left", fontsize=12, fontweight="bold")
     export(fig, "Figure_4_gene_contribution_patterns")
     gene.to_csv(SOURCE_OUT / "Figure_4A_source_data.csv", index=False)
     arch.to_csv(SOURCE_OUT / "Figure_4B_source_data.csv", index=False)
@@ -464,7 +473,7 @@ def figure6() -> None:
         vals = [0, m.loc[sig, "T1"], m.loc[sig, "T2"]]
         color = signature_colors[sig]
         status = stability.loc[sig, "sensitivity_status"]
-        linestyle = "-" if status == "STABLE" else "--"
+        linestyle = {"STABLE": "-", "BOUNDARY_SENSITIVE": ":", "UNSTABLE": "--"}[status]
         ax.plot(x, vals, marker=marker_cycle[sig], linestyle=linestyle,
                 lw=1.7, ms=4.3, color=color, alpha=0.95)
         label_dy = {"SIG001": 10, "SIG002": 2, "SIG003": -2, "SIG004": 2,
@@ -479,8 +488,10 @@ def figure6() -> None:
     handles = [
         mpl.lines.Line2D([], [], color="#444444", linestyle="-", lw=1.6,
                          label="Label stable across threshold perturbations"),
+        mpl.lines.Line2D([], [], color="#444444", linestyle=":", lw=1.6,
+                         label="Label changed in one scenario"),
         mpl.lines.Line2D([], [], color="#444444", linestyle="--", lw=1.6,
-                         label="Label threshold-sensitive"),
+                         label="Label changed in ≥2 scenarios"),
     ]
     ax.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.47, -0.13),
               ncol=1, fontsize=5.9, columnspacing=1.0, handlelength=2.2)
@@ -597,8 +608,8 @@ def main() -> None:
         if number in selected:
             function()
     manifest = {
-        "freeze_id": "SCIREP-ANALYSIS-v1.1.2-20260720",
-        "scientific_source": "Corrected v1.1.2 Stage 3/4 result tables after the SIG001 formula audit",
+        "freeze_id": "SCIREP-ANALYSIS-v1.2.0-20260722",
+        "scientific_source": "Frozen Stage 3 results and corrected v1.2.0 Stage 4 architecture summaries using signature-specific primary-independent cohort sets",
         "figures": [p.name for p in sorted(OUT.glob("Figure_*.*"))],
         "source_files": [p.name for p in sorted(SOURCE_OUT.glob("*"))],
         "backend": "Python/matplotlib only",

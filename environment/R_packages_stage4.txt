@@ -1,0 +1,8 @@
+R==4.5.2
+Bioconductor==3.22
+DESeq2==1.50.2
+
+# DESeq2 is required only when forcing regeneration of the GSE110487
+# full-transcriptome VST matrix from public integer counts. The portable
+# Figure 1-6 reproduction route uses the released source tables and does not
+# require R.

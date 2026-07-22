@@ -341,6 +341,9 @@ def cohort_summaries(gene_level: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFra
             "analysis_role": group["analysis_role"].iloc[0],
         })
     cohort_gene = pd.DataFrame(rows)
+    cohort_gene["analysis_role"] = cohort_gene["analysis_role"].replace(
+        {"BLINDED_VALIDATION": "PRESPECIFIED_NON_PILOT"}
+    )
 
     metric_summary = patient_metrics.groupby(["dataset", "signature_id", "time_window"], as_index=False).agg(
         paired_n=("patient_id", "size"),
@@ -354,6 +357,26 @@ def cohort_summaries(gene_level: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFra
     dominant[["dominant_gene", "dominant_gene_patient_n"]] = pd.DataFrame(dominant.pop("dominant_tuple").tolist(), index=dominant.index)
     cohort_metrics = metric_summary.merge(dominant, on=["dataset", "signature_id", "time_window"], how="left")
     cohort_metrics["dominant_gene_patient_fraction"] = cohort_metrics["dominant_gene_patient_n"] / cohort_metrics["paired_n"]
+    cohort_context = gene_level[
+        [
+            "dataset",
+            "signature_id",
+            "time_window",
+            "development_overlap_status",
+            "analysis_role",
+        ]
+    ].drop_duplicates()
+    if cohort_context.duplicated(["dataset", "signature_id", "time_window"]).any():
+        raise RuntimeError("cohort context is not unique at dataset-signature-window grain")
+    cohort_metrics = cohort_metrics.merge(
+        cohort_context,
+        on=["dataset", "signature_id", "time_window"],
+        how="left",
+        validate="one_to_one",
+    )
+    cohort_metrics["analysis_role"] = cohort_metrics["analysis_role"].replace(
+        {"BLINDED_VALIDATION": "PRESPECIFIED_NON_PILOT"}
+    )
     return cohort_gene, cohort_metrics
 
 
@@ -427,16 +450,45 @@ def drift_architecture(cohort_metrics: pd.DataFrame, meta: pd.DataFrame) -> pd.D
     rows = []
     for signature in CONFIG["signatures"]:
         selected_window = None
+        selected_stage3 = None
         for window in th["classification_time_priority"]:
-            candidates = cohort_metrics[(cohort_metrics["signature_id"] == signature) & (cohort_metrics["time_window"] == window)]
-            if len(analysis_subset(candidates.assign(development_overlap_status="NO_KNOWN_OVERLAP", analysis_role=""), "ALL_COHORTS")) >= int(th["minimum_cohorts"]):
+            stage3_candidates = stage3[
+                (stage3["signature_id"] == signature)
+                & (stage3["time_window"] == window)
+            ]
+            if (
+                len(stage3_candidates) == 1
+                and int(stage3_candidates.iloc[0]["cohort_n"]) >= int(th["minimum_cohorts"])
+            ):
                 selected_window = window
+                selected_stage3 = stage3_candidates.iloc[0]
                 break
         if selected_window is None:
             rows.append({"signature_id": signature, "classification_window": "NONE", "drift_architecture": "EVIDENCE_INSUFFICIENT", "classification_reason": "fewer than three cohorts"})
             continue
-        cm = cohort_metrics[(cohort_metrics["signature_id"] == signature) & (cohort_metrics["time_window"] == selected_window)]
-        s3 = stage3[(stage3["signature_id"] == signature) & (stage3["time_window"] == selected_window)].iloc[0]
+        s3 = selected_stage3
+        primary_cohorts = tuple(str(s3["cohorts"]).split(";"))
+        if len(primary_cohorts) != int(s3["cohort_n"]):
+            raise RuntimeError(
+                f"{signature} {selected_window}: Stage 3 cohort list length does not match cohort_n"
+            )
+        cm = cohort_metrics[
+            (cohort_metrics["signature_id"] == signature)
+            & (cohort_metrics["time_window"] == selected_window)
+            & (cohort_metrics["dataset"].isin(primary_cohorts))
+        ].copy()
+        observed_cohorts = set(cm["dataset"])
+        expected_cohorts = set(primary_cohorts)
+        if observed_cohorts != expected_cohorts or len(cm) != len(primary_cohorts):
+            raise RuntimeError(
+                f"{signature} {selected_window}: architecture cohorts {sorted(observed_cohorts)} "
+                f"do not match Stage 3 PRIMARY_INDEPENDENT cohorts {sorted(expected_cohorts)}"
+            )
+        if int(cm["paired_n"].sum()) != int(s3["patient_n"]):
+            raise RuntimeError(
+                f"{signature} {selected_window}: architecture patient count "
+                f"{int(cm['paired_n'].sum())} does not match Stage 3 patient_n {int(s3['patient_n'])}"
+            )
         gm = meta[(meta["signature_id"] == signature) & (meta["time_window"] == selected_window) & (meta["analysis_set"] == "PRIMARY_INDEPENDENT")].copy()
         gene_abs = gm.assign(abs_pooled=gm["pooled_contribution"].abs()).sort_values("abs_pooled", ascending=False)
         total_gene_abs = float(gene_abs["abs_pooled"].sum())
@@ -444,6 +496,7 @@ def drift_architecture(cohort_metrics: pd.DataFrame, meta: pd.DataFrame) -> pd.D
         leading_share = float(gene_abs.iloc[0]["abs_pooled"] / total_gene_abs) if total_gene_abs > 0 else 0.0
         gene_shares_ge = int(np.sum(gene_abs["abs_pooled"] / total_gene_abs >= float(th["multigene_share"]))) if total_gene_abs > 0 else 0
         top_by_cohort = cm["dominant_gene"].value_counts(normalize=True)
+        modal_dominant_gene = str(top_by_cohort.index[0]) if len(top_by_cohort) else ""
         top_identity_fraction = float(top_by_cohort.iloc[0]) if len(top_by_cohort) else math.nan
         median_dominance = float(cm["median_dominance_ratio"].median())
         median_cancellation = float(cm["median_cancellation_index"].median())
@@ -452,10 +505,10 @@ def drift_architecture(cohort_metrics: pd.DataFrame, meta: pd.DataFrame) -> pd.D
         direction_consistency = float(s3["direction_consistency"])
         if float(s3["I2_percent"]) >= float(th["cohort_dependence_I2_percent"]) or top_identity_fraction < float(th["dominant_gene_cohort_identity_fraction"]):
             label = "COHORT_DEPENDENT_DRIFT"
-            reason = "high total-score heterogeneity or inconsistent dominant gene across cohorts"
+            reason = "high total-score heterogeneity or low modal dominant-gene agreement across cohorts"
         elif median_dominance >= float(th["single_gene_dominance_ratio"]) and top_identity_fraction >= float(th["dominant_gene_cohort_identity_fraction"]):
             label = "SINGLE_GENE_DOMINANT_DRIFT"
-            reason = "dominance ratio and dominant-gene identity thresholds met"
+            reason = "dominance ratio and modal dominant-gene agreement thresholds met"
         elif abs(pooled_delta) < float(th["stable_absolute_pooled_delta_z"]) and median_cancellation >= float(th["cancellation_index"]) and median_abs_sum >= float(th["nontrivial_absolute_contribution_sum"]):
             label = "INTERNAL_CANCELLATION_STABILITY"
             reason = "small total drift despite nontrivial opposing gene contributions"
@@ -474,7 +527,13 @@ def drift_architecture(cohort_metrics: pd.DataFrame, meta: pd.DataFrame) -> pd.D
             "stage3_prediction_lower": float(s3["prediction_lower"]), "stage3_prediction_upper": float(s3["prediction_upper"]),
             "median_patient_dominance_ratio": median_dominance, "median_patient_cancellation_index": median_cancellation,
             "median_patient_absolute_contribution_sum": median_abs_sum, "leading_gene": leading_gene,
-            "leading_gene_pooled_absolute_share": leading_share, "dominant_gene_cohort_identity_fraction": top_identity_fraction,
+            "leading_gene_pooled_absolute_share": leading_share,
+            "modal_cohort_dominant_gene": modal_dominant_gene,
+            "modal_dominant_gene_agreement_fraction": top_identity_fraction,
+            "architecture_cohort_n": int(len(cm)),
+            "architecture_patient_n": int(cm["paired_n"].sum()),
+            "architecture_cohorts": ";".join(primary_cohorts),
+            "cohort_summary_aggregation": "median_of_cohort_specific_patient_medians",
             "material_gene_count": gene_shares_ge, "stage3_direction_consistency": direction_consistency,
         })
     return pd.DataFrame(rows)
