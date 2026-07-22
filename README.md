@@ -76,7 +76,11 @@ Release identifier: `srep-sepsis-temporal-signatures-v1.2.0`.
 
 Public repository: `https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures`.
 
-The version-specific DOI is recorded in the GitHub release, Zenodo record and release manifest. Do not cite the superseded v1.0.1 version DOI as the corrected analysis.
+Version-specific DOI: `10.5281/zenodo.21484711`.
+
+Concept DOI for all versions: `10.5281/zenodo.21415496`.
+
+Do not cite the superseded v1.0.1 version DOI as the corrected analysis.
 
 ## License
 
