@@ -1,8 +1,8 @@
 {
   "release_id": "srep-sepsis-temporal-signatures-v1.2.0",
-  "doi": null,
+  "doi": "10.5281/zenodo.21484711",
   "concept_doi": "10.5281/zenodo.21415496",
-  "publication_status": "public GitHub release prepared; version DOI pending",
+  "publication_status": "public immutable release",
   "repository": "https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures",
   "files": [
     {
@@ -22,8 +22,8 @@
     },
     {
       "path": "CITATION.cff",
-      "size_bytes": 639,
-      "sha256": "b1d00d25dc71a5d19b1e531f70ed8d2e09bb1e75d06c872fb2e2150b30528671"
+      "size_bytes": 670,
+      "sha256": "ad02aad0afd949b2d518ed8a50700e0b7b200d8f0fe46619d72631f934cf93ad"
     },
     {
       "path": "LICENSE_CODE",
@@ -42,8 +42,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 8947,
-      "sha256": "5ac9ff42ce9b4840358b27d0d128692abe37fe366baa41e583254eeab11c70f2"
+      "size_bytes": 8959,
+      "sha256": "8edbffebf44f47ed6fd3e584dad7b27e1f651217d0e5b5798086456039ae4d77"
     },
     {
       "path": "code/analyse_gse106878_confirmation.py",
