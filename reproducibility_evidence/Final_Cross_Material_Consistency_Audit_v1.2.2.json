@@ -1,0 +1,782 @@
+{
+  "audit_id": "SCIREP-FINAL-CROSS-MATERIAL-v1.2.2-20260723",
+  "version": "v1.2.2",
+  "doi": "10.5281/zenodo.21506111",
+  "phase": "pre_manifest",
+  "status": "PASS",
+  "checks": 66,
+  "passed": 66,
+  "failed": 0,
+  "failures": [],
+  "details": [
+    {
+      "name": "Version DOI syntax",
+      "status": "PASS",
+      "observed": "10.5281/zenodo.21506111",
+      "expected": "Zenodo DOI"
+    },
+    {
+      "name": "Main cites v1.2.2 DOI",
+      "status": "PASS",
+      "observed": 2,
+      "expected": ">=2"
+    },
+    {
+      "name": "Main cites immutable GitHub v1.2.2 release",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "SI cites v1.2.2 DOI",
+      "status": "PASS",
+      "observed": 1,
+      "expected": ">=1"
+    },
+    {
+      "name": "Obsolete v1.2.1 DOI absent from main and SI",
+      "status": "PASS",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "Abstract leads with four modified-HK-supported changes",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Abstract identifies two inference-sensitive estimates",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Abstract limits separate replication to four diagnostic signatures",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Results report four cross-procedure changes",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Discussion gives two inference-sensitive estimates cautious interpretation",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Modified HK remains a sensitivity method",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Cross-platform analytical-equivalence boundary is explicit",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Platform-transfer approximation class is explicit",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Version correction narrative is compressed",
+      "status": "PASS",
+      "observed": 1,
+      "expected": 1
+    },
+    {
+      "name": "Main avoids post-freeze and change-control language",
+      "status": "PASS",
+      "observed": {
+        "post-freeze": 0,
+        "formal change control": 0,
+        "submission-matched": 0
+      },
+      "expected": "all zero"
+    },
+    {
+      "name": "Continuous architecture metrics carry interpretation",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Pathway result is explicitly exploratory and method-dependent",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "AI-use disclosure is present",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Clean Word state: Scientific_Reports_Manuscript.docx",
+      "status": "PASS",
+      "observed": {
+        "comments": [],
+        "insertions": 0,
+        "deletions": 0,
+        "moves": 0,
+        "hidden": 0,
+        "tracking_on": false
+      },
+      "expected": "no comments, revisions, moves, or hidden text"
+    },
+    {
+      "name": "Native Word equation count: Scientific_Reports_Manuscript.docx",
+      "status": "PASS",
+      "observed": 15,
+      "expected": 15
+    },
+    {
+      "name": "Clean Word state: Supplementary_Information.docx",
+      "status": "PASS",
+      "observed": {
+        "comments": [],
+        "insertions": 0,
+        "deletions": 0,
+        "moves": 0,
+        "hidden": 0,
+        "tracking_on": false
+      },
+      "expected": "no comments, revisions, moves, or hidden text"
+    },
+    {
+      "name": "Native Word equation count: Supplementary_Information.docx",
+      "status": "PASS",
+      "observed": 64,
+      "expected": 64
+    },
+    {
+      "name": "Main Table 2 is 9 by 12",
+      "status": "PASS",
+      "observed": [
+        9,
+        12
+      ],
+      "expected": [
+        9,
+        12
+      ]
+    },
+    {
+      "name": "Main Table 2 removes T48 pattern",
+      "status": "PASS",
+      "observed": [
+        "Signature",
+        "T24 k",
+        "T24 ΔZ\nstandard HK 95% CI",
+        "T24 modified HK\n95% CI; Holm P",
+        "T48 k",
+        "T48 ΔZ\nstandard HK 95% CI",
+        "T48 modified HK\n95% CI; Holm P",
+        "T48 95% PI",
+        "T48 I², %",
+        "T48 leading gene",
+        "T48 dominance",
+        "T48 cancellation"
+      ],
+      "expected": "no T48 pattern"
+    },
+    {
+      "name": "Main Table 2 adds modified HK columns",
+      "status": "PASS",
+      "observed": [
+        "Signature",
+        "T24 k",
+        "T24 ΔZ\nstandard HK 95% CI",
+        "T24 modified HK\n95% CI; Holm P",
+        "T48 k",
+        "T48 ΔZ\nstandard HK 95% CI",
+        "T48 modified HK\n95% CI; Holm P",
+        "T48 95% PI",
+        "T48 I², %",
+        "T48 leading gene",
+        "T48 dominance",
+        "T48 cancellation"
+      ],
+      "expected": 2
+    },
+    {
+      "name": "Table 2 contains modified HK SIG001 T24",
+      "status": "PASS",
+      "observed": {
+        "ci": true,
+        "p": true
+      },
+      "expected": true
+    },
+    {
+      "name": "Table 2 contains modified HK SIG001 T48",
+      "status": "PASS",
+      "observed": {
+        "ci": true,
+        "p": true
+      },
+      "expected": true
+    },
+    {
+      "name": "Table 2 contains modified HK SIG002 T48",
+      "status": "PASS",
+      "observed": {
+        "ci": true,
+        "p": true
+      },
+      "expected": true
+    },
+    {
+      "name": "Table 2 contains modified HK SIG003 T24",
+      "status": "PASS",
+      "observed": {
+        "ci": true,
+        "p": true
+      },
+      "expected": true
+    },
+    {
+      "name": "Table 2 contains modified HK SIG003 T48",
+      "status": "PASS",
+      "observed": {
+        "ci": true,
+        "p": true
+      },
+      "expected": true
+    },
+    {
+      "name": "Table 2 contains modified HK SIG004 T48",
+      "status": "PASS",
+      "observed": {
+        "ci": true,
+        "p": true
+      },
+      "expected": true
+    },
+    {
+      "name": "Table 2 marks exactly two inference-sensitive cells",
+      "status": "PASS",
+      "observed": 2,
+      "expected": 2
+    },
+    {
+      "name": "Supplementary Data has 30 visible sheets",
+      "status": "PASS",
+      "observed": {
+        "count": 30,
+        "hidden": []
+      },
+      "expected": {
+        "count": 30,
+        "hidden": []
+      }
+    },
+    {
+      "name": "Portal, author, and release Supplementary Data are identical",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Portal, author, and release Figure Source Data are identical",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Signature selection registry contains 34 candidates",
+      "status": "PASS",
+      "observed": {
+        "rows": 34,
+        "grades": {
+          "A2": 10,
+          "B": 19,
+          "X": 5
+        }
+      },
+      "expected": {
+        "rows": 34,
+        "grades": {
+          "A2": 10,
+          "B": 19,
+          "X": 5
+        }
+      }
+    },
+    {
+      "name": "Eight protein-coding A2 and two lncRNA A2 boundaries are retained",
+      "status": "PASS",
+      "observed": {
+        "Included: protein-coding A2 formula reconstructed without refitting in all six primary cohorts": 8,
+        "Not evaluated: incomplete, conflict-affected, or refitting-dependent rule (see grade reason)": 19,
+        "Not evaluated: critical computation inaccessible, proprietary, or irreconcilable (see grade reason)": 5,
+        "Not evaluated: lncRNA A2 panel with unresolved cross-platform feature mapping": 2
+      },
+      "expected": {
+        "included": 8,
+        "lncRNA_not_evaluated": 2
+      }
+    },
+    {
+      "name": "S10 denominator is three for all 16 rows",
+      "status": "PASS",
+      "observed": {
+        "rows": 16,
+        "denominators": [
+          3
+        ]
+      },
+      "expected": {
+        "rows": 16,
+        "denominators": [
+          3
+        ]
+      }
+    },
+    {
+      "name": "S10 names the exact three analyses",
+      "status": "PASS",
+      "observed": "Table note: The three class-agreement sensitivity analyses were all-cohort, strict-never-used, and prespecified non-pilot-only. The non-pilot-only set corresponds to the internal code label BLINDED_VALIDATION_ONLY and does not imply formal masking. The numerator counts analyses whose stability class matched the primary-independent class. The MAD-scaling estimate was assessed separately for material sign reversal and was not included in this denominator.",
+      "expected": "exact definitions"
+    },
+    {
+      "name": "HPA gene-level mapping contains all 74 genes",
+      "status": "PASS",
+      "observed": {
+        "rows": 74,
+        "mapping": {
+          "EXACT": 72,
+          "HISTORICAL_SYMBOL_RESOLVED": 2
+        }
+      },
+      "expected": {
+        "rows": 74,
+        "mapping": {
+          "EXACT": 72,
+          "HISTORICAL_SYMBOL_RESOLVED": 2
+        }
+      }
+    },
+    {
+      "name": "HPA version and SHA-256 are recorded",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "S15 uses lowest-FDR pathway field",
+      "status": "PASS",
+      "observed": [
+        "T48_lowest_FDR_primary_pathway",
+        "T48_pathway_rho",
+        "T48_pathway_ci",
+        "T48_pathway_prediction_interval",
+        "T48_pathway_FDR",
+        "T48_pathway_passes_FDR",
+        "ssGSEA_same_pathway_rho",
+        "ssGSEA_same_pathway_FDR"
+      ],
+      "expected": "lowest-FDR field only"
+    },
+    {
+      "name": "S15 pathways equal deterministic lowest-FDR S13 rows",
+      "status": "PASS",
+      "observed": {
+        "SIG001": "HALLMARK_APOPTOSIS",
+        "SIG002": "HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+        "SIG003": "HALLMARK_ALLOGRAFT_REJECTION",
+        "SIG004": "HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+        "SIG022": "HALLMARK_ALLOGRAFT_REJECTION",
+        "SIG023": "HALLMARK_INFLAMMATORY_RESPONSE",
+        "SIG033": "HALLMARK_APOPTOSIS",
+        "SIG034": "HALLMARK_OXIDATIVE_PHOSPHORYLATION"
+      },
+      "expected": {
+        "SIG001": "HALLMARK_APOPTOSIS",
+        "SIG002": "HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+        "SIG003": "HALLMARK_ALLOGRAFT_REJECTION",
+        "SIG004": "HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+        "SIG022": "HALLMARK_ALLOGRAFT_REJECTION",
+        "SIG023": "HALLMARK_INFLAMMATORY_RESPONSE",
+        "SIG033": "HALLMARK_APOPTOSIS",
+        "SIG034": "HALLMARK_OXIDATIVE_PHOSPHORYLATION"
+      }
+    },
+    {
+      "name": "S25 retains exactly four modified-HK estimates",
+      "status": "PASS",
+      "observed": [
+        [
+          "SIG001",
+          "T24"
+        ],
+        [
+          "SIG001",
+          "T48"
+        ],
+        [
+          "SIG002",
+          "T48"
+        ],
+        [
+          "SIG003",
+          "T48"
+        ]
+      ],
+      "expected": [
+        "SIG001 T24",
+        "SIG001 T48",
+        "SIG002 T48",
+        "SIG003 T48"
+      ]
+    },
+    {
+      "name": "S25 records the two inference-sensitive adjusted P values",
+      "status": "PASS",
+      "observed": {
+        "SIG003 T24": 0.462,
+        "SIG004 T48": 0.052
+      },
+      "expected": {
+        "SIG003 T24": 0.462,
+        "SIG004 T48": 0.052
+      }
+    },
+    {
+      "name": "Release Table 2 workbook is 9 by 12",
+      "status": "PASS",
+      "observed": [
+        9,
+        12
+      ],
+      "expected": [
+        9,
+        12
+      ]
+    },
+    {
+      "name": "Release Table 2 workbook removes pattern column",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Release Table 2 workbook carries v1.2.2 DOI",
+      "status": "PASS",
+      "observed": "10.5281/zenodo.21506111",
+      "expected": "10.5281/zenodo.21506111"
+    },
+    {
+      "name": "Supplementary Data changes are text-only and confined to 15 documented cells",
+      "status": "PASS",
+      "observed": [
+        [
+          "README",
+          "A1"
+        ],
+        [
+          "README",
+          "A25"
+        ],
+        [
+          "README",
+          "B1"
+        ],
+        [
+          "README",
+          "B2"
+        ],
+        [
+          "README",
+          "B20"
+        ],
+        [
+          "README",
+          "B21"
+        ],
+        [
+          "README",
+          "B22"
+        ],
+        [
+          "README",
+          "B25"
+        ],
+        [
+          "README",
+          "B26"
+        ],
+        [
+          "README",
+          "B27"
+        ],
+        [
+          "S10_Evidence",
+          "A18"
+        ],
+        [
+          "S21_DatasetSearch",
+          "A18"
+        ],
+        [
+          "S21_DatasetSearch",
+          "H13"
+        ],
+        [
+          "S26_DirectionalReplication",
+          "A1"
+        ],
+        [
+          "S26_DirectionalReplication",
+          "B1"
+        ]
+      ],
+      "expected": [
+        [
+          "README",
+          "A1"
+        ],
+        [
+          "README",
+          "A25"
+        ],
+        [
+          "README",
+          "B1"
+        ],
+        [
+          "README",
+          "B2"
+        ],
+        [
+          "README",
+          "B20"
+        ],
+        [
+          "README",
+          "B21"
+        ],
+        [
+          "README",
+          "B22"
+        ],
+        [
+          "README",
+          "B25"
+        ],
+        [
+          "README",
+          "B26"
+        ],
+        [
+          "README",
+          "B27"
+        ],
+        [
+          "S10_Evidence",
+          "A18"
+        ],
+        [
+          "S21_DatasetSearch",
+          "A18"
+        ],
+        [
+          "S21_DatasetSearch",
+          "H13"
+        ],
+        [
+          "S26_DirectionalReplication",
+          "A1"
+        ],
+        [
+          "S26_DirectionalReplication",
+          "B1"
+        ]
+      ]
+    },
+    {
+      "name": "Figure Source Data changes are documentation-only",
+      "status": "PASS",
+      "observed": [
+        [
+          "Fig4_B",
+          "A2"
+        ],
+        [
+          "README",
+          "A21"
+        ],
+        [
+          "README",
+          "B3"
+        ]
+      ],
+      "expected": [
+        [
+          "Fig4_B",
+          "A2"
+        ],
+        [
+          "README",
+          "A21"
+        ],
+        [
+          "README",
+          "B3"
+        ]
+      ]
+    },
+    {
+      "name": "Supplementary Data has no formulas, errors, comments, or external links",
+      "status": "PASS",
+      "observed": {
+        "formulas": [],
+        "errors": [],
+        "comments": [],
+        "external_links": 0
+      },
+      "expected": "all empty"
+    },
+    {
+      "name": "All 22 locked figure files are byte-identical",
+      "status": "PASS",
+      "observed": {
+        "00_PORTAL_UPLOAD/Figures/Figure_1.tiff": true,
+        "00_PORTAL_UPLOAD/Figures/Figure_2.tiff": true,
+        "00_PORTAL_UPLOAD/Figures/Figure_3.tiff": true,
+        "00_PORTAL_UPLOAD/Figures/Figure_4.tiff": true,
+        "00_PORTAL_UPLOAD/Figures/Figure_5.tiff": true,
+        "00_PORTAL_UPLOAD/Figures/Figure_6.tiff": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_1.pdf": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_1.pptx": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_1.svg": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_2.pdf": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_2.svg": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_3.pdf": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_3.svg": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_4.pdf": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_4.pptx": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_4.svg": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_5.pdf": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_5.pptx": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_5.svg": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_6.pdf": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_6.pptx": true,
+        "01_AUTHOR_SOURCE/Figures/Figure_6.svg": true
+      },
+      "expected": "22 of 22 true"
+    },
+    {
+      "name": "PDF page count: Scientific_Reports_Manuscript.pdf",
+      "status": "PASS",
+      "observed": 24,
+      "expected": 24
+    },
+    {
+      "name": "PDF page count: Supplementary_Information.pdf",
+      "status": "PASS",
+      "observed": 31,
+      "expected": 31
+    },
+    {
+      "name": "PDF page count: Scientific_Reports_Cover_Letter.pdf",
+      "status": "PASS",
+      "observed": 1,
+      "expected": 1
+    },
+    {
+      "name": "PDF page count: Reporting_Summary_Content_Transfer_Aid.pdf",
+      "status": "PASS",
+      "observed": 2,
+      "expected": 2
+    },
+    {
+      "name": "PDF page count: STROBE_Checklist.pdf",
+      "status": "PASS",
+      "observed": 2,
+      "expected": 2
+    },
+    {
+      "name": "Portal and author SI PDFs are identical",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Portal and author cover-letter PDFs are identical",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Portal and author STROBE PDFs are identical",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Reporting Summary XFA uses v1.2.2",
+      "status": "PASS",
+      "observed": {
+        "v1.2.2": 5,
+        "v1.2.1": 0
+      },
+      "expected": {
+        "v1.2.2": ">=5",
+        "v1.2.1": 0
+      }
+    },
+    {
+      "name": "Reporting Summary XFA uses version DOI",
+      "status": "PASS",
+      "observed": {
+        "new": 1,
+        "old": 0
+      },
+      "expected": {
+        "new": 1,
+        "old": 0
+      }
+    },
+    {
+      "name": "Portal and author Reporting Summary are identical",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Release metadata uses v1.2.2 DOI",
+      "status": "PASS",
+      "observed": {
+        "new": 7,
+        "old": 0
+      },
+      "expected": {
+        "new": ">=1",
+        "old": 0
+      }
+    },
+    {
+      "name": "Release describes presentation-only boundary",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    },
+    {
+      "name": "Release preserves internal v1.2.1 workflow names",
+      "status": "PASS",
+      "observed": null,
+      "expected": true
+    }
+  ]
+}

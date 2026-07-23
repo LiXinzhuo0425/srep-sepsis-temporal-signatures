@@ -1,0 +1,30 @@
+{
+  "verification_id": "SCIREP-CLEAN-RELEASE-REPRODUCTION-v1.2.2-20260723",
+  "release_version": "v1.2.2",
+  "numerical_workflow_version": "v1.2.1",
+  "status": "PASS",
+  "command_exit_code": 0,
+  "recorded_render_environment": false,
+  "render_environment_interpretation": "This isolated run used a different rendering environment. PASS_PLATFORM_RENDER_VARIATION is acceptable only because all scientific source files are byte-identical and all export checks passed.",
+  "source_data_files": 12,
+  "source_data_passed": 12,
+  "supplementary_source_status": "PASS",
+  "main_figure_statuses": {
+    "Figure_1_study_design": "PASS_AUTHORED_LAYOUT",
+    "Figure_2_pooled_longitudinal_change": "PASS_PLATFORM_RENDER_VARIATION",
+    "Figure_3_cross_cohort_transportability": "PASS_PLATFORM_RENDER_VARIATION",
+    "Figure_4_gene_contribution_patterns": "PASS_AUTHORED_LAYOUT",
+    "Figure_5_gene_pathway_cell_integration": "PASS_AUTHORED_LAYOUT",
+    "Figure_6_temporal_measurement_context": "PASS_AUTHORED_LAYOUT"
+  },
+  "supplementary_figure_status": "PASS_PLATFORM_RENDER_VARIATION",
+  "format_checks": {
+    "Figure_1_study_design": "PASS",
+    "Figure_2_pooled_longitudinal_change": "PASS",
+    "Figure_3_cross_cohort_transportability": "PASS",
+    "Figure_4_gene_contribution_patterns": "PASS",
+    "Figure_5_gene_pathway_cell_integration": "PASS",
+    "Figure_6_temporal_measurement_context": "PASS"
+  },
+  "scientific_continuity": "The v1.2.2 release changes manuscript-facing Table 2 and documentation only. The retained v1.2.1 analysis workflow regenerated all 12 main-figure source CSV files and the Supplementary Figure S1 source CSV byte-for-byte."
+}

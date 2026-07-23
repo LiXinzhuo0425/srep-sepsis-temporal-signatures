@@ -1,8 +1,10 @@
-# Fixed blood transcriptomic signatures: version 1.2.1
+# Fixed blood transcriptomic signatures: version 1.2.2
 
-This release accompanies *Fixed blood transcriptomic signatures show distinct longitudinal behavior and gene-contribution patterns across sepsis cohorts*. It contains the submission-matched v1.2.1 analysis outputs, patient-level derived data, source tables for Figures 1–6, portable figure-generation code, environment records, modified Knapp–Hartung sensitivity results, post-freeze directional-replication results, and scripted clean-environment verification.
+This release accompanies *Fixed blood transcriptomic signatures show distinct longitudinal behavior and gene-contribution patterns across sepsis cohorts*. Version 1.2.2 is a presentation-only maintenance release: it preserves the corrected v1.2.1 numerical workflow, cohorts, point estimates, figures, numerical source values, and reproducibility outputs, while updating the manuscript-facing Table 2 and the associated documentation.
 
-The public v1.0.1 archive is retained for provenance but is superseded for scientific use because its SIG001 implementation omitted the published 5/6 coefficient on the down-regulated module. An intermediate v1.1.2 correction build restored the formula and normalized the submission package. A later cross-material consistency check found that its Stage 4 summaries for SIG002, SIG003, and SIG004 combined the four-cohort primary score synthesis with five-cohort gene-contribution summaries. Version 1.2.0 reruns Stage 4 so every architecture component uses the exact signature-specific primary-independent cohort set. Stage 3 pooled effects and inferential conclusions are unchanged; the descriptive SIG004 label changes from single-gene-dominant to consistent multigene drift.
+Table 2 now presents modified Knapp–Hartung confidence intervals and Holm-adjusted P values alongside the prespecified standard Hartung–Knapp results for the eight diagnostic signature–window contrasts. It also removes the threshold-dependent pattern label so that the continuous dominance and cancellation metrics carry the main interpretation. Four changes are supported under both procedures; the FAIM3:PLAC8 T24 and sNIP T48 estimates are identified as inference-sensitive. No analysis was rerun and no figure was changed.
+
+The public v1.0.1 archive is retained as superseded history. Version 1.1.2 corrected the SIG001 coefficient, version 1.2.0 reconciled Stage 4 architecture summaries with the signature-specific primary-independent cohort sets, and version 1.2.1 completed the manuscript-facing data and documentation package.
 
 ## Evidence boundary
 
@@ -10,7 +12,7 @@ The study evaluates published blood transcriptomic formulas under repeated sampl
 
 ## Public inputs
 
-Original expression data are available from NCBI GEO under GSE236713, GSE57065, GSE95233, GSE54514, GSE110487, GSE8121 and GSE106878. The first six cohorts constituted the frozen primary analysis; GSE106878 was used only as a standalone post-freeze directional-replication cohort. Source-study terms govern reuse. No direct identifiers or newly linked clinical data are included. Patient and sample identifiers in `data/derived_patient_level` are the pseudonymous identifiers used in the public deposits.
+Original expression data are available from NCBI GEO under GSE236713, GSE57065, GSE95233, GSE54514, GSE110487, GSE8121 and GSE106878. The first six cohorts constituted the primary analysis; GSE106878 was used as a separate directional-replication cohort. Source-study terms govern reuse. No direct identifiers or newly linked clinical data are included. Patient and sample identifiers in `data/derived_patient_level` are the pseudonymous identifiers used in the public deposits.
 
 ## Reproduce Figures 1–6 and Supplementary Figure S1
 
@@ -33,9 +35,17 @@ The bundled DESeq2 1.50.2 library is a macOS arm64 environment snapshot licensed
 - `04_environment/reproducibility_rerun_stage4.py`
 - `04_environment/verify_stage4.py`
 
-Version 1.2.1 retains the corrected SIG001 implementation and the v1.2.0 regression guard requiring every Stage 4 architecture component to match the exact signature-specific primary-independent cohort IDs, cohort count, and patient count from Stage 3. The complete formula registry, threshold-sensitivity evidence, architecture-set verification, full Stage 4 log, and semantic rerun comparison are retained in `tables` and `reproducibility_evidence`.
+The retained v1.2.1 numerical workflow includes the corrected SIG001 implementation and the v1.2.0 regression guard requiring every Stage 4 architecture component to match the exact signature-specific primary-independent cohort IDs, cohort count, and patient count from Stage 3. The complete formula registry, threshold-sensitivity evidence, architecture-set verification, Stage 4 log, and semantic rerun comparison are retained in `tables` and `reproducibility_evidence`.
 
-The final workbook-assembly step is presentation-only and runs when `ARTIFACT_TOOL_MJS` points to a compatible workbook renderer. If that optional dependency is absent, the reproducibility runner skips workbook assembly after all scientific CSV/parquet outputs and verification checks have completed; submission-matched workbooks are already included in `tables`.
+The final workbook-assembly step is presentation-only and runs when `ARTIFACT_TOOL_MJS` points to a compatible workbook renderer. If that optional dependency is absent, the reproducibility runner skips workbook assembly after all scientific CSV/parquet outputs and verification checks have completed; the release workbooks are already included in `tables`.
+
+## Version 1.2.2 changes
+
+- Added modified Knapp–Hartung 95% confidence intervals and Holm-adjusted P values to the manuscript-facing Table 2 for the eight diagnostic signature–window contrasts.
+- Removed the threshold-dependent `T48 pattern` column from Table 2.
+- Identified four changes supported by both the standard and modified procedures and two estimates that are sensitive to the inferential method.
+- Updated release documentation and citation metadata to v1.2.2.
+- Preserved the v1.2.1 numerical workflow, cohorts, point estimates, standard Hartung–Knapp results, prediction intervals, heterogeneity estimates, figures, numerical source values, and reproducibility evidence without change.
 
 ## Version 1.2.1 changes
 
@@ -94,13 +104,13 @@ The final workbook-assembly step is presentation-only and runs when `ARTIFACT_TO
 
 ## Version and citation
 
-Release identifier: `srep-sepsis-temporal-signatures-v1.2.1`.
+Release identifier: `srep-sepsis-temporal-signatures-v1.2.2`.
 
 Public repository: `https://github.com/LiXinzhuo0425/srep-sepsis-temporal-signatures`.
 
 Concept DOI for all versions: `10.5281/zenodo.21415496`.
 
-Version-specific DOI for v1.2.1: `10.5281/zenodo.21500875` (https://doi.org/10.5281/zenodo.21500875).
+Version-specific DOI for v1.2.2: `10.5281/zenodo.21506111` (https://doi.org/10.5281/zenodo.21506111).
 
 Do not cite the superseded v1.0.1 version DOI as the corrected analysis.
 
